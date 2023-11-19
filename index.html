@@ -81,6 +81,35 @@
         </div>
     </div>
 
+
+    <div class="row mb-5">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Allies and Adversaries</h5>
+                    <p class="card-text">WIP</p>
+
+                    <div class="align-self-center" id="country_mentions_map">
+
+                        <div class="map-container">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary" id="exploreButton">Explore</button>
+                                    <button class="btn btn-secondary" id="resetButton">Reset</button>
+                                </div>
+                            </div>
+                            <!-- Map SVG goes here -->
+                        </div>
+
+                        <div class="scatter-container">
+                            <!-- Scatter Plot SVG goes here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 </div>
@@ -99,9 +128,11 @@
 <script src="https://d3js.org/topojson.v2.min.js"></script>
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
 
+
 <!-- OWN JS -->
 <script src="js/runningBarVis.js"></script>
 <script src="js/stackedBarVis.js"></script>
+<script src="js/map.js"></script>
 <script src="js/main.js"></script>
 
 </body>
