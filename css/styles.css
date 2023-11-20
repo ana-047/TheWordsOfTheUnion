@@ -34,3 +34,16 @@ img {
     stroke: black;
     stroke-opacity: 0.1;
 }
+
+.theme-beeswarm {
+    height: 300px;
+    width: 100%;
+}
+
+.war {
+    fill: #4242e4;
+}
+
+.economy {
+    fill: green;
+}

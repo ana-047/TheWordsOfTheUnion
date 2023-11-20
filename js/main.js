@@ -18,7 +18,9 @@ let promises = [
     d3.csv("Data/cleaned_data/csv_format_d3/policy.csv"), //9
     d3.csv("Data/cleaned_data/csv_format_d3/policy_agg.csv"), //10
     d3.csv("Data/cleaned_data/csv_format_d3/speech_length.csv"), //11
-    d3.csv("Data/cleaned_data/csv_format_d3/speech_length_agg.csv") //12
+    d3.csv("Data/cleaned_data/csv_format_d3/speech_length_agg.csv"), //12
+
+    d3.json('Data/tagged_full_text/combined_data.json'), //13
 
     // add more files here
 ];
@@ -42,6 +44,6 @@ function initMainPage(dataArray) {
 
     myStackedBarVis = new StackedBarVis('stacked-bars-themes', dataArray[10]);
 
-
+    themeBeeswarm = new ThemeBeeswarm('theme-beeswarm', dataArray[13]);
 
 }
