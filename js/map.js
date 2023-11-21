@@ -1,20 +1,23 @@
+
 function initializeMapAndScatter() {
     let selectedCountry;
     let countries;
-    let scatterData;
+    let scatterData; // Add this line to declare scatterData variable
 
     const mapWidth = 900;
     const mapHeight = 600;
 
+    // Declare separate dimensions for scatter plot
     const scatterWidth = 400;
     const scatterHeight = 300;
 
+    // Declare scatterSvg variable
     let scatterSvg;
 
     const initialProjection = d3.geoOrthographic().scale(300).translate([mapWidth / 2, mapHeight / 2]);
     const equirectangularProjection = d3.geoEquirectangular().scale(140).translate([mapWidth / 2, mapHeight / 1.4]);
 
-    //  container div
+    // Select the container div
     const containerDiv = d3.select('#country_mentions_map');
 
     // Append SVG to the map-container div
@@ -22,9 +25,9 @@ function initializeMapAndScatter() {
     let g = svg.append('g');
     let path = d3.geoPath().projection(initialProjection);
 
-    // Zoom functionality
+    // Create a zoom behavior
     const zoom = d3.zoom()
-        .scaleExtent([1, 8])
+        .scaleExtent([1, 8]) // Set the scale extent (minimum and maximum zoom levels)
         .on('zoom', zoomed);
 
     // Function to get the country name from a feature
@@ -36,10 +39,10 @@ function initializeMapAndScatter() {
         }
     }
 
-    // // Add a hidden tooltip element
-    // containerDiv.append('div')
-    //     .attr('id', 'tooltip')
-    //     .style('position', 'absolute');
+    // Add a hidden tooltip element
+    containerDiv.append('div')
+        .attr('id', 'tooltip')
+        .style('position', 'absolute');
 
     // Add a button to toggle between projections
     containerDiv.select('#exploreButton')
@@ -58,6 +61,7 @@ function initializeMapAndScatter() {
             // Extract the features from the data
             const countries = topojson.feature(mapData, mapData.objects.countries).features;
 
+            // Assign the features to the global variable
             window.countries = countries;
 
             // Append path elements to the group
@@ -101,13 +105,13 @@ function initializeMapAndScatter() {
             // Apply the zoom behavior to the SVG
             svg.call(zoom);
 
-            // rotation animation
+            // Start the rotation animation
             rotateGlobe();
         }
     );
 
     function showAxis() {
-        // check if user clicked on a country
+        // Show the axes only if the user has clicked on a country
         if (userClickedCountry) {
 
             scatterSvg.selectAll('.x-axis, .y-axis').style('display', 'block');
@@ -139,9 +143,9 @@ function initializeMapAndScatter() {
                     .style('display', 'none'); // Initially hide the scatter plot
             }
 
-            scatterSvg.style('display', 'block');
+            scatterSvg.style('display', 'block'); // Show the scatter plot
             scatterSvg.call(zoom); // Apply zoom only when using equirectangular projection
-            showAxis();
+            showAxis(); // Call a function to show the axis
         } else {
             scatterSvg.style('display', 'none'); // Hide the scatter plot
             scatterSvg.on('.zoom', null); // Remove zoom behavior when not using equirectangular projection
@@ -186,17 +190,18 @@ function initializeMapAndScatter() {
     }
 
     function zoomed(event) {
-
+        // Get the current zoom transform
         const transform = event.transform;
 
         // Update the projection based on the zoom transform
         const newProjection = d3.geoEquirectangular()
-            .scale(140 * transform.k)
+            .scale(140 * transform.k) // Scale based on the zoom level
             .translate([mapWidth / 2 + transform.x, mapHeight / 1.4 + transform.y]); // Update the translation based on the zoom transform
 
         // Update the path generator with the new projection
         path = d3.geoPath().projection(newProjection);
 
+        // Update the paths with the new projection
         g.selectAll('.country').attr('d', path);
     }
 
@@ -213,13 +218,13 @@ function initializeMapAndScatter() {
     function updateScatterPlot(selectedCountryName) {
         userClickedCountry = true;
         // Load CSV data for the selected country
-        d3.csv('data/countries_long.csv').then(data => {
+        d3.csv('data/cleaned_data/csv_format_d3/countries_long.csv').then(data => {
             scatterData = data;
 
             // Define filteredData here before using it
             const filteredData = scatterData.filter(d => d.Country === selectedCountryName);
 
-
+            // Clear existing scatter plot contents
             if (!scatterSvg) {
                 scatterSvg = containerDiv.select('.scatter-container')
                     .append('svg')
@@ -228,7 +233,7 @@ function initializeMapAndScatter() {
                     .attr('class', 'scatter')
                     .style('display', 'none'); // Initially hide the scatter plot
             } else {
-
+                // Clear existing scatter plot contents
                 scatterSvg.selectAll('*').remove();
             }
 
@@ -293,10 +298,10 @@ function initializeMapAndScatter() {
                 .attr('cy', d => yScale(+d.Mentions))
                 .attr('r', 3)
                 .attr('fill', d => {
-
+                    // Log the "Party" values to the console for debugging
                     console.log('Party:', d.Party);
 
-
+                    // Use a conditional statement to set the fill color based on the "Party" column
                     if (d.Party === 'Republican') {
                         return 'red';
                     } else if (d.Party === 'Democratic') {
