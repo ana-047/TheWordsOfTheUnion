@@ -7,7 +7,7 @@ body {
 }
 
 #racing-bar-chart,
-#stacked-bars-themes {
+#stacked-bars-themes, #speech_heatmap {
     height: 80vh;
     width: 100%;
 }
