@@ -49,13 +49,17 @@ class BarVis {
 
 
         // legend
-        var keys = ["Republican", "Democratic", "Other"]
+        var keys = ["Republican", "Democratic", "Other"];
+
+        // Declare party color variables
+        vis.partyColors = Object.values(partyColors).slice(0,3);
 
         var color = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#FF8B8B", "#83A2FF", "#FFD28F"]);
+            // .range(["#FF8B8B", "#83A2FF", "#FFD28F"]);
+            .range(vis.partyColors);
 
-        var size=20
+        var size=20;
 
         vis.svg.append("g")
             .attr("class", "legend")
@@ -68,7 +72,7 @@ class BarVis {
             .attr("y", function(d,i){ return 10 + i*(size+5)})
             .attr("width", size)
             .attr("height", size)
-            .style("fill", function(d){ return color(d)})
+            .style("fill", function(d){ return color(d)});
 
         vis.svg.append("g")
             .attr("class", "legend")
@@ -128,13 +132,15 @@ class BarVis {
             .duration(1100)
             .attr("width", d => vis.x(d.word_count))
 
-            .attr("fill", d=>{if(d.party == "Republican"){
-                return "#FF8B8B"
-            }else if(d.party == "Democratic"){
-                return "#83A2FF"
-            }else{
-                return "#FFD28F"
-            }});
+            .attr("class", d=>{
+                if(d.party === "Republican"){
+                    return "party-republican"
+                }else if(d.party === "Democratic"){
+                    return "party-democrat"
+                }else{
+                    return "party-other"
+                }
+            });
 
         vis.bars.exit().remove();
 

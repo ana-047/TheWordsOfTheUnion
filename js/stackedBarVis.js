@@ -50,9 +50,13 @@ class StackedBarVis {
 
         vis.keys = Object.keys(vis.data[0]).slice(3)
 
+        // Get theme colors from main and convert to array
+        vis.themeColors = Object.values(themeColors);
+
         vis.colorScale = d3.scaleOrdinal()
             .domain(vis.keys)
-            .range(["#FFD28F",  "#6BD425", "#83A2FF", "#EB4747", "#2274A5", "#F7AEF8", "#5BD1D7"]);
+            // .range(["#FFD28F",  "#6BD425", "#83A2FF", "#EB4747", "#2274A5", "#F7AEF8", "#5BD1D7"]);
+            .range(vis.themeColors);
 
         var size=20
 

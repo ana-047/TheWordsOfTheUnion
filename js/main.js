@@ -4,6 +4,26 @@
 
 // init global variables & switches
 
+// declare color variables
+const themeColors = {
+    'theme-border': '#F7A072',
+    'theme-climate': '#738A7C',
+    'theme-economy': '#98BB95',
+    'theme-guns': '#909CC2',
+    'theme-immigration': '#85C7F2',
+    'theme-law-crime': '#D17A9E',
+    'theme-war': '#AA8CAD',
+};
+
+const partyColors = {
+    'party-republican': '#DB767B',
+    'party-democrat': '#53AEF4',
+    'party-other': '#A8A8A8',
+    'party-whig': '#E2DE91',
+    'party-national-union': '#39668C',
+    'party-federalist': '#96787C',
+};
+
 // load data using promises
 let promises = [
     d3.csv("Data/cleaned_data/csv_format_d3/abortion_sentiment.csv"), //0

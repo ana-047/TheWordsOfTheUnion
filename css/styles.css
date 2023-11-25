@@ -6,11 +6,12 @@
     --border-section: #CCCCCC;
     --background-tooltip: #DCDBDB;
 
-    --party-repubican: #DB767B;
+    --party-republican: #DB767B;
     --party-democrat: #53AEF4;
     --party-whig: #E2DE91;
     --party-national-union: #39668C;
     --party-federalist: #96787C;
+    --party-other: #A8A8A8;
 
     --hover: #FCF300;
 
@@ -18,7 +19,7 @@
     --theme-war: #AA8CAD;
     --theme-border: #F7A072;
     --theme-climate: #738A7C;
-    --theme-imigration: #85C7F2;
+    --theme-immigration: #85C7F2;
     --theme-law-crime: #D17A9E;
     --theme-guns: #909CC2;
 
@@ -40,6 +41,18 @@ body {
 #stacked-bars-themes, #speech_heatmap {
     height: 80vh;
     width: 100%;
+}
+
+.party-republican {
+    fill: var(--party-republican);
+}
+
+.party-democrat {
+    fill: var(--party-democrat);
+}
+
+.party-other {
+    fill: var(--party-other);
 }
 
 /* COUNTRY MAP */
