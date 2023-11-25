@@ -6,7 +6,7 @@ class SampledBeeswarm {
 
     this.data = data;
     this.sampleProportion = 0.2;
-    this.radius = 5;
+    this.radius = 2;
 
     this.init();
     this.render();

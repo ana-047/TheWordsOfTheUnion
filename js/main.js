@@ -20,7 +20,8 @@ let promises = [
     d3.csv("Data/cleaned_data/csv_format_d3/speech_length.csv"), //11
     d3.csv("Data/cleaned_data/csv_format_d3/speech_length_agg.csv"), //12
 
-    d3.json('Data/tagged_full_text/combined_data.json'), //13
+    // d3.json('Data/tagged_full_text/combined_data.json'), //13
+    d3.json('Data/tagged_full_text/sotu-themes-and-sentiment-all-speeches.json'), //13
 
     // add more files here
 ];
