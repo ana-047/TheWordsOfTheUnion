@@ -46,12 +46,33 @@ img {
     width: 100%;
 }
 
+.theme-beeswarm-col {
+    height: 300px;
+    min-width: 280px;
+    width: 100%;
+}
+
+.beeswarm-chart-area {
+    position: relative;
+}
+
 .war {
     fill: #4242e4;
 }
 
 .economy {
     fill: green;
+}
+
+.beeswarm-tooltip {
+    min-width: 200px;
+    border-radius: 4px;
+    padding: 8px 10px;
+}
+
+.beeswarm-tooltip-col {
+    min-width: 200px;
+    max-width: 300px;
 }
 
 .map-container {

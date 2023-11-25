@@ -44,6 +44,7 @@ function initMainPage(dataArray) {
 
     myStackedBarVis = new StackedBarVis('stacked-bars-themes', dataArray[10]);
 
-    themeBeeswarm = new ThemeBeeswarm('theme-beeswarm', dataArray[13]);
+    // themeBeeswarm = new ThemeBeeswarm('theme-beeswarm', dataArray[13]);
+    sampledBeeswarm = new SampledBeeswarm(['theme-beeswarm', 'beeswarm-tooltip'], dataArray[13]);
 
 }
