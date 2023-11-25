@@ -1,12 +1,9 @@
-
 function initializeMapAndScatter() {
-
-   // console.log('initializeMapAndScatter function is called');
-
     let countries;
     let scatterData;
     let scatterSvg;
     let scatterContainer;
+    let selectedCountry = null;
 
     const mapWidth = 900;
     const mapHeight = 600;
@@ -24,16 +21,6 @@ function initializeMapAndScatter() {
     let g = svg.append('g');
     let path = d3.geoPath().projection(initialProjection);
 
-    // Create a zoom behavior
-    const zoom = d3.zoom()
-        .scaleExtent([1, 8])
-        .on('zoom', zoomed);
-
-    // Add a hidden tooltip element
-    // containerDiv.append('div')
-    //     .attr('id', 'tooltip')
-    //     .style('position', 'absolute');
-
     // Add a button to toggle between projections
     containerDiv.select('#exploreButton')
         .on('click', toggleProjection);
@@ -42,8 +29,7 @@ function initializeMapAndScatter() {
     containerDiv.select('#resetButton')
         .on('click', resetProjection);
 
-    // Add a container for the scatter plot -initially hide the scatter plot container
-
+    // Add a container for the scatter plot
     scatterContainer = containerDiv.append('div')
         .attr('class', 'scatter-container')
         .style('position', 'absolute')
@@ -53,17 +39,18 @@ function initializeMapAndScatter() {
         .style('z-index', 999)
         .style('display', 'none');
 
-// Add a container for the scatter plot SVG
-    const scatterBox = scatterContainer.append('div')
-        .attr('class', 'scatter-box');
+
+    scatterSvg = scatterContainer.append('svg')
+        .attr('width', scatterWidth)
+        .attr('height', scatterHeight)
+        .attr('class', 'scatter');
 
     // Load the world map data
     d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(
         mapData => {
-
             countries = topojson.feature(mapData, mapData.objects.countries).features;
 
-            // Append path elements to the group
+
             g.selectAll('.country')
                 .data(countries)
                 .enter()
@@ -71,41 +58,19 @@ function initializeMapAndScatter() {
                 .attr('class', 'country')
                 .attr('d', path)
                 .on('click', function (event, d) {
-                    const clickedCountryName = getCountryName(d);
-
-                    if (clickedCountryName) {
-                        updateScatterPlot(clickedCountryName);
-                    }
-                })
-                .on('mouseover', function (d) {
-                    const tooltip = d3.select('#tooltip');
-                    tooltip.html(getCountryName(d))
-                        .style('visibility', 'visible');
-
+                    //update if the projection is equirectangular
                     if (path.projection() === equirectangularProjection) {
-                        // Display scatter plot next to the mouse coordinates
-                        const [x, y] = d3.pointer(event);
-
-                        scatterContainer.style('left', (x + 10) + 'px')
-                            .style('top', (y + 10) + 'px');
-
-                        // Update scatter plot data and dimensions based on the hovered country
-                        const hoveredCountryName = getCountryName(d);
-                        updateScatterPlot(hoveredCountryName);
+                        const clickedCountryName = getCountryName(d);
+                        selectedCountry = (selectedCountry === clickedCountryName) ? null : clickedCountryName;
+                        updateScatterPlot(selectedCountry);
                     }
                 })
+
                 .on('mouseout', function () {
                     const tooltip = d3.select('#tooltip');
                     tooltip.style('visibility', 'hidden');
-
-                    // Hide scatter plot when mouse leaves the country
-                    scatterContainer.style('display', 'none');
                 });
 
-            // Apply the zoom behavior to the SVG
-            svg.call(zoom);
-
-            // Start the rotation animation
             rotateGlobe();
         }
     );
@@ -119,7 +84,6 @@ function initializeMapAndScatter() {
     }
 
     function updateScatterPlot(selectedCountryName) {
-
         console.log('updateScatterPlot function is called with country:', selectedCountryName);
 
         d3.csv('data/cleaned_data/csv_format_d3/countries_long.csv').then(data => {
@@ -127,24 +91,25 @@ function initializeMapAndScatter() {
             const filteredData = scatterData.filter(d => d.Country === selectedCountryName);
 
             // Check if there is data for the selected country
-            if (filteredData.length === 0) {
-                // Hide scatter plot if there is no data
+            if (!selectedCountryName || filteredData.length === 0) {
+                // Hide scatter plot if there is no data or if no country is selected
                 scatterContainer.style('display', 'none');
                 return;
             }
 
-            // Clear existing scatter plot contents
-            scatterSvg = scatterContainer.select('svg');
-            if (!scatterSvg.node()) {
-                scatterSvg = scatterContainer.append('svg')
-                    .attr('width', scatterWidth)
-                    .attr('height', scatterHeight)
-                    .attr('class', 'scatter');
-            } else {
-                scatterSvg.selectAll('*').remove();
-            }
 
-            // Create scatter plot
+            scatterSvg.selectAll('*').remove();
+
+            // Add title
+            scatterSvg.append('text')
+                .attr('class', 'scatter-title')
+                .attr('x', scatterWidth / 2)
+                .attr('y', 20)
+                .style('text-anchor', 'middle')
+                .style('font-size', '16px')
+                .text(selectedCountryName);
+
+            // Create the scatter plot
             const margin = { top: 20, right: 20, bottom: 40, left: 40 };
 
             const xScale = d3.scaleLinear()
@@ -160,11 +125,12 @@ function initializeMapAndScatter() {
 
             const yAxis = d3.axisLeft(yScale);
 
-            const scatterLeft = (mapWidth * 0.35) + 'px'; // Adjust the percentage as needed
-            const scatterTop = '10px'; // Adjust the top position as needed
+            const scatterLeft = (mapWidth * 0.35) + 'px';
+            const scatterTop = '10px';
 
             scatterContainer.style('left', scatterLeft)
-                .style('top', scatterTop);
+                .style('top', scatterTop)
+                .style('display', 'block');
 
             scatterSvg.append('g')
                 .attr('class', 'x-axis')
@@ -175,29 +141,6 @@ function initializeMapAndScatter() {
                 .attr('class', 'y-axis')
                 .attr('transform', `translate(${margin.left}, 0)`)
                 .call(yAxis);
-
-            scatterSvg.append('text')
-                .attr('x', scatterWidth / 2)
-                .attr('y', margin.top)
-                .attr('text-anchor', 'middle')
-                .style('font-size', '18px')
-                .style('font-weight', 'bold')
-                .text(selectedCountryName);
-
-            scatterSvg.append('text')
-                .attr('x', scatterWidth / 2)
-                .attr('y', scatterHeight - 5)
-                .attr('text-anchor', 'middle')
-                .style('font-size', '14px')
-                .text('Year');
-
-            scatterSvg.append('text')
-                .attr('transform', 'rotate(-90)')
-                .attr('x', -scatterHeight / 2)
-                .attr('y', 10)
-                .attr('text-anchor', 'middle')
-                .style('font-size', '14px')
-                .text('Mentions');
 
             scatterSvg.selectAll('circle')
                 .data(filteredData)
@@ -215,21 +158,24 @@ function initializeMapAndScatter() {
                     } else {
                         return 'grey';
                     }
+                })
+                .on('mouseover', function (event, d) {
+                    // Show tooltip on mouseover
+                    scatterSvg.append("text")
+                        .attr("class", "scatter-tooltip")
+                        .attr("x", xScale(+d.Year))
+                        .attr("y", yScale(+d.Mentions) - 10)
+                        .text(`Year: ${d.Year}\nPresident: ${d.President}-\n ${d.Party}`);
+                })
+                .on('mouseout', function () {
+                    // Hide tooltip on mouseout
+                    scatterSvg.select(".scatter-tooltip").remove();
                 });
-
-            // Display the scatter plot container
-            scatterContainer.style('display', 'block');
         });
     }
 
-    function updateScatterDimensions() {
-        // Adjust the positioning of the scatter plot container
-        scatterContainer.style('left', (mapWidth + 10) + 'px')
-            .style('top', '10px');
-    }
-
     function resetProjection() {
-        // Switch back to the orthographic projection
+      //user clicks on the reset button to switch back to orthographic
         path = d3.geoPath().projection(initialProjection);
 
         // Update paths with the new projection
@@ -238,69 +184,12 @@ function initializeMapAndScatter() {
             .duration(1000)
             .attr('d', path);
 
-        // Hide the scatter plot container
+        // Hide the scatter plot container - it only appears when the projection is equirectangular
         scatterContainer.style('display', 'none');
 
         // Stop the rotation animation
         d3.timerFlush();
     }
-
-    function showAxis() {
-
-        scatterSvg.selectAll('.x-axis, .y-axis').style('display', 'block');
-    }
-
-
-    function hideAxis() {
-
-        scatterSvg.selectAll('.x-axis, .y-axis').style('display', 'none');
-    }
-
-    function toggleProjection() {
-        // Toggle the projection between orthographic and equirectangular
-        path = (path.projection() === initialProjection) ? d3.geoPath().projection(equirectangularProjection) : d3.geoPath().projection(initialProjection);
-
-        // Update paths with the new projection
-        g.selectAll('.country')
-            .transition()
-            .duration(1000)
-            .attr('d', path);
-
-        if (path.projection() === equirectangularProjection) {
-            const selectedCountry = d3.select('.country.active').data()[0];
-            if (selectedCountry) {
-                const selectedCountryName = getCountryName(selectedCountry);
-                const filteredData = scatterData.filter(d => d.Country === selectedCountryName);
-
-                if (filteredData.length > 0) {
-                    if (!scatterSvg) {
-                        // Append scatter plot SVG to the scatterContainer
-                        scatterSvg = scatterContainer.append('svg')
-                            .attr('width', scatterWidth)
-                            .attr('height', scatterHeight)
-                            .attr('class', 'scatter');
-                    }
-
-                    scatterContainer.style('display', 'block'); // Show the scatter plot container
-                    scatterSvg.call(zoom); // Apply zoom only when using equirectangular projection
-                    showAxis(); // Call a function to show the axis
-
-                    updateScatterDimensions(); // Adjust the dimensions and position of the scatter plot container
-                } else {
-                    // Hide the scatter plot container if no data is available
-                    scatterContainer.style('display', 'none');
-                }
-            } else {
-                // Hide the scatter plot container if no country is selected
-                scatterContainer.style('display', 'none');
-            }
-        } else {
-            scatterContainer.style('display', 'none');
-            scatterSvg.on('.zoom', null);
-            hideAxis();
-        }
-    }
-
 
     function rotateGlobe() {
         d3.timer(function (elapsed) {
@@ -313,26 +202,34 @@ function initializeMapAndScatter() {
         });
     }
 
-    function zoomed(event) {
-        const transform = event.transform;
+    function toggleProjection() {
+        // Toggle the projection between orthographic and equirectangular
+        path = (path.projection() === initialProjection) ? d3.geoPath().projection(equirectangularProjection) : d3.geoPath().projection(initialProjection);
 
-        if (path.projection() === equirectangularProjection) {
-            const newProjection = d3.geoEquirectangular()
-                .scale(140 * transform.k)
-                .translate([mapWidth / 2 + transform.x, mapHeight / 1.4 + transform.y]);
+        // Update paths with the new projection
+        g.selectAll('.country')
+            .transition()
+            .duration(1000)
+            .attr('d', path);
 
-            path = d3.geoPath().projection(newProjection);
+        // Check if the current projection is equirectangular
+        const isEquirectangular = path.projection() === equirectangularProjection;
 
+        // Show or hide the scatter plot container based on the projection type
+        scatterContainer.style('display', isEquirectangular ? 'block' : 'none');
 
-            g.selectAll('.country')
-                .transition()
-                .duration(50)
-                .attr('d', path);
+        // If there is a selected country and the projection is equirectangular, update the scatter plot
+        if (isEquirectangular && selectedCountry) {
+            updateScatterPlot(selectedCountry);
+        } else {
+            // If the projection is orthographic, hide the scatter plot container
+            scatterContainer.style('display', 'none');
         }
     }
 
+
+
     document.addEventListener('DOMContentLoaded', initializeMapAndScatter);
 }
-
 
 document.addEventListener('DOMContentLoaded', initializeMapAndScatter);

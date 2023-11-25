@@ -57,3 +57,29 @@ img {
 .map-container {
     height: 600px; /* Adjusted to match #country_mentions_map height */
 }
+
+.tooltip {
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 999;
+    visibility: hidden; /* Ensure visibility is initially set to hidden */
+}
+.scatter-container {
+    display: none;
+}
+
+.scatter-tooltip {
+    fill: black; /* Text color */
+    text-anchor: middle; /* Center the text */
+    pointer-events: none;
+}
+
+.scatter-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
