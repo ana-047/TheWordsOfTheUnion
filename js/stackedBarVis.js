@@ -14,7 +14,7 @@ class StackedBarVis {
     initVis(){
         let vis = this;
 
-        vis.margin = {top: 20, right: 20, bottom: 60, left: 120};
+        vis.margin = {top: 20, right: 250, bottom: 60, left: 120};
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
 
@@ -48,7 +48,7 @@ class StackedBarVis {
             .attr("transform", "translate(0," + (vis.height) + ")");
         // legend
 
-        vis.keys = Object.keys(vis.data[0]).slice(3)
+        vis.keys = Object.keys(vis.data[0]).slice(2)
 
         // Get theme colors from main and convert to array
         vis.themeColors = Object.values(themeColors);
@@ -67,7 +67,7 @@ class StackedBarVis {
             .enter()
             .append("rect")
             .attr("class", "myLegend2")
-            .attr("x", vis.width-170)
+            .attr("x", vis.width + vis.margin.right -170)
             .attr("y", function(d,i){ return 10 + i*(size+5)})
             .attr("width", size)
             .attr("height", size)
@@ -79,7 +79,7 @@ class StackedBarVis {
             .data(vis.keys)
             .enter()
             .append("text")
-            .attr("x", vis.width-170 + size*1.2)
+            .attr("x", vis.width + vis.margin.right -170 + size*1.2)
             .attr("y", function(d,i){ return 10 + i*(size+5) + (size/2)})
             .style("fill", "black")
             .text(function(d){ return d})
@@ -96,6 +96,7 @@ class StackedBarVis {
         let sortData = vis.data.sort((a,b) => {return a.year - b.year});
 
         //vis.keys = Object.keys(sortData[0]).slice(3)
+
 
         // Stack the data per subgroup
         vis.displayData = d3.stack()
@@ -118,6 +119,7 @@ class StackedBarVis {
                 });
             });
 
+
         // Flatten the nested structure
         vis.displayData = vis.displayData.flat();
 
@@ -133,10 +135,9 @@ class StackedBarVis {
 
         var t = 800;
 
-        console.log(vis.displayData);
 
         var myMax = d3.max(vis.displayData, d => d.value_d1);
-        console.log(myMax);
+
 
         /*
         // color scale
@@ -157,9 +158,6 @@ class StackedBarVis {
             .duration(t)
             .call(vis.yAxis);
 
-// Debugging information
-        console.log("X Domain:", vis.x.domain());
-        console.log("X Range:", vis.x.range());
 
         vis.bars = vis.svg.selectAll(".stackedBars")
             .data(vis.displayData);
@@ -174,7 +172,7 @@ class StackedBarVis {
             .duration(t)
             .attr("x", d => vis.x(d.value_d0))
             .attr("y", d => vis.y(d.name))
-            .attr("width", d => vis.x(d.value))
+            .attr("width", d => vis.x(d.value_d1) - vis.x(d.value_d0))
             .attr("height", vis.y.bandwidth())
             .attr("fill", d => vis.colorScale(d.key));
 
