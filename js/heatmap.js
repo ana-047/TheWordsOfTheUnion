@@ -1,7 +1,7 @@
 //**heatmap**
 const width = 800;
 const height = 600;
-const margin = { top: 70, right: 70, bottom: 200, left: 200 };
+const margin = { top: 70, right: 70, bottom: 200, left: 170 };
 
 
 const svg = d3.select('#speech_heatmap')
@@ -17,7 +17,7 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
     const matrixData = data.map(d => years.map(year => +d[year]));
 
     //Color scale
-    const colorScale = d3.scaleSequential(d3.interpolateWarm)
+    const colorScale = d3.scaleSequential(d3.interpolateGnBu)
         .domain([d3.min(matrixData, row => d3.min(row)), d3.max(matrixData, row => d3.max(row))]);
 
     // Heatmap
@@ -36,23 +36,19 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
         .attr('height', height / matrixData.length)
         .style('fill', d => colorScale(d.value))
         .on('mouseover', function (event, d) {
+            const [x, y] = d3.pointer(event, this);
 
-            const [x, y] = d3.pointer(event, svg.node());
+            // Get the position of the SVG
+            const svgPos = svg.node().getBoundingClientRect();
 
             // Show tooltip on mouseover
             tooltip.transition()
                 .duration(200)
                 .style('opacity', .9);
             tooltip.html(` ${d.year} vs ${data[d.index].year}`)
-                .style('left', (x + 5) + 'px')
-                .style('top', (y - 28) + 'px');
+                .style('left', (svgPos.x + x + 5) + 'px')  // Consider the SVG position
+                .style('top', (svgPos.y + y - 28) + 'px');
         })
-        .on('mouseout', () => {
-            // Hide tooltip on mouseout
-            tooltip.transition()
-                .duration(500)
-                .style('opacity', 0);
-        });
 
 
     // Add X axis
@@ -83,9 +79,14 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
     svg.append('text')
         .attr('text-anchor', 'middle')
         .attr('transform', `translate(${-margin.left / 2}, ${height / 2})rotate(-90)`)
-        .text('Speech');
+        //.text('Speech');
 
     const tooltip = d3.select('#speech_heatmap').append('div')
-        .attr('class', 'tooltip')
+        .attr('class', 'tooltip_scatter')
         .style('opacity', 0);
+
+
+
+
+
 });

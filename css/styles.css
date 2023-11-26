@@ -65,8 +65,8 @@ body {
 /* COUNTRY MAP */
 
 #country_mentions_map {
-    height: 1000px; /* Adjusted to desired height */
-    width: 900px; /* Adjusted to desired width */
+    height: 900px;
+    width: 100%
 }
 
 img {
@@ -123,7 +123,15 @@ img {
     margin-bottom: 10px;
 }
 
-
+.tooltip_scatter {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
 
 /* BEESWARM CHART */
 

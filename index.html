@@ -14,7 +14,9 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Words of the Union</a>
+        <a class="navbar-brand" href="#">
+            <i>"As we gather to hear the State of the Union, let us remember: 'We may have all come on different ships, but we're in the same boat now."
+            <br>- Martin Luther King Jr.</i></a>
     </div>
 </nav>
 
@@ -87,7 +89,7 @@
         </div>
     </div>
 
-
+    <div class="row mb-5">
     <div class="col">
         <div class="card">
             <div class="card-body">
@@ -121,14 +123,35 @@
             </div>
         </div>
     </div>
+    </div>
 
 
     <div class="row mb-6">
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Speech Similarity</h5>
-                    <p class="card-text">WIP</p>
+                    <h5 class="card-title">Similarities in historical SOTU addresses:Trump’s
+                        addresses are very different from his predecessors...</h5>
+                    <br>
+                    <p class="card-text">
+                        Historically, SOTU addresses have varied  depending on
+                        the context of the time, the issues facing the nation, and the individual speaking.
+                        However, more often than not, there are recurring themes such as the economy, war,
+                        foreign policy, trade, healthcare, social security, immigration among others.
+                        Presidents also tend to address current events, challenges, and their policy priorities.<br><br>
+                        A look at addresses given in the past 30 years in the heatmap below suggests
+                        that there is a high degree of
+                        similarity between speeches given by the Democratic Presidents. Meanwhile, with the exception of President Trump,
+                        there are subtle but not starking differences between Republicans and Democrats as the tone is generally positive and the themes remain constant. Similarity scores were assigned
+                        using cosine similarity, which is an NLP metric to measure the similarity of text.
+                        The darker shades of blue represent higher similarity scores which lower scores are represented by lighter values.
+                        <br><br>
+                        President Trump's addresses stand out as being different not only from addresses given by Presidents - Clinton, Obama and Biden
+                        but also different from President Bush, a Republican President. The scores highlight not only his eccentric style but also his varying policy priorities.
+                        Another interesting observation is the difference in addresses given by President Bush in 2001 after taking office
+                        and 2002 in the aftermath of 9/11, which changed the world forever. Also, President Obama's 2009 address after taking office in the middle of the
+                        financial crisis is slightly different from his subsequent addresses.
+                    </p>
                     <div class="align-self-center" id="speech_heatmap">
                 </div>
             </div>
