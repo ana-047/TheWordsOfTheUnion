@@ -155,6 +155,12 @@ img {
 
 /* COMMON STYLES */
 
+.selected {
+    /*stroke: black;*/
+    /*stroke-width: 1px;*/
+    outline: 1px solid black;
+}
+
 .war {
     fill: var(--theme-war);
 }

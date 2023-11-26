@@ -136,7 +136,7 @@ class SampledBeeswarm {
     vis.renderAxes();
 
     function handleMouseOver(event, d) {
-      console.log('mouseover called');
+      // console.log('mouseover called');
 
       const dot = d3.select(this);
       vis.selectedDotData = dot.datum();
@@ -158,7 +158,7 @@ class SampledBeeswarm {
     }
 
     function handleMouseOut(event, d) {
-      console.log('mouseout called');
+      // console.log('mouseout called');
       vis.tooltip
         .style('opacity', 0);
         // .transition()
@@ -240,9 +240,11 @@ class SampledBeeswarm {
 
     vis.svg.append("g")
       .attr("class", "legend")
-      .selectAll("theme-labels")
+      .selectAll(".theme-label")
       .data(vis.themeCategories)
       .enter()
+      .append('g')
+      .attr('class', 'theme-label selected')
       .append("text")
       .attr("x", vis.width + 10 + size * 1.2)
       .attr("y", function(d, i) { return 10 + i * (size + 5) + (size / 2) })
@@ -250,5 +252,30 @@ class SampledBeeswarm {
       .text(function(d) { return d })
       .attr("text-anchor", "left")
       .style("alignment-baseline", "middle");
+
+    // Add click event listeners to legend labels for filtering
+    vis.svg.selectAll(".theme-label")
+      .on("click", function(event, d) {
+        console.log('legend click');
+        vis.selectedTheme = d;
+
+        // Toggle class for selected/unselected appearance
+        const isSelected = d3.select(this).classed("selected");
+        d3.select(this).classed("selected", !isSelected);
+
+        // Toggle visibility of data points based on the selected theme
+        vis.toggleDataVisibility(vis.selectedTheme, !isSelected);
+      });
   }
+
+  toggleDataVisibility(selectedTheme, show) {
+    const vis = this;
+    console.log('Toggling visibility for theme:', vis.selectedTheme);
+
+    // Show/hide data points based on the selected theme
+    vis.svg.selectAll('circle')
+      .filter((d) => d.t === vis.selectedTheme.toLowerCase())
+      .style('display', show ? 'initial' : 'none');
+  }
+
 }
