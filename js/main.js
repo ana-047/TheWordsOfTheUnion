@@ -11,7 +11,7 @@ const themeColors = {
     'theme-economy': '#98BB95',
     'theme-guns': '#909CC2',
     'theme-immigration': '#85C7F2',
-    'theme-law-crime': '#D17A9E',
+    'theme-crime': '#D17A9E',
     'theme-war': '#AA8CAD',
 };
 
@@ -41,7 +41,7 @@ let promises = [
     d3.csv("Data/cleaned_data/csv_format_d3/speech_length_agg.csv"), //12
 
     // d3.json('Data/tagged_full_text/combined_data.json'), //13
-    d3.json('Data/tagged_full_text/sotu-themes-and-sentiment-all-speeches.json'), //13
+    d3.json('Data/tagged_full_text/sotu-all-themes-and-sentiment.json'), //13
 
     // add more files here
 ];

@@ -21,7 +21,7 @@ class SampledBeeswarm {
 
     // Define dimensions
     vis.margin = {
-      top: 20, right: 40, bottom: 40, left: 60,
+      top: 20, right: 140, bottom: 40, left: 60,
     };
     vis.width = vis.chartContainer.node().offsetWidth - vis.margin.left - vis.margin.right;
     vis.height = vis.chartContainer.node().offsetHeight - vis.margin.top - vis.margin.bottom;
@@ -131,7 +131,8 @@ class SampledBeeswarm {
       .on('mouseover', handleMouseOver)
       .on('mouseout', handleMouseOut);
 
-    vis.initTooltip()
+    vis.initTooltip();
+    vis.initLegend();
     vis.renderAxes();
 
     function handleMouseOver(event, d) {
@@ -203,5 +204,51 @@ class SampledBeeswarm {
       .style('pointer-events', 'none')
       // .style('background-color', 'lightgrey')
       .style('box-shadow', '2px 2px 6px rgba(0,0,0,0.3)');
+  }
+
+
+  initLegend() {
+    const vis = this;
+    console.log(vis.constructor.name, 'initializing legend');
+
+
+    // Get theme colors from main and convert to array
+    vis.themeCategories = Object.keys(themeColors).map(key => {
+      const modifiedKey = key.substring(6); // Remove first 6 characters
+      return modifiedKey.charAt(0).toUpperCase() + modifiedKey.slice(1);
+    });
+    vis.themeColors = Object.values(themeColors);
+
+    vis.colorScale = d3.scaleOrdinal()
+      .domain(vis.themeCategories)
+      .range(vis.themeColors);
+
+    const size= 20;
+
+    vis.svg.append("g")
+      .attr("class", "legend")
+      .selectAll(".theme-legend")
+      .data(vis.themeCategories)
+      .enter()
+      .append("rect")
+      .attr("class", "theme-legend")
+      .attr("x", vis.width + 10)
+      .attr("y", function(d, i) { return 10 + i * (size + 5) })
+      .attr("width", size)
+      .attr("height", size)
+      .style("fill", function(d) { return vis.colorScale(d) });
+
+    vis.svg.append("g")
+      .attr("class", "legend")
+      .selectAll("theme-labels")
+      .data(vis.themeCategories)
+      .enter()
+      .append("text")
+      .attr("x", vis.width + 10 + size * 1.2)
+      .attr("y", function(d, i) { return 10 + i * (size + 5) + (size / 2) })
+      .style("fill", "black")
+      .text(function(d) { return d })
+      .attr("text-anchor", "left")
+      .style("alignment-baseline", "middle");
   }
 }

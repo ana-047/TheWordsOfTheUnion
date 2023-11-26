@@ -162,3 +162,22 @@ img {
 .economy {
     fill: var(--theme-economy);
 }
+.border {
+fill: var(--theme-border)
+}
+
+.climate {
+    fill: var(--theme-climate)
+}
+
+.immigration {
+    fill: var(--theme-immigration)
+}
+
+.crime {
+    fill: var(--theme-law-crime)
+}
+
+.guns {
+    fill: var(--theme-guns)
+}
