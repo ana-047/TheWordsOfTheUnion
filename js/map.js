@@ -39,7 +39,6 @@ function initializeMapAndScatter() {
         .style('z-index', 999)
         .style('display', 'none');
 
-
     scatterSvg = scatterContainer.append('svg')
         .attr('width', scatterWidth)
         .attr('height', scatterHeight)
@@ -49,7 +48,6 @@ function initializeMapAndScatter() {
     d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(
         mapData => {
             countries = topojson.feature(mapData, mapData.objects.countries).features;
-
 
             g.selectAll('.country')
                 .data(countries)
@@ -65,7 +63,6 @@ function initializeMapAndScatter() {
                         updateScatterPlot(selectedCountry);
                     }
                 })
-
                 .on('mouseout', function () {
                     const tooltip = d3.select('#tooltip');
                     tooltip.style('visibility', 'hidden');
@@ -96,7 +93,6 @@ function initializeMapAndScatter() {
                 scatterContainer.style('display', 'none');
                 return;
             }
-
 
             scatterSvg.selectAll('*').remove();
 
@@ -160,22 +156,86 @@ function initializeMapAndScatter() {
                     }
                 })
                 .on('mouseover', function (event, d) {
+                    const tooltipWidth = 120;
+                    const tooltipHeight = 60;
+                    const padding = 5;
+
+                    // Calculate adjusted tooltip position to prevent it from getting cut off
+                    const xPosition = xScale(+d.Year) + 10;
+                    const yPosition = yScale(+d.Mentions) - tooltipHeight;
+
+                    const maxXPosition = scatterWidth - tooltipWidth - 10;
+                    const maxYPosition = scatterHeight - tooltipHeight - 10;
+
+                    const adjustedX = Math.min(xPosition, maxXPosition);
+                    const adjustedY = Math.max(Math.min(yPosition, maxYPosition), 10);
+
                     // Show tooltip on mouseover
-                    scatterSvg.append("text")
+                    const tooltip = scatterSvg.append("g")
                         .attr("class", "scatter-tooltip")
-                        .attr("x", xScale(+d.Year))
-                        .attr("y", yScale(+d.Mentions) - 10)
-                        .text(`Year: ${d.Year}\nPresident: ${d.President}-\n ${d.Party}`);
+                        .attr("transform", `translate(${adjustedX},${adjustedY})`);
+
+                    tooltip.append("rect")
+                        .attr("width", tooltipWidth)
+                        .attr("height", tooltipHeight)
+                        .attr("rx", 5)
+                        .attr("ry", 5)
+                        .style("fill", "white")
+                        .style("stroke", "black");
+
+                    const lines = wrapText(`${d.Year}\n- ${d.President}\n, ${d.Party}`, tooltipWidth - padding);
+
+                    const text = tooltip.selectAll("text")
+                        .data(lines)
+                        .enter().append("text")
+                        .attr("x", padding)
+                        .attr("y", (d, i) => i * 15 + padding)
+                        .text(d => d);
+
+                    // Adjust the height of the tooltip box to fit the text
+                    const newHeight = Math.max(lines.length * 15 + 2 * padding, tooltipHeight);
+                    tooltip.select("rect").attr("height", newHeight);
                 })
                 .on('mouseout', function () {
                     // Hide tooltip on mouseout
-                    scatterSvg.select(".scatter-tooltip").remove();
+                    scatterSvg.selectAll(".scatter-tooltip, .scatter-tooltip-text").remove();
                 });
+
+
         });
     }
 
+    function wrapText(text, width) {
+        const words = text.split(/\s+/);
+        let line = [];
+        let lines = [];
+
+        for (const word of words) {
+            const testLine = line.length === 0 ? word : `${line.join(' ')} ${word}`;
+            const testWidth = getTextWidth(testLine);
+
+            if (testWidth > width && line.length > 0) {
+                lines.push(line.join(' '));
+                line = [word];
+            } else {
+                line.push(word);
+            }
+        }
+
+        lines.push(line.join(' '));
+        return lines;
+    }
+
+    function getTextWidth(text) {
+        // You may need to adjust this based on your font and styling
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        context.font = "12px sans-serif"; // Adjust the font size and style as needed
+        return context.measureText(text).width;
+    }
+
     function resetProjection() {
-      //user clicks on the reset button to switch back to orthographic
+        // user clicks on the reset button to switch back to orthographic
         path = d3.geoPath().projection(initialProjection);
 
         // Update paths with the new projection
@@ -226,8 +286,6 @@ function initializeMapAndScatter() {
             scatterContainer.style('display', 'none');
         }
     }
-
-
 
     document.addEventListener('DOMContentLoaded', initializeMapAndScatter);
 }

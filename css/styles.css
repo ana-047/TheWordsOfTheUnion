@@ -31,6 +31,10 @@ body {
     padding-top: 60px; /* Adjusted for the fixed navbar height */
 }
 
+.navbar-brand{
+    padding: 1px;
+    font-size: 18px;
+}
 .container-fluid {
     height: 100vh; /* 100% of viewport height */
     background-color: var(--background-page);
@@ -65,7 +69,7 @@ body {
 /* COUNTRY MAP */
 
 #country_mentions_map {
-    height: 900px;
+    height: 800px;
     width: 100%
 }
 
@@ -123,8 +127,8 @@ img {
     margin-bottom: 10px;
 }
 
-.tooltip_scatter {
-    position: absolute;
+.tooltip_heatmap {
+    position:absolute;
     background: white;
     border: 1px solid #ccc;
     padding: 10px;

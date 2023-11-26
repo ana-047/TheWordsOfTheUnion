@@ -36,18 +36,20 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
         .attr('height', height / matrixData.length)
         .style('fill', d => colorScale(d.value))
         .on('mouseover', function (event, d) {
-            const [x, y] = d3.pointer(event, this);
+            const x = event.pageX;
+            const y = event.pageY;
 
-            // Get the position of the SVG
-            const svgPos = svg.node().getBoundingClientRect();
+            // Calculate adjusted coordinates for tooltip
+            const adjustedX = x + 1;  // Adjust based on your preference
+            const adjustedY = y - 5; // Adjust based on your preference
 
             // Show tooltip on mouseover
             tooltip.transition()
                 .duration(200)
                 .style('opacity', .9);
-            tooltip.html(` ${d.year} vs ${data[d.index].year}`)
-                .style('left', (svgPos.x + x + 5) + 'px')  // Consider the SVG position
-                .style('top', (svgPos.y + y - 28) + 'px');
+            tooltip.html(`${d.year} vs ${data[d.index].year}`)
+                .style('left', `${adjustedX}px`)
+                .style('top', `${adjustedY}px`);
         })
 
 
@@ -82,7 +84,7 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
         //.text('Speech');
 
     const tooltip = d3.select('#speech_heatmap').append('div')
-        .attr('class', 'tooltip_scatter')
+        .attr('class', 'tooltip_heatmap')
         .style('opacity', 0);
 
 
