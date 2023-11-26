@@ -41,7 +41,7 @@ let promises = [
     d3.csv("Data/cleaned_data/csv_format_d3/speech_length_agg.csv"), //12
 
     // d3.json('Data/tagged_full_text/combined_data.json'), //13
-    d3.json('Data/tagged_full_text/sotu-themes-and-sentiment-all-speeches.json'), //13
+    d3.json('Data/tagged_full_text/sotu-all-themes-and-sentiment.json'), //13
 
     // add more files here
 ];
@@ -65,7 +65,6 @@ function initMainPage(dataArray) {
 
     myStackedBarVis = new StackedBarVis('stacked-bars-themes', dataArray[10]);
 
-    // themeBeeswarm = new ThemeBeeswarm('theme-beeswarm', dataArray[13]);
     sampledBeeswarm = new SampledBeeswarm(['theme-beeswarm', 'beeswarm-tooltip'], dataArray[13]);
 
 }
