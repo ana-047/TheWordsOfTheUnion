@@ -6,6 +6,9 @@
     --border-section: #CCCCCC;
     --background-tooltip: #DCDBDB;
 
+    --text-default: #262626;
+    --text-contrast: #EFEFEF;
+
     --party-republican: #DB767B;
     --party-democrat: #53AEF4;
     --party-whig: #E2DE91;
@@ -29,11 +32,17 @@
 
 body {
     padding-top: 60px; /* Adjusted for the fixed navbar height */
+    color: var(--text-default);
 }
 
 .navbar-brand{
     padding: 1px;
     font-size: 18px;
+    color: var(--text-contrast);
+}
+
+.header-quote {
+    color: var(--text-contrast);;
 }
 .container-fluid {
     height: 100vh; /* 100% of viewport height */
