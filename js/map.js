@@ -100,7 +100,7 @@ function initializeMapAndScatter() {
             scatterSvg.append('text')
                 .attr('class', 'scatter-title')
                 .attr('x', scatterWidth / 2)
-                .attr('y', 20)
+                .attr('y', 15)
                 .style('text-anchor', 'middle')
                 .style('font-size', '16px')
                 .text(selectedCountryName);
@@ -122,7 +122,7 @@ function initializeMapAndScatter() {
             const yAxis = d3.axisLeft(yScale);
 
             const scatterLeft = (mapWidth * 0.35) + 'px';
-            const scatterTop = '10px';
+            const scatterTop = '20px';
 
             scatterContainer.style('left', scatterLeft)
                 .style('top', scatterTop)
@@ -148,16 +148,19 @@ function initializeMapAndScatter() {
                 .attr('r', 3)
                 .attr('fill', d => {
                     if (d.Party === 'Republican') {
-                        return 'red';
+                        return "#DB767B";
                     } else if (d.Party === 'Democratic') {
-                        return 'blue';
+                        return "#53AEF4";
                     } else {
-                        return 'grey';
+                        return "#A8A8A8";
                     }
                 })
                 .on('mouseover', function (event, d) {
+                    // Remove any existing tooltips
+                    scatterContainer.selectAll(".scatter-tooltip").remove();
+
                     const tooltipWidth = 120;
-                    const tooltipHeight = 60;
+                    const tooltipHeight = 80;
                     const padding = 5;
 
                     // Calculate adjusted tooltip position to prevent it from getting cut off
@@ -167,63 +170,53 @@ function initializeMapAndScatter() {
                     const maxXPosition = scatterWidth - tooltipWidth - 10;
                     const maxYPosition = scatterHeight - tooltipHeight - 10;
 
-                    const adjustedX = Math.min(xPosition, maxXPosition);
+                    // Adjusted positions to move the tooltip outside the scatterplot
+                    const adjustedX = Math.max(Math.min(xPosition, maxXPosition), 10);
                     const adjustedY = Math.max(Math.min(yPosition, maxYPosition), 10);
 
                     // Show tooltip on mouseover
-                    const tooltip = scatterSvg.append("g")
+                    const tooltip = scatterContainer.append("div")
                         .attr("class", "scatter-tooltip")
-                        .attr("transform", `translate(${adjustedX},${adjustedY})`);
+                        .style("position", "absolute")
+                        .style("left", adjustedX + "px")
+                        .style("top", adjustedY + "px")
+                        .style("width", tooltipWidth + "px")
+                        .style("background-color", "white")
+                        .style("border", "1px solid black")
+                        .style("border-radius", "5px");
 
-                    tooltip.append("rect")
-                        .attr("width", tooltipWidth)
-                        .attr("height", tooltipHeight)
-                        .attr("rx", 5)
-                        .attr("ry", 5)
-                        .style("fill", "white")
-                        .style("stroke", "black");
-
-                    const lines = wrapText(`${d.Year}\n- ${d.President}\n, ${d.Party}`, tooltipWidth - padding);
-
-                    const text = tooltip.selectAll("text")
-                        .data(lines)
-                        .enter().append("text")
-                        .attr("x", padding)
-                        .attr("y", (d, i) => i * 15 + padding)
-                        .text(d => d);
-
-                    // Adjust the height of the tooltip box to fit the text
-                    const newHeight = Math.max(lines.length * 15 + 2 * padding, tooltipHeight);
-                    tooltip.select("rect").attr("height", newHeight);
+                    tooltip.append("div").text(`Year: ${d.Year}`);
+                    tooltip.append("div").text(`President: ${d.President}`);
+                    tooltip.append("div").text(`Party: ${d.Party}`);
                 })
                 .on('mouseout', function () {
                     // Hide tooltip on mouseout
-                    scatterSvg.selectAll(".scatter-tooltip, .scatter-tooltip-text").remove();
+                    scatterContainer.selectAll(".scatter-tooltip").remove();
                 });
-
 
         });
     }
 
     function wrapText(text, width) {
         const words = text.split(/\s+/);
-        let line = [];
-        let lines = [];
+        const lines = [];
+        let currentLine = words[0];
 
-        for (const word of words) {
-            const testLine = line.length === 0 ? word : `${line.join(' ')} ${word}`;
+        for (let i = 1; i < words.length; i++) {
+            const word = words[i];
+            const testLine = currentLine + ' ' + word;
             const testWidth = getTextWidth(testLine);
 
-            if (testWidth > width && line.length > 0) {
-                lines.push(line.join(' '));
-                line = [word];
+            if (testWidth <= width) {
+                currentLine = testLine;
             } else {
-                line.push(word);
+                lines.push(currentLine);
+                currentLine = word;
             }
         }
 
-        lines.push(line.join(' '));
-        return lines;
+        lines.push(currentLine);
+        return lines.join(' ');
     }
 
     function getTextWidth(text) {
