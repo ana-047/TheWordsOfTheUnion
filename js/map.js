@@ -83,9 +83,11 @@ function initializeMapAndScatter() {
     function updateScatterPlot(selectedCountryName) {
         console.log('updateScatterPlot function is called with country:', selectedCountryName);
 
+        const scatterContainer = d3.select('.scatter-container');
+        const scatterSvg = d3.select('.scatter');
+
         d3.csv('data/cleaned_data/csv_format_d3/countries_long.csv').then(data => {
-            scatterData = data;
-            const filteredData = scatterData.filter(d => d.Country === selectedCountryName);
+            const filteredData = data.filter(d => d.Country === selectedCountryName);
 
             // Check if there is data for the selected country
             if (!selectedCountryName || filteredData.length === 0) {
@@ -121,8 +123,16 @@ function initializeMapAndScatter() {
 
             const yAxis = d3.axisLeft(yScale);
 
-            const scatterLeft = (mapWidth * 0.35) + 'px';
-            const scatterTop = '20px';
+            let scatterLeft = (mapWidth * 0.35) + 'px';
+            let scatterTop = '20px';
+
+            const textAboveMap = document.querySelector('.card-title');
+
+
+            if (textAboveMap) {
+                const textAboveMapHeight = textAboveMap.offsetHeight;
+                scatterTop = `${textAboveMapHeight + 20}px`;
+            }
 
             scatterContainer.style('left', scatterLeft)
                 .style('top', scatterTop)
@@ -163,7 +173,6 @@ function initializeMapAndScatter() {
                     const tooltipHeight = 80;
                     const padding = 5;
 
-                    // Calculate adjusted tooltip position to prevent it from getting cut off
                     const xPosition = xScale(+d.Year) + 10;
                     const yPosition = yScale(+d.Mentions) - tooltipHeight;
 
@@ -193,37 +202,15 @@ function initializeMapAndScatter() {
                     // Hide tooltip on mouseout
                     scatterContainer.selectAll(".scatter-tooltip").remove();
                 });
-
         });
     }
 
-    function wrapText(text, width) {
-        const words = text.split(/\s+/);
-        const lines = [];
-        let currentLine = words[0];
-
-        for (let i = 1; i < words.length; i++) {
-            const word = words[i];
-            const testLine = currentLine + ' ' + word;
-            const testWidth = getTextWidth(testLine);
-
-            if (testWidth <= width) {
-                currentLine = testLine;
-            } else {
-                lines.push(currentLine);
-                currentLine = word;
-            }
-        }
-
-        lines.push(currentLine);
-        return lines.join(' ');
-    }
 
     function getTextWidth(text) {
-        // You may need to adjust this based on your font and styling
+
         const canvas = document.createElement("canvas");
         const context = canvas.getContext("2d");
-        context.font = "12px sans-serif"; // Adjust the font size and style as needed
+        context.font = "12px sans-serif";
         return context.measureText(text).width;
     }
 
@@ -237,13 +224,15 @@ function initializeMapAndScatter() {
             .duration(1000)
             .attr('d', path);
 
-        // Hide the scatter plot container - it only appears when the projection is equirectangular
-        scatterContainer.style('display', 'none');
+        // Check if the current projection is equirectangular
+        const isEquirectangular = path.projection() === equirectangularProjection;
+
+        // Show or hide the scatter plot container based on the projection type
+        scatterContainer.style('display', isEquirectangular ? 'block' : 'none');
 
         // Stop the rotation animation
         d3.timerFlush();
     }
-
     function rotateGlobe() {
         d3.timer(function (elapsed) {
             initialProjection.rotate([elapsed / 100, 0]);
@@ -256,10 +245,9 @@ function initializeMapAndScatter() {
     }
 
     function toggleProjection() {
-        // Toggle the projection between orthographic and equirectangular
+
         path = (path.projection() === initialProjection) ? d3.geoPath().projection(equirectangularProjection) : d3.geoPath().projection(initialProjection);
 
-        // Update paths with the new projection
         g.selectAll('.country')
             .transition()
             .duration(1000)
@@ -275,7 +263,7 @@ function initializeMapAndScatter() {
         if (isEquirectangular && selectedCountry) {
             updateScatterPlot(selectedCountry);
         } else {
-            // If the projection is orthographic, hide the scatter plot container
+            // If the projection is orthographic, hide the scatter plot
             scatterContainer.style('display', 'none');
         }
     }

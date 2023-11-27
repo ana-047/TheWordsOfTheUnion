@@ -58,7 +58,7 @@ body {
 /* RACING BAR CHART */
 
 #racing-bar-chart,
-#stacked-bars-themes, #speech_heatmap {
+#stacked-bars-themes {
     height: 80vh;
     width: 100%;
 }
@@ -125,7 +125,10 @@ img {
     z-index: 999;
     visibility: hidden; /* Ensure visibility is initially set to hidden */
 }
+
 .scatter-container {
+    position: relative; /* Change from absolute to relative */
+    margin-top: 250px; /* Adjust the margin-top value based on your layout */
     display: none;
 }
 
@@ -151,6 +154,10 @@ img {
     z-index: 1;
 }
 
+#speech_heatmap {
+    height: 90vh;
+    width: 100%;
+}
 /* BEESWARM CHART */
 
 .theme-beeswarm {

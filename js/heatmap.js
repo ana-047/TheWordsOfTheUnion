@@ -40,8 +40,8 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
             const y = event.pageY;
 
             // Calculate adjusted coordinates for tooltip
-            const adjustedX = x + 1;  // Adjust based on your preference
-            const adjustedY = y - 5; // Adjust based on your preference
+            const adjustedX = x + 1; 
+            const adjustedY = y - 5;
 
             // Show tooltip on mouseover
             tooltip.transition()
