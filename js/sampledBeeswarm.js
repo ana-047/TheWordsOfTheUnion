@@ -1,5 +1,7 @@
 class SampledBeeswarm {
   constructor(containerIds, data) {
+    // this.scrollContainerId = 'main-scroll-container';
+    // this.animateButton = document.getElementById('animateButton');
     this.containerId = containerIds[0];
     this.tooltipId = containerIds[1];
     this.tooltip = null;
@@ -7,6 +9,10 @@ class SampledBeeswarm {
     this.data = data;
     this.sampleProportion = 0.2;
     this.radius = 2;
+
+    // this.scrollThreshold = 100; // Set a scroll threshold value
+    // this.handleScroll = this.handleScroll.bind(this);
+    // document.getElementById(this.scrollContainerId).addEventListener('scroll', this.handleScroll);
 
     this.init();
     this.render();
@@ -21,7 +27,7 @@ class SampledBeeswarm {
 
     // Define dimensions
     vis.margin = {
-      top: 20, right: 140, bottom: 40, left: 60,
+      top: 20, right: 100, bottom: 40, left: 60,
     };
     vis.width = vis.chartContainer.node().offsetWidth - vis.margin.left - vis.margin.right;
     vis.height = vis.chartContainer.node().offsetHeight - vis.margin.top - vis.margin.bottom;
@@ -134,6 +140,8 @@ class SampledBeeswarm {
     vis.initTooltip();
     vis.initLegend();
     vis.renderAxes();
+
+    vis.animateButton ? vis.animateButton.addEventListener('click', this.handleButtonClick): console.log('no animate button found');
 
     function handleMouseOver(event, d) {
       // console.log('mouseover called');
@@ -277,5 +285,55 @@ class SampledBeeswarm {
       .filter((d) => d.t === vis.selectedTheme.toLowerCase())
       .style('display', show ? 'initial' : 'none');
   }
+
+  // animateToGlobe() {
+  //   const vis = this;
+  //   console.log(vis.constructor.name, 'animating to sphere');
+  //
+  //   const simulation = d3
+  //     .forceSimulation(vis.sampledData)
+  //     .force('x', d3.forceX(vis.width / 2).strength(0.1)) // Set x to the center of the chart
+  //     .force('y', d3.forceY(vis.height / 2).strength(0.1)) // Set y to the center of the chart
+  //     .force('charge', d3.forceManyBody().strength(5)) // Add repulsion force to spread circles
+  //     .stop();
+  //
+  //   // Transition the circles to a sphere shape
+  //   for (let i = 0; i < 300; ++i) {
+  //     simulation.tick();
+  //     vis.svg.selectAll('circle')
+  //       .data(vis.sampledData)
+  //       .transition()
+  //       .duration(20)
+  //       .attr('cx', (d) => d.x)
+  //       .attr('cy', (d) => d.y);
+  //   }
+  // }
+  //
+  // handleScroll() {
+  //   const chartContainer = document.getElementById(this.chartContainerId);
+  //   const scrollContainer = document.getElementById(this.scrollContainerId);
+  //
+  //   const chartRect = chartContainer.getBoundingClientRect();
+  //   const scrollRect = scrollContainer.getBoundingClientRect();
+  //
+  //   const chartTopOffset = chartRect.top - scrollRect.top;
+  //   const chartBottomOffset = chartTopOffset + chartRect.height;
+  //
+  //   const scrollPosition = scrollContainer.scrollTop;
+  //
+  //   if (scrollPosition > chartBottomOffset - this.scrollThreshold) {
+  //     // If scrolled past the beeswarm chart, trigger the animation
+  //     this.animateToGlobe();
+  //     // Remove the event listener to prevent multiple animations
+  //     document.getElementById(this.scrollContainerId).removeEventListener('scroll', this.handleScroll);
+  //   }
+  // }
+  //
+  // handleButtonClick() {
+  //   const vis = this;
+  //   console.log('animate button clicked');
+  //   // Trigger the animation when the button is clicked
+  //   vis.animateToGlobe();
+  // }
 
 }
