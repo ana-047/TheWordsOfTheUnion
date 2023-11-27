@@ -188,11 +188,31 @@ img {
     max-width: 200px;
 }
 
+.theme-label {
+    fill: var(--background-section);
+    margin: 4px 8px;
+    padding: 4px 8px;
+}
+
+.theme-label-background {
+    fill: var(--background-section);
+    margin: 4px 8px;
+    padding: 4px 8px;
+}
+
+.legend-item > text {
+    fill: var(--text-default);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
 /* COMMON STYLES */
 
 .selected {
     /*stroke: black;*/
     /*stroke-width: 1px;*/
+    fill: var(--background-page);
     outline: 1px solid black;
 }
 

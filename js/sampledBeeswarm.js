@@ -27,7 +27,7 @@ class SampledBeeswarm {
 
     // Define dimensions
     vis.margin = {
-      top: 20, right: 100, bottom: 40, left: 60,
+      top: 20, right: 108, bottom: 40, left: 60,
     };
     vis.width = vis.chartContainer.node().offsetWidth - vis.margin.left - vis.margin.right;
     vis.height = vis.chartContainer.node().offsetHeight - vis.margin.top - vis.margin.bottom;
@@ -251,15 +251,28 @@ class SampledBeeswarm {
       .selectAll(".theme-label")
       .data(vis.themeCategories)
       .enter()
-      .append('g')
-      .attr('class', 'theme-label selected')
-      .append("text")
-      .attr("x", vis.width + 10 + size * 1.2)
-      .attr("y", function(d, i) { return 10 + i * (size + 5) + (size / 2) })
-      .style("fill", "black")
-      .text(function(d) { return d })
-      .attr("text-anchor", "left")
-      .style("alignment-baseline", "middle");
+      .append('g') // Create a group for each legend item
+      .attr('class', 'theme-label legend-item selected')
+      .attr("transform", function(d, i) {
+        return "translate(" + (vis.width + 10 + size * 1.2) + "," + (10 + i * (size + 5)) + ")";
+      })
+      .each(function(d) {
+        // Append rectangle to the group
+        d3.select(this)
+          .append('rect')
+          .attr('class', 'theme-label-background')
+          .attr('width', 70)
+          .attr('height', size);
+
+        // Append text to the group
+        d3.select(this)
+          .append("text")
+          .attr("x", 3) // Adjust as needed for text position
+          .attr("y", size * .7) // Adjust as needed for text position
+          .text(d)
+          .attr("text-anchor", "left")
+          .style("alignment-baseline", "middle");
+      });
 
     // Add click event listeners to legend labels for filtering
     vis.svg.selectAll(".theme-label")
