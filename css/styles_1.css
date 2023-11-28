@@ -33,6 +33,7 @@
 body {
     padding-top: 60px; /* Adjusted for the fixed navbar height */
     color: var(--text-default);
+    overflow: hidden;
 }
 
 .navbar-brand{
@@ -242,3 +243,71 @@ img {
 .guns {
     fill: var(--theme-guns)
 }
+
+/*PARALLAX STYLES */
+
+.parallax-container {
+    position: relative;
+    /*overflow: hidden;*/
+}
+
+.parallax-section {
+    position: relative;
+    height: 200vh;
+    background-attachment: fixed;
+    margin-left: 5%;
+    margin-right: 5%;
+    /*width: 80%; */
+}
+
+.navigation-circles {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+
+/* Style for the circles */
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+#section1 {
+    height: 80vh;
+
+}
+
+#section2 {
+    height: 100vh;
+}
+#section3 {
+    height: 120vh;
+}
+
+#section4 {
+    height: 100vh;
+}
+
+#section5 {
+    height: 100vh;
+}
+
+#section6 {
+    height: 100vh;
+}
+
+#section7 {
+    height: 100vh;
+}
+
+#section1, #section2, #section3, #section4, #section5, #section6 {
+ font: 16px sans-serif;
+}
+
