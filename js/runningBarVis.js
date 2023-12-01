@@ -96,7 +96,7 @@ class BarVis {
         vis.x.domain([0, 20000]);
         vis.y.domain(vis.displayData.map(d => d.name));
 
-        console.log(vis.displayData.map(d => d.name))
+        //console.log(vis.displayData.map(d => d.name))
 
         d3.select("#presidents")
             .selectAll("option")
@@ -134,7 +134,7 @@ class BarVis {
     wrangleData(){
         let vis = this;
 
-        vis.displayData = vis.data.sort((a,b) => {return a.year - b.year});
+        vis.displayData = vis.data.sort((a,b) => {return a.year - b.year}).slice();
 
         vis.avg_democrat = d3.mean(vis.displayData.filter(d=>d.party == "Democratic"), d=> d.word_count)
         vis.avg_republican = d3.mean(vis.displayData.filter(d=>d.party == "Republican"), d=> d.word_count)
@@ -149,14 +149,16 @@ class BarVis {
     updateVis(){
         let vis = this;
 
-        var t = 800;
+        var t = 1200;
+
+        var myPres = d3.select("#presidents").property("value")
 
         //d3.select("#startBars").attr("disabled", true);
 
         vis.svg.select(".x-axis")
             .transition()
             .duration(t)
-            .delay(8000)
+            .delay(10000)
             .attr("color", "black");
 
         //overall line
@@ -168,7 +170,7 @@ class BarVis {
             .attr("x2", vis.x(vis.avg_overall))
             .transition()
             .duration(t)
-            .delay(9000)
+            .delay(11000)
             .style("stroke", "black")
             .style("stroke-width", 25)
             .style("stroke-dasharray", "5,5");
@@ -182,7 +184,7 @@ class BarVis {
             .attr("x2", vis.x(vis.avg_democrat))
             .transition()
             .duration(t)
-            .delay(9000)
+            .delay(11000)
             .style("stroke", "#83A2FF")
             .style("stroke-width", 25)
             .style("stroke-dasharray", "5,5");
@@ -196,7 +198,7 @@ class BarVis {
             .attr("x2", vis.x(vis.avg_republican))
             .transition()
             .duration(t)
-            .delay(9000)
+            .delay(11000)
             .style("stroke", "#FF8B8B")
             .style("stroke-width", 25)
             .style("stroke-dasharray", "5,5");
@@ -214,10 +216,6 @@ class BarVis {
             //.attr("width", d => vis.x(0))
             .attr("fill", d=>{
 
-                var myPres = d3.select("#presidents").value
-
-                console.log(myPres)
-
                 if(d.name == myPres) {
                     return "pink"
                 } else {
@@ -233,23 +231,45 @@ class BarVis {
                 if(d.word_count<2000){return vis.x(d.word_count)} else{return vis.x(2000)}
             })
             .transition()
-            .duration(2000)
+            .duration(1000)
+            .ease(d3.easeLinear)
+            .attr("width", d => {
+                if(d.word_count<4000){return vis.x(d.word_count)} else{return vis.x(4000)}
+            })
+            .transition()
+            .duration(1000)
             .ease(d3.easeLinear)
             .ease(d3.easeLinear)
             .attr("width", d => {
                 if(d.word_count<6000){return vis.x(d.word_count)} else{return vis.x(6000)}
             })
             .transition()
-            .duration(2000)
+            .duration(1000)
+            .ease(d3.easeLinear)
+            .attr("width", d => {
+                if(d.word_count<8000){return vis.x(d.word_count)} else{return vis.x(8000)}
+            })
+            .transition()
+            .duration(1000)
             .ease(d3.easeLinear)
             .ease(d3.easeLinear)
             .attr("width", d => {
                 if(d.word_count<10000){return vis.x(d.word_count)} else{return vis.x(10000)}
             })
             .transition()
-            .duration(2000)
+            .duration(1000)
             .ease(d3.easeLinear)
-
+            .attr("width", d => {
+                if(d.word_count<12000){return vis.x(d.word_count)} else{return vis.x(12000)}
+            })
+            .transition()
+            .duration(1000)
+            .ease(d3.easeLinear)
+            .attr("width", d => {
+                if(d.word_count<14000){return vis.x(d.word_count)} else{return vis.x(14000)}
+            })
+            .transition()
+            .duration(1000)
             .ease(d3.easeLinear)
             .attr("width", d => {
                 if(d.word_count<16000){return vis.x(d.word_count)} else{return vis.x(16000)}
@@ -257,10 +277,26 @@ class BarVis {
             .transition()
             .duration(1000)
             .ease(d3.easeLinear)
+            .attr("width", d => {
+                if(d.word_count<18000){return vis.x(d.word_count)} else{return vis.x(18000)}
+            })
+            .transition()
+            .duration(1000)
+            .ease(d3.easeLinear)
             .attr("width", d => vis.x(d.word_count))
             .transition()
-            .delay(300)
-            .duration(300)
+            .delay(1200)
+            .duration(1200)
+            .attr("fill", d => {
+                if(d.party === "Republican"){
+                    return partyColors["party-republican"]
+                }else if(d.party === "Democratic"){
+                    return partyColors["party-democrat"]
+                }else{
+                    return partyColors["party-other"]
+                }
+            })
+            /*
             .attr("class", d=>{
                 if(d.party === "Republican"){
                     return "racingBars party-republican"
@@ -270,6 +306,21 @@ class BarVis {
                     return "racingBars party-other"
                 }
             })
+            */
+
+            // this part doesn't work
+            /*
+            .on("end", function (d) {
+                // Append image at the end of each bar
+                vis.svg.append("image")
+                    .attr("xlink:href", d => `images/Portraits/${d.image}-*.jpeg`)
+                    .attr("x", vis.x(d.word_count)) // Adjust the position based on your requirements
+                    .attr("y", vis.y(d.name))
+                    .attr("width", vis.x(20)) //
+                    .attr("height", vis.y.bandwidth());
+            })
+            */
+
             ;
 
         vis.bars.exit().remove();
