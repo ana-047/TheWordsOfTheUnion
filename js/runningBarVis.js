@@ -127,6 +127,13 @@ class BarVis {
         d3.select("#resetBars")
             .on("click", () =>  this.resetAnimation());  // Call startAnimation when the button is clicked
 
+        // Create a tooltip div
+        vis.tooltip = d3.select("#presidents").append("div")
+            .attr("class", "tooltip")
+            .style('opacity', 0)
+            .style('pointer-events', 'none')
+            // .style('background-color', 'lightgrey')
+            .style('box-shadow', '2px 2px 6px rgba(0,0,0,0.3)');
 
 
     }
@@ -224,6 +231,27 @@ class BarVis {
 
             })
 
+            .on("mouseover", function (event, d) {
+                vis.tooltip.transition()
+                    .duration(200)
+                    .style("opacity", 1);
+                vis.tooltip.html(
+                    `President: ${d.name}<br/>Average Speech Length: ${d.word_count} words<br/>Party: ${d.party}`
+                )
+                    .style("left", (event.pageX + 10) + "px")
+                    .style("top", (event.pageY - 10) + "px");
+
+            })
+            .on("mousemove", function (event) {
+                vis.tooltip.style("left", (event.pageX + 10) + "px")
+                    .style("top", (event.pageY - 28) + "px");
+            })
+            .on("mouseout", function () {
+                vis.tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            })
+
             .transition()
             .duration(1000)
             .ease(d3.easeLinear)
@@ -296,6 +324,9 @@ class BarVis {
                     return partyColors["party-other"]
                 }
             })
+
+
+
             /*
             .attr("class", d=>{
                 if(d.party === "Republican"){

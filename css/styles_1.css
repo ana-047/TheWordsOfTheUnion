@@ -127,6 +127,17 @@ img {
     visibility: hidden;
 }
 
+.tooltip-speechLength {
+    position: absolute;
+    text-align: left;
+    padding: 10px;
+    font: 12px sans-serif;
+    background: #ffffff;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
 .scatter-container {
     position: relative;
     margin-top: 250px;
