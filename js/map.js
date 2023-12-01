@@ -56,10 +56,15 @@ function initializeMapAndScatter() {
                 .attr('class', 'country')
                 .attr('d', path)
                 .on('click', function (event, d) {
-                    //update if the projection is equirectangular
+                    // Update if the projection is equirectangular
                     if (path.projection() === equirectangularProjection) {
                         const clickedCountryName = getCountryName(d);
                         selectedCountry = (selectedCountry === clickedCountryName) ? null : clickedCountryName;
+
+                        // Update the fill color of all countries
+                        g.selectAll('.country')
+                            .style('fill', country => (getCountryName(country) === selectedCountry) ? '#96787C' : 'lightgrey');
+
                         updateScatterPlot(selectedCountry);
                     }
                 })
@@ -222,7 +227,8 @@ function initializeMapAndScatter() {
         g.selectAll('.country')
             .transition()
             .duration(1000)
-            .attr('d', path);
+            .attr('d', path)
+            .style('fill', 'lightgrey');
 
         // Check if the current projection is equirectangular
         const isEquirectangular = path.projection() === equirectangularProjection;
@@ -233,6 +239,7 @@ function initializeMapAndScatter() {
         // Stop the rotation animation
         d3.timerFlush();
     }
+
     function rotateGlobe() {
         d3.timer(function (elapsed) {
             initialProjection.rotate([elapsed / 100, 0]);
