@@ -39,18 +39,19 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
             const x = event.pageX;
             const y = event.pageY;
 
-            // Calculate adjusted coordinates for tooltip
-            const adjustedX = x + 1; 
+
+            const adjustedX = x + 1;
             const adjustedY = y - 5;
 
             // Show tooltip on mouseover
             tooltip.transition()
                 .duration(200)
                 .style('opacity', .9);
-            tooltip.html(`${d.year} vs ${data[d.index].year}`)
+            tooltip.html(`${d.year} vs ${data[d.index].year}<br>Score: ${d.value}`)
                 .style('left', `${adjustedX}px`)
                 .style('top', `${adjustedY}px`);
         })
+
 
 
     // Add X axis
@@ -87,6 +88,29 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
         .attr('class', 'tooltip_heatmap')
         .style('opacity', 0);
 
+    const legend = svg.append('g')
+        .attr('class', 'legend')
+        .attr('transform', `translate(${width + 10}, 0)`); // Adjust the position based on your layout
+
+//legend
+    const legendRects = legend.selectAll('rect')
+        .data(colorScale.ticks(5))
+        .enter()
+        .append('rect')
+        .attr('x', 0)
+        .attr('y', (d, i) => i * 20)
+        .attr('width', 20)
+        .attr('height', 20)
+        .style('fill', d => colorScale(d));
+
+
+    const legendLabels = legend.selectAll('text')
+        .data(colorScale.ticks(5))
+        .enter()
+        .append('text')
+        .attr('x', 30)
+        .attr('y', (d, i) => i * 20 + 12)
+        .text(d3.format(".6f"));// Format the score as needed
 
 
 
