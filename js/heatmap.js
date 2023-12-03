@@ -39,7 +39,6 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
             const x = event.pageX;
             const y = event.pageY;
 
-
             const adjustedX = x + 1;
             const adjustedY = y - 5;
 
@@ -51,6 +50,13 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
                 .style('left', `${adjustedX}px`)
                 .style('top', `${adjustedY}px`);
         })
+        .on('mouseout', function (event, d) {
+            // Hide tooltip on mouseout
+            tooltip.transition()
+                .duration(200)
+                .style('opacity', 0);
+        });
+
 
 
 
@@ -84,13 +90,13 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
         .attr('transform', `translate(${-margin.left / 2}, ${height / 2})rotate(-90)`)
         //.text('Speech');
 
-    const tooltip = d3.select('#speech_heatmap').append('div')
+    const tooltip = d3.select('body').append('div')
         .attr('class', 'tooltip_heatmap')
         .style('opacity', 0);
 
     const legend = svg.append('g')
         .attr('class', 'legend')
-        .attr('transform', `translate(${width + 10}, 0)`); // Adjust the position based on your layout
+        .attr('transform', `translate(${width + 10}, 0)`);
 
 //legend
     const legendRects = legend.selectAll('rect')
@@ -110,9 +116,7 @@ d3.csv('data/cleaned_data/csv_format_d3/speech_similarity_scores.csv').then(data
         .append('text')
         .attr('x', 30)
         .attr('y', (d, i) => i * 20 + 12)
-        .text(d3.format(".6f"));// Format the score as needed
-
-
-
+        .text(d3.format(".6f"));
+    
 
 });
