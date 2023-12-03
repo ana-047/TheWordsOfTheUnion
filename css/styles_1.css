@@ -220,8 +220,6 @@ img {
     -moz-user-select: none;
 }
 
-
-
 /*Fast Facts */
 .ff {
     display: grid;
@@ -239,10 +237,17 @@ img {
     transition: transform 0.5s;
     margin: 10px;
     cursor: pointer;
+    flex: 1;
+    perspective: 1000px;
+
 }
 
 .card_ff:hover {
     transform: rotateY(180deg);
+}
+
+.gridRow {
+    display: flex;
 }
 
 .front, .back {
@@ -255,11 +260,25 @@ img {
     justify-content: center;
     border: 2px solid #333;
     background-color: #fff;
+    transition: transform 0.5s;
 }
 
 .back {
     transform: rotateY(180deg);
 }
+
+.card_ff.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.card_ff.flipped .back {
+    transform: rotateY(0deg);
+}
+
+ChatGPT
+
+
+
 /* COMMON STYLES */
 .selected {
     /*stroke: black;*/
