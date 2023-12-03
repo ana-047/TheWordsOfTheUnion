@@ -128,15 +128,17 @@ function initializeMapAndScatter() {
 
             const yAxis = d3.axisLeft(yScale);
 
-            let scatterLeft = (mapWidth * 0.35) + 'px';
+            // Get the main container and map container
+            const mainContainer = document.getElementById('section9');
+            const mapContainer = document.querySelector('.map-container');
+
+            // Adjust positioning based on the size of the text above the map
+            let scatterLeft = '20px';
             let scatterTop = '20px';
 
-            const textAboveMap = document.querySelector('.card-title');
-
-
-            if (textAboveMap) {
-                const textAboveMapHeight = textAboveMap.offsetHeight;
-                scatterTop = `${textAboveMapHeight + 20}px`;
+            if (mainContainer && mapContainer) {
+                const mapContainerWidth = mapContainer.offsetWidth;
+                scatterLeft = `${mapContainerWidth + 40}px`;
             }
 
             scatterContainer.style('left', scatterLeft)
@@ -199,6 +201,8 @@ function initializeMapAndScatter() {
                         .style("border", "1px solid black")
                         .style("border-radius", "5px");
 
+
+
                     tooltip.append("div").text(`Year: ${d.Year}`);
                     tooltip.append("div").text(`President: ${d.President}`);
                     tooltip.append("div").text(`Party: ${d.Party}`);
@@ -209,6 +213,7 @@ function initializeMapAndScatter() {
                 });
         });
     }
+
 
 
     function getTextWidth(text) {

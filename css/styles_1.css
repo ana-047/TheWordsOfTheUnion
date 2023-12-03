@@ -112,8 +112,14 @@ img {
     stroke-opacity: 0.1;
 }
 
+/*.map-container {*/
+/*    height: 600px; !* Adjusted to match #country_mentions_map height *!*/
+/*}*/
+
 .map-container {
-    height: 600px; /* Adjusted to match #country_mentions_map height */
+    position: absolute;
+    top: 50;
+
 }
 
 .tooltip {
@@ -138,16 +144,22 @@ img {
     pointer-events: none;
 }
 
-.scatter-container {
-    position: relative;
-    margin-top: 250px;
-    display: none;
-}
 
 .scatter-tooltip {
     fill: black;
     text-anchor: middle;
     pointer-events: none;
+}
+
+.scatter-container {
+    position: absolute;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 999;
+    display: none;
+    left: 960px;
+    top: 20px;
 }
 
 .scatter-title {
@@ -380,6 +392,8 @@ ChatGPT
 #section11 {
     height: 100vh;
 }
+
+
 
 #section1, #section2, #section3, #section4, #section5, #section6, #section7, #section8, #section9, #section10, #section11{
  font: 16px sans-serif;
