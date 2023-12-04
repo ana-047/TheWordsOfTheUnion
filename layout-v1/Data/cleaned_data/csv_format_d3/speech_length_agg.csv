@@ -1,0 +1,44 @@
+"name","year","image","party","word_count","year2"
+"George Washington",1793,"01","none",2217.42857142857,1750
+"John Adams",1798.5,"02","Federalist",1788,1750
+"Thomas Jefferson",1804.5,"03","Democratic-Republican",2585.5,1800
+"James Madison",1812.5,"04","Democratic-Republican",2710.75,1800
+"James Monroe",1820.5,"05","Democratic-Republican",5289.125,1800
+"John Quincy Adams",1826.5,"06","Democratic-Republican",7759.5,1800
+"Andrew Jackson",1832.5,"07","Democratic",10646.25,1800
+"Martin Van Buren",1838.5,"08","Democratic",11325.5,1800
+"John Tyler",1842.5,"09","Whig & Democratic",8494,1800
+"James Polk",1846.5,"10","Democratic",18004.75,1800
+"Zachary Taylor",1849,"11","Whig",7617,1800
+"Millard Fillmore",1851,"12","Whig",10494.3333333333,1850
+"Franklin Pierce",1854.5,"13","Democratic",10451,1850
+"James Buchanan",1858.5,"14","Democratic",14089.75,1850
+"Abraham Lincoln",1862.5,"15","Republican",6835.5,1850
+"Andrew Johnson",1866.5,"16","National Union",9535.75,1850
+"Ulysses S Grant",1872.5,"17","Republican",8126.375,1850
+"Rutherford B Hayes",1878.5,"18","Republican",8529,1850
+"Chester A Arthur",1882.5,"19","Republican",4571.5,1850
+"Benjamin Harrison",1890.5,"20","Republican",13621.25,1850
+"Grover Cleveland",1890.5,"21","Democratic",13388.625,1850
+"William Mc Kinley",1898.5,"22","Republican",16646.25,1850
+"Theodore Roosevelt",1904.5,"23","Republican",19624.875,1900
+"William H Taft",1910.5,"24","Republican",17369.75,1900
+"Woodrow Wilson",1916.5,"25","Democratic",4340.75,1900
+"Warren G Harding",1921.5,"26","Republican",5674,1900
+"Calvin Coolidge",1925.5,"27","Republican",8608.83333333333,1900
+"Herbert Hoover",1930.5,"28","Republican",5546.75,1900
+"Franklin D Roosevelt",1939.5,"29","Democratic",3919.25,1900
+"Harry S Truman",1949.5,"30","Democratic",8284.5,1900
+"Dwight D Eisenhower",1957,"31","Republican",6024.77777777778,1950
+"John F Kennedy",1962,"32","Democratic",5642.33333333333,1950
+"Lyndon B Johnson",1966.5,"33","Democratic",4818.16666666667,1950
+"Richard Nixon",1972,"34","Republican",3940,1950
+"Gerald R Ford",1976,"35","Republican",4564.66666666667,1950
+"Jimmy Carter",1979.5,"36","Democratic",11194.25,1950
+"Ronald Reagan",1985,"37","Republican",4560.42857142857,1950
+"George Bush",1990.5,"38","Republican",4420.5,1950
+"William J Clinton",1996.5,"39","Democratic",7553.875,1950
+"George W Bush",2004.5,"40","Republican",5038.75,2000
+"Barack Obama",2012.5,"41","Democratic",6691.25,2000
+"Donald J Trump",2018.5,"42","Republican",5482.75,2000
+"Joseph R Biden",2022,"43","Democratic",8276.33333333333,2000

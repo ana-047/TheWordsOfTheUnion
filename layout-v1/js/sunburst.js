@@ -1,7 +1,7 @@
-class SampledBeeswarm {
+class ThemeSunburst {
   constructor(containerIds, data) {
     // this.scrollContainerId = 'main-scroll-container';
-    // this.animateButton = document.getElementById('animateButton');
+    // this.animateButton = document.getElementById('test-radial-chart');
     this.containerId = containerIds[0];
     this.tooltipId = containerIds[1];
     this.tooltip = null;
@@ -169,9 +169,9 @@ class SampledBeeswarm {
       // console.log('mouseout called');
       vis.tooltip
         .style('opacity', 0);
-        // .transition()
-        // .duration(200)
-        // .style('opacity', 0);
+      // .transition()
+      // .duration(200)
+      // .style('opacity', 0);
     }
   }
 
@@ -342,11 +342,152 @@ class SampledBeeswarm {
   //   }
   // }
   //
-  // handleButtonClick() {
-  //   const vis = this;
-  //   console.log('animate button clicked');
-  //   // Trigger the animation when the button is clicked
-  //   vis.animateToGlobe();
-  // }
+  handleButtonClick() {
+    const vis = this;
+    console.log('animate button clicked');
+    // Trigger the animation when the button is clicked
+    // vis.animateToGlobe();
+    // vis.transformToRadialBarChart();
+    vis.createSunburstChart();
+  }
+
+  transformToRadialBarChart() {
+    const vis = this;
+    console.log(vis.constructor.name, 'transforming to radial bar chart');
+
+    // Group the data by 't' (theme) and 'w' (word)
+    const groupedData = d3.group(vis.sampledData.flatMap(d => d.tagged_text), d => d.t, d => d.w);
+
+    // Flatten the grouped data into individual dots
+    const individualDots = Array.from(groupedData, ([theme, themeData]) => {
+      return Array.from(themeData, ([word, wordData]) => {
+        return {
+          theme: theme,
+          word: word,
+          count: wordData.length
+        };
+      });
+    }).flat();
+
+    // Define maximum count to scale the radial bars
+    const maxCount = d3.max(individualDots, d => d.count);
+
+    // Create radial scale for positioning bars
+    const radiusScale = d3.scaleLinear()
+      .domain([0, maxCount])
+      .range([0, vis.height / 2]); // Adjust according to available space
+
+    // Create an angle scale for positioning bars around the circle
+    const angleScale = d3.scaleBand()
+      .domain(d3.range(individualDots.length))
+      .range([0, 2 * Math.PI]);
+
+    // Remove existing swarm chart elements
+    vis.svg.selectAll('.dot').remove();
+
+    // Render the radial bars representing individual dots
+    vis.svg.selectAll('.radial-bar')
+      .data(individualDots)
+      .enter()
+      .append('rect')
+      .attr('class', 'radial-bar')
+      .attr('transform', (d, i) => `translate(${vis.width / 2},${vis.height / 2}) rotate(${(i * 360) / individualDots.length})`)
+      .attr('x', 0)
+      .attr('y', 0)
+      .attr('width', 2) // Adjust the width of each bar
+      .attr('height', d => radiusScale(d.count))
+      .attr('fill', 'steelblue'); // Change color as needed
+  }
+
+
+  // Define your SampledBeeswarm class...
+// ...
+
+// Method to create an interactive sunburst chart
+  createSunburstChart() {
+    const vis = this;
+    console.log(vis.constructor.name, 'creating sunburst chart');
+
+    // Construct your hierarchical data using d3.nest() on your grouped data
+    const hierarchy = {
+      key: "Theme Data",
+      values: d3.nest()
+        .key(d => d.t)
+        .key(d => d.w)
+        .key(d => d.year)
+        .rollup(leaves => leaves.length)
+        .entries(vis.sampledData.flatMap(d => d.tagged_text))
+    };
+
+    // Define dimensions for the sunburst chart
+    const width = 960;
+    const height = 700;
+    const radius = Math.min(width, height) / 2;
+
+    // Create the SVG container for the visualization
+    const svg = d3.select("body")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", `translate(${width / 2},${height / 2})`);
+
+    // Define partition layout
+    const partition = d3.layout.partition()
+      .value(d => d.values)
+      .sort(null);
+
+    // Define color scale
+    const color = d3.scale.category20c();
+
+    // Define arc function
+    const arc = d3.svg.arc()
+      .startAngle(d => Math.max(0, Math.min(2 * Math.PI, x(d.x))))
+      .endAngle(d => Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))))
+      .innerRadius(d => Math.max(0, y(d.y)))
+      .outerRadius(d => Math.max(0, y(d.y + d.dy)));
+
+    // Construct the visualization
+    const path = svg.datum(hierarchy)
+      .selectAll("path")
+      .data(partition.nodes)
+      .enter()
+      .append("path")
+      .attr("d", arc)
+      .style("fill", d => color((d.children ? d : d.parent).key))
+      .on("click", click)
+      .append("title")
+      .text(d => `${d.key}\n${formatNumber(d.value)}`);
+
+    // Handle click events
+    function click(d) {
+      path.transition()
+        .duration(750)
+        .attrTween("d", arcTween(d));
+    }
+
+    // Function to smoothly transition arcs
+    function arcTween(d) {
+      const xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]);
+      const yd = d3.interpolate(y.domain(), [d.y, 1]);
+      const yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
+      return function (d, i) {
+        return i
+          ? t => arc(d)
+          : t => {
+            x.domain(xd(t));
+            y.domain(yd(t)).range(yr(t));
+            return arc(d);
+          };
+      };
+    }
+
+    // Function to format numbers
+    function formatNumber(n) {
+      return n.toLocaleString();
+    }
+  }
+
+
 
 }
