@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WoTU Scrolling Sections</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+</head>
+<body>
+<div id="app-container">
+    <!-- Scrolling Container -->
+    <div class="container" id="scroll-container">
+        <!-- Scrolling Text -->
+        <div class="sections" id="sections">
+            <!-- Main Story Content Sections -->
+
+            <!-- Background -->
+            <section class="step intro">
+                <div class="title ">The State of the Union Address: </div>
+                <div class="title page-title">A Time Honored Tradition</div>
+                <p>
+                    The first State of the Union address was given in 1790 by <b class="pres-name">George Washington</b> in person and over time, it has evolved considerably.
+                </p>
+                <p>
+                    <b class="pres-name">Thomas Jefferson</b> abandoned the practice as “monarchical” and time-consuming, sending written messages instead.
+                </p>
+                <p>
+                    This precedent was followed until <b class="pres-name">Woodrow Wilson</b> personally appeared before Congress in 1913.
+                </p>
+                <p>
+                    <b class="pres-name">Franklin Roosevelt</b> adopted Wilson’s practice of personal delivery, and it has since become a contemporary tradition.
+                </p>
+            </section>
+
+            <!-- Introduction and Hook -->
+            <section class="step intro">
+                <div class="title">The Words of the Union</div>
+                <p>
+                    As we delve into the depths of this unique narrative, <strong><em>Words of the Union</em></strong> invites you to explore the power of words, the evolution of oratory, and the enduring impact of these annual presidential pronouncements on the tapestry of American history.
+                </p>
+                <p>
+                    Join us on a journey through time, where every speech is a chapter, and together, we navigate the archives of the State of the Union.
+                </p>
+            </section>
+
+            <!-- Rising Action -->
+            <section class="step">
+                <div class="title">Racing Rhetoric</div>
+                <p>Though the State of the Union is mandated by the Constitution, there are no requirements for how long it has to be...</p>
+                <p>Place your bet! Which president do you think had the longest speech?</p>
+                <div class="chart-controls flex-vertical">
+                    <label class="title" for="presidents">Choose a president:</label>
+                    <br/>
+                    <select id="presidents" name="presidents"></select>
+                </div>
+                <div class="chart-controls flex-horizontal">
+                    <button id="startBars">Start!</button>
+                    <button id="resetBars">Reset</button>
+                </div>
+            </section>
+            <section class="step">
+                <div class="title">Label</div>
+                <p>
+                    The average SOTU speech length is 8000 words!
+                </p>
+                <p>
+                    This would be approximately 53.33 minutes long if delivered at a rate of 150 words per minute.
+                </p>
+                <p>
+                    That means that since the first State of the Union speech in 1790, US Presidents have spoken for over 200 hours on the most pressing topics of their time.
+                </p>
+            </section>
+
+            <!-- Main Theme 1 -->
+            <section class="step">
+                <div class="title">Similarities and Differences</div>
+                <p>
+                    Historically, State of the Union addresses have varied depending on the context of the time, the issues facing the nation, and the individual speaking.
+                </p>
+                <p>
+                    However, some speeches are more similar than others.
+                </p>
+                <p>
+                    For example, a look at addresses given in the past 30 years suggests that there is a high degree of similarity between speeches given by Democratic Presidents.
+                </p>
+                <p>
+                    Perhaps surprisingly, this similarity also largely extends to speeches given by Republicans (with the exception of speeches given by President Trump).
+                </p>
+                <p>
+                    This is perhaps due to the traditional "Presidential tone" of a speech being generally positive and the themes remaining relatively constant.
+                </p>
+                <small>
+                    Similarity scores were assigned using cosine similarity, which is an NLP metric to measure the similarity of text. The darker shades represent higher similarity scores and lower scores are represented by lighter values.
+                </small>
+            </section>
+
+            <!-- Main Theme 2 -->
+            <section class="step">
+                <div class="title">Does history repeat itself?</div>
+                <p>
+                    Over the course of history, specific talking points may come and go, but
+                    several general themes remain:
+                </p>
+                <ul>
+                    <li>Territory and Border</li>
+                    <li>Climate and Environment</li>
+                    <li>The Economy</li>
+                    <li>Guns and the Second Amendment</li>
+                    <li>Immigration</li>
+                    <li>Law and Crime</li>
+                    <li>War, Peace, and the Military</li>
+                </ul>
+            </section>
+            <section class="step">
+                <div class="title">A Matter of Sentiment</div>
+                <p>
+                    Though the themes remain consistent, the way in which Presidents talk about them changes.
+                </p>
+                <small>
+                    In this chart, a dot represents each mention of a theme, with the most positive mentions encoded as +1, and the most negative mentions encoded as -1.
+                </small>
+                <p></p>
+                <p>
+                    Notice how in [year], when [event] happened, [president] makes many more [negative/positive] mentions of [theme].
+                </p>
+                <p>
+                    Or in [year], when [war/conflict event] happened, [president] makes many more [negative/positive] mentions of [theme].
+                </p>
+            </section>
+
+            <!-- Main Theme 3 -->
+            <section class="step">
+                <div class="title">The World Stage</div>
+                <p>
+                    One of the objectives of the State of the Union is to address imminent challenges facing the nation.
+                </p>
+                <p>
+                    Adversarial relations, conflicts, and international tensions have all taken the spotlight from time to time.
+                </p>
+                <p>
+                    In recent years, the focus of State of the Union addresses has shifted from prominent mentions of Mexico, a neighbor, and Great Britain, a longstanding ally,
+                </p>
+                <p>
+                    to an emphasis on American adversaries and countries with which the United States has engaged in conflicts.
+                </p>
+                <p>
+                    Over the past decade, China, Afghanistan, Iran, Russia, Syria, Cuba, and North Korea have prominently featured in these addresses, marking a notable shift in the geopolitical landscape addressed by U.S. presidents.
+                </p>
+                <div class="chart-controls flex-horizontal">
+                    <button id="exploreGlobe">Explore</button>
+                    <button id="resetGlobe">Reset</button>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="step">
+                <div class="title">An Enduring Tradition</div>
+                <p>A catchy summary sentence goes here:</p>
+                <ul>
+                    <li>key takeaway 1</li>
+                    <li>key takeaway 2</li>
+                    <li>key takeaway 3</li>
+                </ul>
+                <p>A nice concluding sentence goes here.</p>
+            </section>
+
+            <!-- References -->
+            <section class="step">
+                <div class="title">References</div>
+                <ul>
+                    <li>reference 1</li>
+                    <li>reference 2</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <!-- Visualization Containers -->
+    <div class="vis-container" id="vis-container">
+        <div class="visualization vis-title" id="vis-title">vis title test</div>
+        <div class="visualization vis-brush" id="vis-brush">vis brush test</div>
+<!--        <div class="visualization vis-legend" id="vis-legend-primary">vis legend 1 test</div>-->
+        <div class="visualization vis-focus-short" id="vis-focus-primary">vis content 1 test</div>
+        <div class="visualization vis-focus-tall" id="vis-focus-secondary">vis content 2 test</div>
+<!--        <div class="visualization vis-legend" id="vis-legend-secondary">vis legend 2 test</div>-->
+<!--        <div class="visualization queue vis-focus" id="vis-queue">vis queue test</div>-->
+    </div>
+</div>
+<!-- End of app container -->
+    <!-- Libraries and Scripts -->
+    <script src="//d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/d3-geo.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+
+    <!-- Chart Generators -->
+    <script src="js/charts/racingBars.chart.js"></script>
+    <script src="js/charts/heatmap.chart.js"></script>
+    <script src="js/charts/stackedBar.chart.js"></script>
+    <script src="js/charts/beeswarm.chart.js"></script>
+    <script src="js/charts/dripBar.chart.js"></script>
+    <script src="js/charts/globe.chart.js"></script>
+    <script src="js/charts/scatter.chart.js"></script>
+
+    <script src="js/charts/bar.chart.js"></script>
+    <script src="js/charts/radial.chart.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/scroller.service.js"></script>
+    <script src="js/services/queue.service.js"></script>
+    <script src="js/services/display.service.js"></script>
+    <script src="js/services/events.service.js"></script>
+    <script src="js/services/offsetCalculator.service.js"></script>
+
+    <!-- Main -->
+    <script src="js/main.js"></script>
+</body>
+</html>

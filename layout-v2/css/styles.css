@@ -1,0 +1,503 @@
+:root {
+    --background-page: #ffffff;
+    --background-section: #f6f6f6;
+    --shadow-section: #b9b9b9;
+    --border-section: #CCCCCC;
+    --background-tooltip: #DCDBDB;
+    --shadow-tooltip: rgba(45, 45, 45, 0.28);
+
+    --text-default: #262626;
+    --text-title: #424242;
+    --text-contrast: #EFEFEF;
+    --pres-name: #262626;
+
+    --party-republican: #DB767B;
+    --party-democrat: #53AEF4;
+    --party-whig: #E2DE91;
+    --party-national-union: #39668C;
+    --party-federalist: #96787C;
+    --party-other: #A8A8A8;
+
+    --hover: #A49139;
+    --highlight: #37FC00;
+    --selected: #E3CD7A;
+
+    --theme-economy: #98BB95;
+    --theme-war: #AA8CAD;
+    --theme-border: #F7A072;
+    --theme-climate: #738A7C;
+    --theme-immigration: #85C7F2;
+    --theme-law-crime: #D17A9E;
+    --theme-guns: #909CC2;
+
+    --similar: #556983;
+    --different: #D1D9E5;
+
+    --country-default: #545454;
+    --country-disabled: #949494;
+    --country-background: #DCDBDB;
+
+    --vis-title-height: 4%;
+    --vis-brush-height: 20%;
+    --vis-legend-height: 8%;
+    --vis-focus-min-height: 40%;
+    --vis-focus-max-height: 80%;
+
+    --text-title-font: Arial, Helvetica, "san-serif", serif;
+    --text-default-font: "TiemposTextWeb-Regular", "Georgia", serif;
+}
+
+body {
+    background-color: var(--background-page);
+    color: var(--text-default);
+}
+
+.container {
+    margin-left: 5%;
+    width: 30%;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sections {
+    position: relative;
+    display: inline-block;
+    /*width: 100%;*/
+    max-width: 250px;
+    top: 0;
+    z-index: 90;
+    padding-bottom: 200px;
+}
+
+.sections:last-child {
+    margin-bottom: 50vh;
+}
+
+.intro {
+    margin-top: 20%;
+}
+
+.step {
+    margin-bottom: 200px;
+    background-color: var(--background-section);
+    border-radius: 8px;
+    /*border: solid 1px var(--border-section);*/
+    box-shadow: 0px 8px 30px var(--shadow-section);
+    padding: 20px 16px;
+
+    font-family: var(--text-default-font);
+    font-size: 16px;
+    line-height: 23px;
+    color: var(--text-default);
+}
+
+.title {
+    padding-top: 10px;
+    font-family: var(--text-title-font);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-title);
+    line-height: 1.2em;
+}
+
+.page-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.pres-name {
+    color: var(--pres-name);
+    font-weight: 600;
+}
+
+.chart-controls{
+    display: flex;
+    /*flex-direction: row;*/
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    /*padding: 8px 4px;*/
+    /*border-radius: 10px;*/
+    /*border: 1px solid var(--border-section);*/
+    /*background-color: var(--background-section);*/
+}
+
+.flex-horizontal {
+    flex-direction: row;
+}
+
+.flex-vertical {
+    flex-direction: column;
+}
+
+.chart-controls > button {
+    flex-grow: 1;
+    /*margin-inline: 4px;*/
+}
+
+.chart-controls > button:first-of-type {
+    margin-right: 8px;
+}
+
+.vis-container {
+    /*display: inline-block;*/
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: fixed;
+    right: 4%;
+    top: 60px;
+    z-index: 1;
+    margin-left: 0;
+    padding-bottom: 10%;
+    height: 100%;
+    max-height: 100vh;
+    width: 60%;
+    /*background-color: #2b542c;*/
+}
+
+.queue {
+    opacity: 10%;
+}
+
+.visualization {
+    /*background-color: #ddd;*/
+    width: 100%;
+}
+
+.vis-title {
+    height: var(--vis-title-height);
+    min-height: var(--vis-title-height);
+    max-height: var(--vis-title-height);
+}
+
+.vis-brush {
+    height: var(--vis-brush-height);
+    min-height: var(--vis-brush-height);
+    max-height: var(--vis-brush-height);
+}
+
+.vis-legend {
+    height: var(--vis-legend-height);
+}
+
+.vis-focus-short {
+    flex-grow: 1;
+    /*min-height: var(--vis-focus-max-height);*/
+    min-height: 500px;
+    max-height: 600px;
+    /*max-height: var(--vis-focus-max-height);*/
+}
+
+.vis-focus-tall {
+    flex-grow: 1;
+    min-height: var(--vis-focus-max-height);
+    /*max-height: 800px;*/
+    max-height: var(--vis-focus-max-height);
+}
+
+
+/* HEATMAP */
+
+.cell:hover {
+    stroke: var(--selected);
+    stroke-width: 2px;
+}
+
+.cell.highlight-row {
+    fill: var(--hover) !important;
+}
+.cell.highlight-column {
+    fill: var(--hover) !important;
+}
+
+.heatmap-tooltip {
+    /* Position */
+    position: absolute;
+    z-index: 9999;
+
+    /* Interactivity */
+    pointer-events: none;
+
+    /* Style */
+    border-radius: 4px;
+    padding: 8px;
+    background-color: var(--background-tooltip);
+    box-shadow: 0px 8px 30px var(--shadow-tooltip);
+
+    font-family: var(--text-title-font);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-title);
+    line-height: 1.2em;
+}
+
+.similarity-score {
+    color: var(--pres-name);
+    font-weight: 500;
+}
+
+
+/* THEME CHARTS */
+.war {
+    fill: var(--theme-war);
+}
+
+.economy {
+    fill: var(--theme-economy);
+}
+.border {
+    fill: var(--theme-border)
+}
+
+.climate {
+    fill: var(--theme-climate)
+}
+
+.immigration {
+    fill: var(--theme-immigration)
+}
+
+.crime {
+    fill: var(--theme-law-crime)
+}
+
+.guns {
+    fill: var(--theme-guns)
+}
+
+
+/* BEE SWARM */
+
+.label {
+    font-family: var(--text-title-font);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-title);
+}
+
+.theme-label {
+    fill: var(--background-section);
+    margin: 4px 8px;
+    padding: 4px 8px;
+}
+
+.theme-label-background {
+    /*fill: var(--background-section);*/
+    margin: 4px 8px;
+    padding: 4px 8px;
+}
+
+.legend-item > text {
+    fill: var(--text-default);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.dot:hover {
+    /*stroke: var(--selected);*/
+    stroke: var(--background-page);
+    stroke-width: 4px;
+
+    /*z-index: 9999;*/
+}
+
+.beeswarm-tooltip {
+    /* Position */
+    position: absolute;
+    z-index: 9999;
+
+    /* Interactivity */
+    pointer-events: none;
+
+    /* Style */
+    border-radius: 4px;
+    padding: 8px;
+    background-color: var(--background-tooltip);
+    box-shadow: 0px 8px 30px var(--shadow-tooltip);
+
+    font-family: var(--text-title-font);
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: var(--text-title);
+    line-height: 1.2em;
+}
+
+.beeswarm-tooltip::before {
+    /* This is a hack to give hover
+    highlighting to the hovered SVG circle */
+
+    /* Position */
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: -10px;
+    /*z-index: 9999; !* Ensure the circle appears behind the hovered element *!*/
+
+    /* Shape */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    /* Style */
+    /*background-color: var(--selected);*/
+    /*border: 4px solid var(--selected);*/
+    /*box-shadow: 0px 0px 0px 4px var(--background-page);*/
+}
+
+/* DRIP CHART */
+.drip-tooltip {
+    /* Position */
+    position: absolute;
+    z-index: 9999;
+
+    /* Interactivity */
+    pointer-events: none;
+
+    /* Style */
+    border-radius: 4px;
+    padding: 8px;
+    background-color: var(--background-tooltip);
+    box-shadow: 0px 8px 30px var(--shadow-tooltip);
+
+    font-family: var(--text-title-font);
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: var(--text-title);
+    line-height: 1.2em;
+}
+
+
+/* GLOBE CHART */
+
+.globe-background {
+    fill: var(--country-background);
+}
+
+.country {
+    fill: var(--country-default);
+}
+
+.country-disabled {
+    fill: var(--country-disabled);
+}
+
+.country:hover {
+    fill: var(--hover);
+}
+
+.country:active {
+    fill: var(--selected);
+}
+
+
+/* SCATTER PLOT */
+
+.scatter-background {
+    background-color: var(--background-tooltip);
+}
+
+.scatter-title {
+    font-family: var(--text-title-font);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-title);
+    line-height: 1.2em;
+}
+
+.scatter-note {
+    font-family: var(--text-default-font);
+    font-size: 14px;
+    /*font-weight: bold;*/
+    color: var(--text-title);
+    line-height: 1.2em;
+}
+
+.scatterplot-tooltip {
+    /* Position */
+    position: absolute;
+    z-index: 9999;
+
+    /* Interactions */
+    pointer-events: none;
+
+    /* Style */
+    border-radius: 4px;
+    padding: 8px;
+    background-color: var(--background-tooltip);
+    box-shadow: 0px 8px 30px var(--shadow-tooltip);
+
+    font-family: var(--text-title-font);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-title);
+    line-height: 1.2em;
+}
+
+
+/* POLITICAL PARTIES */
+
+.party-republican {
+    fill: var(--party-republican);
+    color: var(--party-republican);
+}
+
+.party-democrat {
+    fill: var(--party-democrat);
+    color: var(--party-democrat);
+}
+
+.party-other {
+    fill: var(--party-other);
+    color: var(--party-other);
+}
+
+/* ---------------------------------------------- */
+/* Keep these at the bottom of the file so they
+   have the highest priority when applying styles */
+
+/* GENERAL AXIS STYLES */
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: var(--text-title);
+    shape-rendering: crispEdges;
+}
+
+.highlight {
+    fill: var(--highlight);
+    color: var(--highlight);
+    font-weight: bold;
+}
+
+.hovered {
+    fill: var(--hover);
+    color: var(--hover);
+}
+
+.selected {
+    fill: var(--selected);
+    color: var(--selected);
+}
+
+.activated {
+    opacity: 100%;
+}
+
+.deactivated {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
+}
