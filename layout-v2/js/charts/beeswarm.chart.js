@@ -208,6 +208,9 @@ class BeeswarmChart {
       // Update the radius of the hovered dot and push neighbors away
       const hoveredCircle = d3.select(this);
       hoveredCircle
+        .raise()
+        .attr('stroke', '#FFF')
+        .attr('stroke-width', 4)
         .transition()
         .duration(200)
         .attr('r', vis.radius * 6); // Set hovered dot radius
@@ -226,6 +229,7 @@ class BeeswarmChart {
       hoveredCircle
         .transition()
         .duration(200)
+        .attr('stroke-width', 0)
         .attr('r', vis.radius);
     }
   }
