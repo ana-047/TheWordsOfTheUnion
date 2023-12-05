@@ -120,9 +120,10 @@ class RacingBarsChart {
       .call(vis.yAxis);
 
     vis.chart.select('.x-axis')
-
+        .transition()
+        .duration(t)
       .call(vis.xAxis)
-      .attr('color', '#EFEFEF');
+     // .attr('color', '#EFEFEF');
 
     // Add a button to start the animation
     d3.select('#startBars')
@@ -132,12 +133,17 @@ class RacingBarsChart {
       .on('click', () => this.resetAnimation()); // Call startAnimation when the button is clicked
 
     // Create a tooltip div
-    vis.tooltip = d3.select('#presidents').append('div')
-      .attr('class', 'tooltip')
-      .style('opacity', 0)
-      .style('pointer-events', 'none')
+    //vis.tooltip = d3.select('#presidents').append('div')
+   //   .attr('class', 'tooltip')
+   //   .style('opacity', 0)
+   //   .style('pointer-events', 'none')
       // .style('background-color', 'lightgrey')
-      .style('box-shadow', '2px 2px 6px rgba(0,0,0,0.3)');
+   //   .style('box-shadow', '2px 2px 6px rgba(0,0,0,0.3)');
+
+    // Create tooltip skeleton
+    this.tooltip = d3.select('#vis-container').append('div')
+        .attr('class', 'heatmap-tooltip')
+        .style('opacity', 0);
   }
 
   wrangleData() {
@@ -227,26 +233,37 @@ class RacingBarsChart {
         return 'grey';
       })
 
-      .on('mouseover', (event, d) => {
-        vis.tooltip.transition()
-          .duration(200)
-          .style('opacity', 1);
-        vis.tooltip.html(
-          `President: ${d.name}<br/>Average Speech Length: ${d.word_count} words<br/>Party: ${d.party}`,
-        )
-          .style('left', `${event.pageX + 10}px`)
-          .style('top', `${event.pageY - 10}px`);
-      })
-      .on('mousemove', (event) => {
-        vis.tooltip.style('left', `${event.pageX + 10}px`)
-          .style('top', `${event.pageY - 28}px`);
-      })
-      .on('mouseout', () => {
-        vis.tooltip.transition()
-          .duration(500)
-          .style('opacity', 0);
+        .on('mouseover', (event, d) => {
+          // console.log('heatmap tooltip trigger');
+          // Get the client offsets so the tooltip appears over the mouse
+          const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
+
+          let format = d3.format(",");
+
+          // Render the tooltip and update position
+          vis.tooltip
+              .transition()
+              .duration(200)
+              .style('opacity', 0.9)
+              .style('left', `${offsetX + 10}px`)
+              .style('top', `${offsetY - 20}px`);
+
+          // Update tooltip contents
+          vis.tooltip
+              .html(`
+                <span class="pres-name">President: ${d.name}</span> 
+            <br><span class="pres-name">Average word count: ${format(Math.round(d.word_count))}</span>
+            `);
+
       })
 
+        .on('mouseout', () => {
+          // Hide tooltip
+          vis.tooltip.transition()
+              .duration(500)
+              .style('opacity', 0);
+
+        })
       .transition()
       .duration(1000)
       .ease(d3.easeLinear)
@@ -358,7 +375,7 @@ class RacingBarsChart {
 
     vis.chart.selectAll('.vertical-line').remove();
 
-    vis.chart.select('.x-axis').attr('color', '#EFEFEF');
+    //vis.chart.select('.x-axis').attr('color', '#EFEFEF');
   }
 
   activate() {

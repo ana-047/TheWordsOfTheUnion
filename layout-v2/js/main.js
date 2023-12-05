@@ -49,6 +49,12 @@ const chartConfigs = [
     visId: 'vis-focus-primary',
   },
   {
+    step: 5,
+    chartGenerator: (container, data) => new LineChart(container, data),
+    dataPath: 'data/policy_agg2.csv',
+    visId: 'vis-brush',
+  },
+  {
     step: 6,
     chartGenerator: (container, data) => new BeeswarmChart(container, data),
     dataPath: 'data/sotu-all-themes-and-sentiment.json',
