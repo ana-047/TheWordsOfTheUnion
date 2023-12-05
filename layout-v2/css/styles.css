@@ -494,8 +494,9 @@ body {
 }
 
 .deactivated {
-    opacity: 0;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .hidden {
