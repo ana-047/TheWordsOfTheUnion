@@ -36,7 +36,7 @@ class BeeswarmChart {
 
     // Declare local chart margins
     this.margin = {
-      top: 20, right: 128, bottom: 40, left: 60,
+      top: 40, right: 128, bottom: 10, left: 60,
     };
 
     // Declare dimensions for local chart
@@ -236,20 +236,29 @@ class BeeswarmChart {
 
   renderAxes() {
     const vis = this;
+    // Render axes
 
-    // Define axes
-    vis.xAxis = d3.axisBottom().scale(vis.xScale)
+    // X axis on bottom edge
+    // vis.xAxis = d3.axisBottom().scale(vis.xScale)
+    //   .tickFormat(d3.format('d'));
+    // vis.chart.append('g')
+    //   .attr('class', 'x-axis')
+    //   .attr('transform', `translate(0, ${vis.height + vis.margin.bottom / 2})`)
+    //   .call(vis.xAxis);
+
+    // X axis on top edge
+    vis.xAxis = d3.axisTop().scale(vis.xScale)
       .tickFormat(d3.format('d'));
+    vis.chart.append('g')
+      .attr('class', 'x-axis')
+      // .attr('transform', `translate(0, ${vis.height + vis.margin.bottom / 2})`)
+      .attr('transform', `translate(0, ${vis.margin.top * -0.5})`)
+      .call(vis.xAxis);
+
+    // Y axis
     vis.yAxis = d3.axisLeft().scale(vis.yScale)
       .tickValues([-1, 0, 1]) // Set specific tick values
       .tickFormat((d) => (d === 0 ? '0' : d > 0 ? '+1' : '-1')); // Label format for sentiment scores;
-
-    // Render axes
-    vis.chart.append('g')
-      .attr('class', 'x-axis')
-      .attr('transform', `translate(0, ${vis.height + vis.margin.bottom / 2})`)
-      .call(vis.xAxis);
-
     vis.chart.append('g')
       .attr('class', 'y-axis')
       .attr('transform', `translate(${-vis.margin.left / 2}, 0)`)

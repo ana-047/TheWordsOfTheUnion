@@ -52,6 +52,10 @@ class DripBarChart {
       .range([0, this.width])
       .padding(0.1);
 
+    this.yearScale = d3.scaleLinear()
+      .domain([1790, 2021])
+      .range([0, this.width]);
+
     this.yScale = d3.scaleLinear()
       .range([this.height, 0]);
 
@@ -60,7 +64,7 @@ class DripBarChart {
       .attr('transform', `translate(0,${this.height + this.margin.bottom * 0.02})`);
 
     this.yAxis = this.chart.append('g')
-      .attr('transform', `translate(${-0.05 * this.margin.left}, 0)`);
+      .attr('transform', `translate(${-0.5 * this.margin.left}, 0)`);
 
     // Create tooltip skeleton
     this.tooltip = d3.select('#vis-container').append('div')
@@ -180,10 +184,20 @@ class DripBarChart {
 
     // Call the axes to show them
     // this.initXAxis();
+    this.initYearAxis();
     this.yAxis.transition().duration(500)
       .call(d3.axisLeft(this.yScale));
   }
 
+  initYearAxis() {
+    // Init time scale axis
+    this.yearAxis = d3.axisBottom().scale(this.yearScale)
+      .tickFormat(d3.format('d'));
+    this.chart.append('g')
+      .attr('class', 'axis year-axis')
+      .attr('transform', `translate(0, ${this.height + 2})`)
+      .call(this.yearAxis);
+  }
   initXAxis() {
     // Initialize variable to keep track of the presidents' names
     const prevName = null;
