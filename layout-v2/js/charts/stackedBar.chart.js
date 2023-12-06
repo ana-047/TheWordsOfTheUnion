@@ -24,7 +24,7 @@ class StackedBarChart {
 
     // Declare local chart margins
     this.margin = {
-      top: 10, right: 180, bottom: 50, left: 120,
+      top: 10, right: 200, bottom: 50, left: 120,
     };
 
     // Declare dimensions for local chart
@@ -91,7 +91,7 @@ class StackedBarChart {
       .enter()
       .append('rect')
       .attr('class', 'myLegend2')
-      .attr('x', vis.width + vis.margin.right - 170)
+      .attr('x', vis.width + 10)
       .attr('y', (d, i) => 10 + i * (size + 5))
       .attr('width', size)
       .attr('height', size)
@@ -99,16 +99,80 @@ class StackedBarChart {
 
     vis.chart.append('g')
       .attr('class', 'legend')
-      .selectAll('mylabels2')
+      .selectAll('.mylabels2')
       .data(vis.keys)
       .enter()
-      .append('text')
-      .attr('x', vis.width + vis.margin.right - 170 + size * 1.2)
-      .attr('y', (d, i) => 10 + i * (size + 5) + (size / 2))
-      .style('fill', 'black')
-      .text((d) => d)
-      .attr('text-anchor', 'left')
-      .style('alignment-baseline', 'middle');
+        .append('g') // Create a group for each legend item
+        .attr('class', 'mylabels2 legend-item selected')
+        .attr('transform', (d, i) => `translate(${vis.width +10 + size * 1.2},${10 + i * (size + 5)})`)
+        .each(function (d) {
+          // Append rectangle to the group
+          d3.select(this)
+              .append('rect')
+              .attr('class', 'theme-label-background')
+              .attr('width', 160)
+              .attr('height', size)
+              .attr('rx', 4)
+              .attr('ry', 4);
+
+          // Append text to the group
+          d3.select(this)
+              .append('text')
+              .attr('class', 'label')
+              .attr('x', 3) // Adjust as needed for text position
+              .attr('y', size * 0.7) // Adjust as needed for text position
+              .text(d)
+              .attr('text-anchor', 'left')
+              .style('alignment-baseline', 'middle');
+        });
+
+
+    vis.chart.selectAll('.mylabels2')
+        .on('click', function (event, d) {
+          // Check how many labels are selected
+          const labels = vis.chart.selectAll('.mylabels2.selected');
+          const counter = Object.values(labels)[0][0].length;
+
+          //console.log('counter is ', counter);
+
+          if (vis.selectedTheme === d && counter === 1) {
+            // Update the selection property and trigger global update
+            vis.selectedTheme = null;
+            globalThemeSelection = vis.selectedTheme;
+
+            // Turn off the filter
+            // Select all items
+            vis.chart.selectAll('.mylabels2').classed('selected', true);
+
+            // re-load data
+            StackedBarChart.wrangleData();
+
+          } else {
+            // Update the selection property and trigger global update
+            vis.selectedTheme = d;
+            globalThemeSelection = vis.selectedTheme;
+            triggerThemeChange();
+
+            // Deselect all items
+            vis.chart.selectAll('.mylabels2').classed('selected', false);
+
+            // Toggle class for selected appearance
+            d3.select(this).classed('selected', true);
+
+            // Toggle visibility of data points based on the selected theme
+            vis.toggleDataVisibility(vis.selectedTheme, true);
+          }
+        });
+
+
+     // .append('text')
+     //   .attr('class', 'mylabels2')
+     // .attr('x', vis.width + vis.margin.right - 170 + size * 1.2)
+     // .attr('y', (d, i) => 10 + i * (size + 5) + (size / 2))
+     // .style('fill', 'black')
+     // .text((d) => d)
+    //  .attr('text-anchor', 'left')
+     // .style('alignment-baseline', 'middle');
 
     this.wrangleData();
   }

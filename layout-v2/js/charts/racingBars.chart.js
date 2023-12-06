@@ -102,7 +102,7 @@ class RacingBarsChart {
     const t = 800;
 
     vis.x.domain([0, 20000]);
-    vis.y.domain(vis.displayData.map((d) => d.name).sort());
+    vis.y.domain(vis.displayData.map((d) => d.name)) //.sort())
 
     // console.log(vis.displayData.map(d => d.name))
 

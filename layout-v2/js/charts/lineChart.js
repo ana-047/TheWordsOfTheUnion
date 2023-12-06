@@ -24,7 +24,7 @@ class LineChart {
 
         // Declare local chart margins
         vis.margin = {
-            top: 10, right: 180, bottom: 60, left: 120,
+            top: 10, right: 200, bottom: 60, left: 120,
         };
 
         // Declare dimensions for local chart
