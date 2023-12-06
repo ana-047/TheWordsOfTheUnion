@@ -510,7 +510,7 @@ body {
 
 .shown {
     overflow: hidden;
-    min-height: 200px !important;
+    min-height: var(--vis-brush-height) !important;
     max-height: 800px !important;
     opacity: 1;
     transition: max-height 0.5s ease, opacity 0.5s ease;

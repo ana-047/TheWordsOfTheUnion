@@ -156,6 +156,10 @@ class Display {
           containerElement.classed('hidden', false);
           containerElement.classed('shown', true);
           containerElement.classed('deactivated', false);
+
+          setTimeout(() => {
+            containerElement.classed('shown', false);
+          }, 500);
         }
       };
 
