@@ -84,7 +84,7 @@ body {
     background-color: var(--background-section);
     border-radius: 8px;
     /*border: solid 1px var(--border-section);*/
-    box-shadow: 0px 8px 30px var(--shadow-section);
+    box-shadow: 0 8px 30px var(--shadow-section);
     padding: 20px 16px;
 
     font-family: var(--text-default-font);
@@ -226,7 +226,7 @@ body {
     border-radius: 4px;
     padding: 8px;
     background-color: var(--background-tooltip);
-    box-shadow: 0px 8px 30px var(--shadow-tooltip);
+    box-shadow: 0 8px 30px var(--shadow-tooltip);
 
     font-family: var(--text-title-font);
     font-size: 16px;
@@ -319,7 +319,7 @@ body {
     border-radius: 4px;
     padding: 8px;
     background-color: var(--background-tooltip);
-    box-shadow: 0px 8px 30px var(--shadow-tooltip);
+    box-shadow: 0 8px 30px var(--shadow-tooltip);
 
     font-family: var(--text-title-font);
     font-size: 14px;
@@ -364,7 +364,7 @@ body {
     border-radius: 4px;
     padding: 8px;
     background-color: var(--background-tooltip);
-    box-shadow: 0px 8px 30px var(--shadow-tooltip);
+    box-shadow: 0 8px 30px var(--shadow-tooltip);
 
     font-family: var(--text-title-font);
     font-size: 14px;
@@ -432,7 +432,7 @@ body {
     border-radius: 4px;
     padding: 8px;
     background-color: var(--background-tooltip);
-    box-shadow: 0px 8px 30px var(--shadow-tooltip);
+    box-shadow: 0 8px 30px var(--shadow-tooltip);
 
     font-family: var(--text-title-font);
     font-size: 16px;
@@ -500,5 +500,18 @@ body {
 }
 
 .hidden {
-    display: none;
+    overflow: hidden;
+    /*height: 0 !important;*/
+    min-height: 0 !important;
+    max-height: 0 !important;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.shown {
+    overflow: hidden;
+    min-height: 200px !important;
+    max-height: 800px !important;
+    opacity: 1;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
 }

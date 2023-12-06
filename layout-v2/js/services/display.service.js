@@ -1,3 +1,4 @@
+/* eslint-disable max-len,no-param-reassign,class-methods-use-this */
 // display.service.js
 // Display class
 class Display {
@@ -142,50 +143,30 @@ class Display {
         .style('opacity', (d, i) => (i === globalSectionIndex ? 1 : 0.3));
 
       // DIV CONTAINERS
-      // Update brush div visibility for current section
-      const plotsInBrush = container.plots.filter((plot) => plot.step
-        === globalSectionIndex
-        && plot.visId === 'vis-brush');
+      // Arrow function updates visibility for each div container
+      // Needs to be arrow function to retain access to the 'this' ('container') context
+      const toggleVisibility = (containerElement, plots, visId) => {
+        const plotsInContainer = plots.filter((p) => p.step === globalSectionIndex && p.visId === visId);
 
-      if (plotsInBrush.length === 0) {
-        // If no plots are found for the current globalSectionIndex
-        // in the 'vis-brush' div, add the 'hidden' class
-        container.brush.classed('hidden', true);
-      } else {
-        // If there are plots for the current globalSectionIndex
-        // in the 'vis-brush' div, remove the 'hidden' class
-        container.brush.classed('hidden', false);
-      }
+        if (plotsInContainer.length === 0) {
+          containerElement.classed('deactivated', true);
+          containerElement.classed('shown', false);
+          containerElement.classed('hidden', true);
+        } else {
+          containerElement.classed('hidden', false);
+          containerElement.classed('shown', true);
+          containerElement.classed('deactivated', false);
+        }
+      };
+
+      // Update brush div visibility for current section
+      toggleVisibility(container.brush, container.plots, 'vis-brush');
 
       // Update focus primary (short) vis div visibility for current section
-      const plotsInPrimary = container.plots.filter((plot) => plot.step
-        === globalSectionIndex
-        && plot.visId === 'vis-focus-primary');
-
-      if (plotsInPrimary.length === 0) {
-        // If no plots are found for the current globalSectionIndex
-        // in the 'vis-focus-primary' div, add the 'hidden' class
-        container.chartPrimary.classed('hidden', true);
-      } else {
-        // If there are plots for the current globalSectionIndex
-        // in the 'vis-focus-primary' div, remove the 'hidden' class
-        container.chartPrimary.classed('hidden', false);
-      }
+      toggleVisibility(container.chartPrimary, container.plots, 'vis-focus-primary');
 
       // Update focus secondary (tall) vis div visibility for current section
-      const plotsInSecondary = container.plots.filter((plot) => plot.step
-        === globalSectionIndex
-        && plot.visId === 'vis-focus-secondary');
-
-      if (plotsInSecondary.length === 0) {
-        // If no plots are found for the current globalSectionIndex
-        // in the 'vis-focus-primary' div, add the 'hidden' class
-        container.chartSecondary.classed('hidden', true);
-      } else {
-        // If there are plots for the current globalSectionIndex
-        // in the 'vis-focus-primary' div, remove the 'hidden' class
-        container.chartSecondary.classed('hidden', false);
-      }
+      toggleVisibility(container.chartSecondary, container.plots, 'vis-focus-secondary');
 
       // CHARTS
       // Update plots visibility based on globalSectionIndex
