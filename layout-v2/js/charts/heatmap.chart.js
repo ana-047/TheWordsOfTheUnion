@@ -29,6 +29,10 @@ class HeatmapChart {
     this.width = containerWidth - this.margin.left - this.margin.right;
     this.height = localHeight - this.margin.top - this.margin.bottom;
 
+    // Set up rectangle heatmap matrix inner padding
+    const paddingMultiplier = 0.025; // Should be between 0 and 0.9 (1 would mean no rectangles show up)
+    this.rectPadding = paddingMultiplier * (this.width / this.data.length);
+
     // Create a chart group that will hold the actual chart
     // (The parent SVG will hold multiple chart groups and display them as needed)
     this.chart = this.svg.append('g')
@@ -80,8 +84,12 @@ class HeatmapChart {
       .attr('class', 'cell')
       .attr('x', (d) => vis.xScale(years[d.col]))
       .attr('y', (d) => vis.yScale(years[d.row]))
-      .attr('width', vis.xScale.bandwidth())
-      .attr('height', vis.yScale.bandwidth())
+      // .attr('x', (d) => vis.xScale(years[d.col]) + (this.rectPadding / 100) * d.col) // Adjust x position for padding
+      // .attr('y', (d) => vis.yScale(years[d.row]) + (this.rectPadding / 100) * d.row) // Adjust y position for padding
+      .attr('width', vis.xScale.bandwidth() - (this.rectPadding)) // Reduce width to offset for the padding
+      .attr('height', vis.yScale.bandwidth() - (this.rectPadding)) // Reduce height to offset for the padding
+      .attr('rx', 2) // Set border radius for x-axis
+      .attr('ry', 2) // Set border radius for y-axis
       .style('fill', (d) => vis.colorScale(d.value))
       .on('mouseover', (event, d) => {
         // console.log('heatmap tooltip trigger');
