@@ -93,6 +93,10 @@ body {
     color: var(--text-default);
 }
 
+.intermediate-step {
+    margin-bottom: 100px;
+}
+
 .title {
     padding-top: 10px;
     font-family: var(--text-title-font);
