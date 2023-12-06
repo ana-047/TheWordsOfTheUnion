@@ -1,0 +1,44 @@
+year,name,party,minutes_avg_pres,minutes_avg,hours_total
+2021,Joseph R Biden,Democratic,55,51.4,201
+2017,Donald J Trump,Republican,37,51.4,201
+2009,Barack Obama,Democratic,45,51.4,201
+2001,George W Bush,Republican,34,51.4,201
+1993,William J Clinton,Democratic,50,51.4,201
+1989,George Bush,Republican,29,51.4,201
+1982,Ronald Reagan,Republican,30,51.4,201
+1978,Jimmy Carter,Democratic,75,51.4,201
+1975,Gerald R Ford,Republican,30,51.4,201
+1970,Richard Nixon,Republican,26,51.4,201
+1964,Lyndon B Johnson,Democratic,32,51.4,201
+1961,John F Kennedy,Democratic,38,51.4,201
+1953,Dwight D Eisenhower,Republican,40,51.4,201
+1946,Harry S Truman,Democratic,55,51.4,201
+1934,Franklin D Roosevelt,Democratic,26,51.4,201
+1929,Herbert Hoover,Republican,37,51.4,201
+1923,Calvin Coolidge,Republican,58,51.4,201
+1921,Warren G Harding,Republican,38,51.4,201
+1913,Woodrow Wilson,Democratic,29,51.4,201
+1909,William H Taft,Republican,116,51.4,201
+1901,Theodore Roosevelt,Republican,131,51.4,201
+1897,William Mc Kinley,Republican,111,51.4,201
+1889,Benjamin Harrison,Republican,91,51.4,201
+1885,Grover Cleveland,Democratic,89,51.4,201
+1881,Chester A Arthur,Republican,31,51.4,201
+1877,Rutherford B Hayes,Republican,57,51.4,201
+1869,Ulysses S Grant,Republican,54,51.4,201
+1865,Andrew Johnson,National Union,64,51.4,201
+1861,Abraham Lincoln,Republican,46,51.4,201
+1857,James Buchanan,Democratic,94,51.4,201
+1853,Franklin Pierce,Democratic,70,51.4,201
+1850,Millard Fillmore,Whig,70,51.4,201
+1849,Zachary Taylor,Whig,51,51.4,201
+1845,James Polk,Democratic,120,51.4,201
+1841,John Tyler,Whig & Democratic,57,51.4,201
+1837,Martin Van Buren,Democratic,76,51.4,201
+1829,Andrew Jackson,Democratic,71,51.4,201
+1825,John Quincy Adams,Democratic-Republican,52,51.4,201
+1817,James Monroe,Democratic-Republican,35,51.4,201
+1809,James Madison,Democratic-Republican,18,51.4,201
+1801,Thomas Jefferson,Democratic-Republican,17,51.4,201
+1797,John Adams,Federalist,12,51.4,201
+1790,George Washington,none,15,51.4,201

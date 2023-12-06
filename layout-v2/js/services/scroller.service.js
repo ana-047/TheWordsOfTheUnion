@@ -72,6 +72,11 @@ class Scroller {
     const progress = (pos - prevTop) / (this.sectionPositions[sectionIndex] - prevTop);
     this.dispatch.call('progress', this, this.currentIndex, progress);
 
+    // Update global section position variable and trigger change detection
+    globalSectionPosition = progress;
+    triggerSectionPositionChange();
+    // console.log('global section position is:', globalSectionPosition);
+
     // Update global section index variable and trigger change detection
     globalSectionIndex = sectionIndex;
     triggerSectionChange();

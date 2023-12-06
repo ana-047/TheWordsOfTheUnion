@@ -8,6 +8,15 @@ function triggerSectionChange() {
   document.dispatchEvent(event);
 }
 
+// Declare global section position vars (percent scroll completion within a section)
+let globalSectionPosition;
+
+// Set up global scroll event handling within a section
+function triggerSectionPositionChange() {
+  const event = new CustomEvent('positionChange', { detail: globalSectionPosition });
+  document.dispatchEvent(event);
+}
+
 // Declare global max vis height based on window
 let globalWindowHeight;
 

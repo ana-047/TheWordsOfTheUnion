@@ -200,6 +200,14 @@ body {
 }
 
 
+/* SPEECH LENGTH TRANSITION */
+.big-stat {
+    font-size: 100px;
+    font-family: var(--text-title-font);
+    fill: var(--text-default)
+}
+
+
 /* HEATMAP */
 
 .cell:hover {

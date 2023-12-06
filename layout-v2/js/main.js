@@ -32,8 +32,8 @@ const chartConfigs = [
   },
   {
     step: 3,
-    chartGenerator: (container, data) => new BarChart(container, data),
-    dataPath: 'data/sotu-all-themes-and-sentiment.json',
+    chartGenerator: (container, data) => new SplitBarChart(container, data),
+    dataPath: 'data/sotu-speech-delivery-minutes.csv',
     visId: 'vis-focus-secondary',
   },
   {

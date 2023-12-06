@@ -179,7 +179,7 @@ class DripBarChart {
       .attr('class', (d) => `bar-segment ${d.t}`); // Assign CSS class based on 't'
 
     // Call the axes to show them
-    this.initXAxis();
+    // this.initXAxis();
     this.yAxis.transition().duration(500)
       .call(d3.axisLeft(this.yScale));
   }
