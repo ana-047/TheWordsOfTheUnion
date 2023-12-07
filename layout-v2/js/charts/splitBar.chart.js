@@ -84,8 +84,6 @@ class SplitBarChart {
       .attr('class', 'bar-group')
       .attr('transform', (d) => `translate(0,${this.yScale(d.name)})`);
 
-    const rectColor = 'steelblue'; // Constant color of rectangles
-
     group.selectAll('rect')
       .data((d) =>
         // Create an array of objects including 'party' and 'index' attributes
@@ -124,9 +122,6 @@ class SplitBarChart {
       .attr('transform', `translate(${0}, ${0})`)
       .attr('opacity', 0);
 
-    const rectWidth = this.width * 0.4;
-    const rectHeight = this.yScale.bandwidth() * 10;
-
     this.stat.append('rect')
       .attr('x', 0)
       .attr('y', 0)
@@ -145,8 +140,9 @@ class SplitBarChart {
 
   update() {
     // console.log('updating bars');
-    const group = this.chart.selectAll('.bar-group');
 
+    // Transition the bar chart
+    const group = this.chart.selectAll('.bar-group');
     const rects = group.selectAll('rect');
     rects
       .transition()
@@ -161,6 +157,7 @@ class SplitBarChart {
         .attr('opacity', ((0 - this.progress) + 1));
     }
 
+    // Transition the stat box
     this.stat.transition()
       .duration(5)
       .attr('opacity', this.progress * 1.1);
@@ -169,8 +166,16 @@ class SplitBarChart {
       .transition()
       .duration(5)
       // .attr('width', this.progress * this.width * 2)
-      .attr('height', this.progress * (this.height * 0.6));
+      .attr('height', normalizeTo(this.progress, 0, 0.8) * (this.height * 0.6)); //Make the animation complete at 80% progress
 
+    console.log('normalized range', normalizeTo(this.progress, 0, 0.8));
+    // Function to animate the text value
+    this.stat.select('text').transition().text((d) => {
+      const interpolatedValue = Math.round(normalizeTo(this.progress, 0, 0.8) * d); //Make the animation complete at 80% progress
+      return `${interpolatedValue} hours!`;
+    });
+
+    // Transition the y axis
     this.yAxis.attr('opacity', ((0 - this.progress) + 1));
   }
 
