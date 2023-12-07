@@ -481,7 +481,7 @@ class BeeswarmChart {
     // Hide all data points
     vis.chart.selectAll('circle')
       .transition()
-      .duration(500)
+      .duration(800)
       .style('opacity', 0) // Fade-out
       .style('display', 'none');
 
@@ -489,7 +489,7 @@ class BeeswarmChart {
     vis.chart.selectAll('circle')
       .filter((d) => d.t === vis.selectedTheme.toLowerCase())
       .transition()
-      .duration(500)
+      .duration(800)
       .style('opacity', 1) // Fade-in
       .style('display', 'initial');
   }

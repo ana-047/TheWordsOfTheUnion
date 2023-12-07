@@ -184,7 +184,7 @@ class DripBarChart {
           .style('opacity', 0);
       })
       .transition()
-      .duration(400)
+      .duration(1200)
       .attr('y', (d) => this.yScale(d.value))
       .attr('height', (d) => this.height - this.yScale(d.value))
       .attr('class', (d) => `bar-segment ${d.t}`); // Assign CSS class based on 't'
