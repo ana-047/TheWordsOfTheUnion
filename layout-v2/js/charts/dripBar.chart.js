@@ -1,3 +1,5 @@
+// TODO Fix tooltip text
+
 class DripBarChart {
   constructor(svgContainer, data) {
     this.svg = svgContainer;
@@ -13,11 +15,16 @@ class DripBarChart {
     // Listen for the countryChange event and update the chart accordingly
     document.addEventListener('themeChange', () => {
       if (globalThemeSelection) {
-        this.selectedTheme = globalThemeSelection.toLowerCase();
+        // Make sure chart resets after the previous stacked bar vis
+        if (globalSectionIndex <7) {
+          this.selectedTheme = null;
+        } else {
+          this.selectedTheme = globalThemeSelection.toLowerCase();
+        }
       } else {
         this.selectedTheme = null;
       }
-      console.log('event theme change', this.selectedTheme);
+      // console.log('dripBar detected event theme change', this.selectedTheme);
       this.update();
     });
 
@@ -200,7 +207,7 @@ class DripBarChart {
   }
   initXAxis() {
     // Initialize variable to keep track of the presidents' names
-    const prevName = null;
+    // const prevName = null;
 
     // Update xScale domain using the names in the data
     this.xScale

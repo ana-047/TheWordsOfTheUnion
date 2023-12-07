@@ -80,7 +80,7 @@ class Scroller {
     // Update global section index variable and trigger change detection
     globalSectionIndex = sectionIndex;
     triggerSectionChange();
-    console.log('global index is:', globalSectionIndex);
+    // console.log('global index is:', globalSectionIndex);
   }
 
   setContainer(value) {

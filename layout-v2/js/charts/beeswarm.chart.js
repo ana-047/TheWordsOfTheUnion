@@ -1,12 +1,12 @@
 // DONE Fix centerline
 // DONE fix tooltips
 // DONE change legend filter to toggle
-// TODO add global var for legend toggle
+// DONE add global var for legend toggle
 // NO put legend horizontally on top?
 // NO add sentence text for tooltip?
-// TODO add presidents along x axis
-
-// TODO change stacked bar to vertical stacks and align with president
+// TODO add presidents along x axis?
+// DONE add section triggers for filter change w/ UI toggle updating
+// DONE change stacked bar to vertical stacks and align with president
 
 class BeeswarmChart {
   constructor(svgContainer, data) {
@@ -18,12 +18,27 @@ class BeeswarmChart {
     this.sampleProportion = 0.2;
     this.radius = 2.2;
 
+    // Prep for section changes
+    this.localSectionIndex = null;
+
     // Render the chart
     this.init();
     this.render();
   }
 
   init() {
+    // Listen for the sectionChange event and update the chart accordingly to highlight specific themes
+    document.addEventListener('sectionChange', () => {
+      if ([7, 8, 9].includes(globalSectionIndex)) {
+        // console.log('beeswarm caught event, section is ', globalSectionIndex);
+        this.toggleLegendSelectors();
+      }
+      else {
+        // console.log('beeswarm caught else event, section is ', globalSectionIndex);
+      }
+      // this.update();
+    });
+
     // Get the bounding box of the SVG element
     this.svgBoundingBox = this.svg.node().getBoundingClientRect();
 
@@ -179,7 +194,7 @@ class BeeswarmChart {
       } else if (s > -1.1) {
         sentimentRank = 'very negative';
       } else {
-        console.log(s);
+        // console.log(s);
         sentimentRank = 'undetermined';
       }
 
@@ -303,7 +318,7 @@ class BeeswarmChart {
       .data(vis.themeCategories)
       .enter()
       .append('g') // Create a group for each legend item
-      .attr('class', 'theme-label legend-item selected')
+      .attr('class', (d) => `theme-label legend-item legend-item-${d.toLowerCase()} selected`)
       .attr('transform', (d, i) => `translate(${vis.width + 10 + size * 1.2},${10 + i * (size + 5)})`)
       .each(function (d) {
         // Append rectangle to the group
@@ -347,8 +362,6 @@ class BeeswarmChart {
         const labels = vis.chart.selectAll('.theme-label.selected');
         const counter = Object.values(labels)[0][0].length;
 
-        console.log('counter is ', counter);
-
         if (vis.selectedTheme === d && counter === 1) {
           // Update the selection property and trigger global update
           vis.selectedTheme = null;
@@ -383,6 +396,79 @@ class BeeswarmChart {
       });
   }
 
+  // Method for programmatically changing selection based on global section change
+  toggleLegendSelectors() {
+    const vis = this;
+
+    // Check how many labels are selected
+    const labels = vis.chart.selectAll('.theme-label.selected');
+
+    // Override potential user selection based on section index
+    if (globalSectionIndex === 7) {
+      // Avoid repeatedly triggering animation changes
+      if (this.localSectionIndex !== 7) {
+        // Update the selection property and trigger global update
+        vis.selectedTheme = null;
+        globalThemeSelection = vis.selectedTheme;
+        triggerThemeChange();
+
+        // Turn off the filter
+        // Select all items
+        vis.chart.selectAll('.theme-label').classed('selected', true);
+
+        // Reset visibility of data points based on the selected theme
+        vis.chart.selectAll('circle')
+          .transition()
+          .duration(500)
+          .style('opacity', 1) // Fade-in
+          .style('display', 'initial');
+
+        // Update local section index
+        this.localSectionIndex = 7;
+      }
+    } else if (globalSectionIndex === 8) {
+      // Avoid repeatedly triggering animation changes
+      if (this.localSectionIndex !== 8) {
+        // Update the selection property and trigger global update
+        vis.selectedTheme = 'crime';
+        globalThemeSelection = vis.selectedTheme.toLowerCase();
+        triggerThemeChange();
+
+        // Deselect all items
+        vis.chart.selectAll('.theme-label').classed('selected', false);
+
+        // Toggle corresponding class for selected appearance
+        vis.chart.select(`.legend-item-${vis.selectedTheme.toLowerCase()}`).classed('selected', true);
+
+        // Toggle visibility of data points based on the selected theme
+        vis.toggleDataVisibility(vis.selectedTheme, true);
+
+        // Update local section index
+        this.localSectionIndex = 8;
+      }
+    } else if (globalSectionIndex === 9) {
+      // Avoid repeatedly triggering animation changes
+      if (this.localSectionIndex !== 9) {
+        // Update the selection property and trigger global update
+        vis.selectedTheme = 'war';
+        globalThemeSelection = vis.selectedTheme.toLowerCase();
+        triggerThemeChange();
+
+        // Deselect all items
+        vis.chart.selectAll('.theme-label').classed('selected', false);
+
+        // Toggle corresponding class for selected appearance
+        vis.chart.select(`.legend-item-${vis.selectedTheme.toLowerCase()}`).classed('selected', true);
+
+        // Toggle visibility of data points based on the selected theme
+        vis.toggleDataVisibility(vis.selectedTheme, true);
+
+        // Update local section index
+        this.localSectionIndex = 9;
+      }
+    }
+  }
+
   toggleDataVisibility(selectedTheme, show) {
     const vis = this;
     // console.log('Toggling visibility for theme:', vis.selectedTheme);
@@ -412,10 +498,12 @@ class BeeswarmChart {
     // Method allows Display class to show this chart
     this.chart.classed('deactivated', false);
     // this.chart.classed('activated', true);
+    this.chart.raise()
   }
 
   deactivate() {
     // Method allows Display class to hide this chart
+    this.chart.lower();
     // this.chart.classed('activated', false);
     this.chart.classed('deactivated', true);
   }

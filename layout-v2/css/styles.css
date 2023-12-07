@@ -504,11 +504,12 @@ body {
 
 .selected {
     fill: var(--selected);
-    color: var(--selected);
+    color: var(--selected)
 }
 
 .activated {
     opacity: 100%;
+    z-index: 999;
 }
 
 .deactivated {

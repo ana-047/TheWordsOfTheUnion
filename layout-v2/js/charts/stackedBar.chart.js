@@ -145,7 +145,7 @@ class StackedBarChart {
             vis.chart.selectAll('.mylabels2').classed('selected', true);
 
             // re-load data
-            StackedBarChart.wrangleData();
+            vis.wrangleData();
 
           } else {
             // Update the selection property and trigger global update
@@ -160,7 +160,7 @@ class StackedBarChart {
             d3.select(this).classed('selected', true);
 
             // Toggle visibility of data points based on the selected theme
-            vis.toggleDataVisibility(vis.selectedTheme, true);
+            // vis.toggleDataVisibility(vis.selectedTheme, true);
           }
         });
 

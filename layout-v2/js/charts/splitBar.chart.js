@@ -193,7 +193,7 @@ class SplitBarChart {
       // .attr('width', this.progress * this.width * 2)
       .attr('height', normalizeTo(this.progress, 0, 0.8) * (this.height * 0.6)); //Make the animation complete at 80% progress
 
-    console.log('normalized range', normalizeTo(this.progress, 0, 0.8));
+    // console.log('normalized range', normalizeTo(this.progress, 0, 0.8));
     // Function to animate the text value
     this.stat.select('text').transition().text((d) => {
       const interpolatedValue = Math.round(normalizeTo(this.progress, 0, 0.8) * d); //Make the animation complete at 80% progress
