@@ -6,6 +6,7 @@ class DripBarChart {
     this.data = data;
     this.filteredData = null;
     this.selectedTheme = null;
+    this.selectedYear = null;
 
     this.init();
     this.update();
@@ -25,6 +26,21 @@ class DripBarChart {
         this.selectedTheme = null;
       }
       // console.log('dripBar detected event theme change', this.selectedTheme);
+      this.update();
+    });
+
+    // Listen for the sectionChange event and update the chart accordingly to highlight specific years
+    document.addEventListener('sectionChange', () => {
+      if ([8].includes(globalSectionIndex)) {
+        // Highlight 1906
+        this.selectedYear = 1906;
+      } else if ([9].includes(globalSectionIndex)) {
+        // Highlight 1897
+        this.selectedYear = 1897;
+      } else {
+        // Deactivate highlights
+        this.selectedYear = null;
+      }
       this.update();
     });
 
@@ -158,19 +174,16 @@ class DripBarChart {
       .merge(allBars)
       .attr('y', this.height)
       .attr('height', 0)
+      .attr('data-year', (d) => d.year)
       .on('mouseover', function (event, d) {
-        // console.log('drip tt', d);
-
+        // Show tooltip on mouseover
         // Get the client offsets so the tooltip appears over the mouse
         const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
-
-        // Show tooltip on mouseover
         const { year, name, t, value} = d;
-        // const tooltipText = `Year: ${year}, President: ${name}, Theme: ${t}, Count: ${value}`;
 
+        // Highlight hovered item
         d3.select(this)
           .classed('selected', true);
-        // .attr('opacity', 0.7); // Highlight the bar segment on hover
 
         vis.tooltip
           .transition()
@@ -190,7 +203,6 @@ class DripBarChart {
         // Hide tooltip on mouseout
         d3.select(this)
           .classed('selected', false);
-        // .attr('opacity', 1); // Restore the bar segment to its original state
 
         vis.tooltip
           .transition()
@@ -201,7 +213,15 @@ class DripBarChart {
       .duration(1200)
       .attr('y', (d) => this.yScale(d.value))
       .attr('height', (d) => this.height - this.yScale(d.value))
-      .attr('class', (d) => `bar-segment ${d.t}`); // Assign CSS class based on 't'
+      .attr('class', (d) => {
+        let highlightState;
+        if(this.selectedYear === d.year) {
+          highlightState = 'selected';
+        } else {
+          highlightState = '';
+        }
+        return `bar-segment ${d.t} ${highlightState}`
+      }); // Assign CSS class based on 't' and highlighted year
 
     // Call the axes to show them
     // this.initXAxis();
@@ -220,9 +240,6 @@ class DripBarChart {
       .call(this.yearAxis);
   }
   initXAxis() {
-    // Initialize variable to keep track of the presidents' names
-    // const prevName = null;
-
     // Update xScale domain using the names in the data
     this.xScale
       .domain(this.filteredData.map((d) => d.name)) // Use 'name' property for x-axis
@@ -237,9 +254,9 @@ class DripBarChart {
           }
           return null; // Return null for ticks where 'name' doesn't change
         }))
-        .tickPadding(10) // Padding between ticks and labels
-        .tickSize(5) // Size of the ticks
-        .tickSizeOuter(5) // Hide outer ticks
+        .tickPadding(10)
+        .tickSize(5)
+        .tickSizeOuter(5)
         .tickFormat((d) => d), // Format ticks to display 'name'
     )
       .selectAll('text')

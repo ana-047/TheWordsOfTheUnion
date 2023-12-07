@@ -36,7 +36,6 @@ class BeeswarmChart {
       else {
         // console.log('beeswarm caught else event, section is ', globalSectionIndex);
       }
-      // this.update();
     });
 
     // Get the bounding box of the SVG element
