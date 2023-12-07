@@ -47,7 +47,7 @@ class SplitBarChart {
       .attr('class', 'deactivated'); // Hide the chart until it's called by the Display class
 
     // Set up base rect width
-    const xWidth = 130;
+    const xWidth = 130; // Calculated from dataset max minutes
     // const maxMinutesAvgPres = d3.max(this.data, (d) => d.minutes_avg_pres);
 
     // Define initial x scale
@@ -68,6 +68,14 @@ class SplitBarChart {
 
     this.yAxis = this.chart.append('g')
       .attr('transform', `translate(${0}, 0)`);
+
+    // Define hours y scale (goes from 0 to 390)
+    this.yScaleHours = d3.scaleLinear()
+      .domain([0, 340])
+      .range([0, this.height]); // Don't reverse the range because it should go from top to bottom for this chart
+
+    // Create y-axis for Hours
+    this.yAxisHours = d3.axisLeft(this.yScaleHours);
   }
 
   render() {
@@ -109,11 +117,12 @@ class SplitBarChart {
       .attr('width', this.baseWidth)
       .attr('height', this.yScale.bandwidth());
 
+    // Call initial y axis
     this.yAxis.call(d3.axisLeft(this.yScale));
 
+    // Set up Stat chart
     const totalHours = [this.data[0].hours_total];
 
-    // console.log(totalHours);
     this.stat = this.chart.selectAll('.stat-group')
       .data(totalHours)
       .enter()
@@ -127,7 +136,7 @@ class SplitBarChart {
       .attr('y', 0)
       .attr('width', this.width)
       .attr('height', this.yScale.bandwidth())
-      .attr('fill', 'steelblue');
+      .attr('fill', '#E3CD7A');
 
     this.stat.append('text')
       .text((d) => `${d} hours!`)
@@ -136,6 +145,22 @@ class SplitBarChart {
       .attr('text-anchor', 'middle') // Align text to the center
       .attr('dominant-baseline', 'middle')
       .attr('class', 'big-stat');
+
+    // Append the y-axis to the SVG
+    this.stat.append('g')
+      .attr('class', 'y-axis-hours')
+      .call(this.yAxisHours)
+      .attr('opacity', 1);
+
+    // Add hours y-axis label
+    this.stat.append('text')
+      .attr('class', 'axis axis-label')
+      .attr('transform', 'rotate(-90)')
+      .attr('y', 0 - this.margin.left / 2) // Adjust positioning as needed
+      .attr('x', 0 - (this.height / 2)) // Adjust positioning as needed
+      .attr('dy', '1em')
+      .style('text-anchor', 'middle')
+      .text('Hours');
   }
 
   update() {

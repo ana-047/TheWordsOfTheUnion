@@ -485,6 +485,12 @@ body {
     shape-rendering: crispEdges;
 }
 
+.axis-label {
+    fill: var(--text-title);
+    font-family: var(--text-title-font);
+    font-size: small;
+}
+
 .highlight {
     fill: var(--highlight);
     color: var(--highlight);
