@@ -131,6 +131,7 @@ class SplitBarChart {
       .attr('transform', `translate(${0}, ${0})`)
       .attr('opacity', 0);
 
+    // Big yellow bar
     this.stat.append('rect')
       .attr('x', 0)
       .attr('y', 0)
@@ -138,11 +139,12 @@ class SplitBarChart {
       .attr('height', this.yScale.bandwidth())
       .attr('fill', '#E3CD7A');
 
+    // Big center text
     this.stat.append('text')
       .text((d) => `${d} hours!`)
-      .attr('x', this.width / 2) // Position text in the middle horizontally
-      .attr('y', (this.height * 0.6) / 2) // Position text in the middle vertically
-      .attr('text-anchor', 'middle') // Align text to the center
+      .attr('x', this.width / 2)
+      .attr('y', (this.height * 0.6) / 2)
+      .attr('text-anchor', 'middle')
       .attr('dominant-baseline', 'middle')
       .attr('class', 'big-stat');
 
@@ -156,8 +158,8 @@ class SplitBarChart {
     this.stat.append('text')
       .attr('class', 'axis axis-label')
       .attr('transform', 'rotate(-90)')
-      .attr('y', 0 - this.margin.left / 2) // Adjust positioning as needed
-      .attr('x', 0 - (this.height / 2)) // Adjust positioning as needed
+      .attr('y', 0 - this.margin.left / 2)
+      .attr('x', 0 - (this.height / 2))
       .attr('dy', '1em')
       .style('text-anchor', 'middle')
       .text('Hours');
