@@ -73,13 +73,6 @@ class BeeswarmChart {
       .domain([-1, 1])
       .range([this.height, 0]);
 
-    // Set up and position axis groups
-    this.xAxis = this.chart.append('g')
-      .attr('transform', `translate(0,${this.height + this.margin.bottom * 0.02})`);
-
-    this.yAxis = this.chart.append('g')
-      .attr('transform', `translate(${-0.05 * this.margin.left}, 0)`);
-
     // Create tooltip skeleton
     this.tooltip = d3.select('#vis-container').append('div')
       .attr('class', 'beeswarm-tooltip')
@@ -276,8 +269,18 @@ class BeeswarmChart {
       .tickFormat((d) => (d === 0 ? '0' : d > 0 ? '+1' : '-1')); // Label format for sentiment scores;
     vis.chart.append('g')
       .attr('class', 'y-axis')
-      .attr('transform', `translate(${-vis.margin.left / 2}, 0)`)
+      .attr('transform', `translate(${-vis.margin.left * 0.2}, 0)`)
       .call(vis.yAxis);
+
+    // Add y-axis label
+    this.chart.append('text')
+      .attr('class', 'axis axis-label')
+      .attr('transform', 'rotate(-90)')
+      .attr('y', 0 - this.margin.left)
+      .attr('x', 0 - (this.height / 2))
+      .attr('dy', '1em')
+      .style('text-anchor', 'middle')
+      .text('Sentiment Score');
   }
 
   initLegend() {
