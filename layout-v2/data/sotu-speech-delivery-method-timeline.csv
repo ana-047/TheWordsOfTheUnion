@@ -1,0 +1,45 @@
+year,name,party,annotation,delivery_mode,y_position
+1790,George Washington,none,First State of the Union,In Person,60
+1797,John Adams,Federalist,,In Person,4
+1801,Thomas Jefferson,Democratic-Republican,Delivered Address in Writing,In Writing,30
+1809,James Madison,Democratic-Republican,,In Writing,4
+1817,James Monroe,Democratic-Republican,,In Writing,4
+1825,John Quincy Adams,Democratic-Republican,,In Writing,4
+1829,Andrew Jackson,Democratic,,In Writing,4
+1837,Martin Van Buren,Democratic,,In Writing,4
+1841,John Tyler,Whig & Democratic,,In Writing,4
+1845,James Polk,Democratic,,In Writing,4
+1849,Zachary Taylor,Whig,,In Writing,4
+1850,Millard Fillmore,Whig,,In Writing,4
+1853,Franklin Pierce,Democratic,,In Writing,4
+1857,James Buchanan,Democratic,,In Writing,4
+1861,Abraham Lincoln,Republican,,In Writing,4
+1865,Andrew Johnson,National Union,,In Writing,4
+1869,Ulysses S Grant,Republican,,In Writing,4
+1877,Rutherford B Hayes,Republican,,In Writing,4
+1881,Chester A Arthur,Republican,,In Writing,4
+1885,Grover Cleveland,Democratic,,In Writing,4
+1889,Benjamin Harrison,Republican,,In Writing,4
+1893,Grover Cleveland,Democratic,,In Writing,4
+1897,William Mc Kinley,Republican,,In Writing,4
+1901,Theodore Roosevelt,Republican,,In Writing,4
+1909,William H Taft,Republican,,In Writing,4
+1913,Woodrow Wilson,Democratic,Delivered Address in Person,In Person,50
+1921,Warren G Harding,Republican,,In Person,4
+1923,Calvin Coolidge,Republican,,In Person,4
+1929,Herbert Hoover,Republican,,In Person,4
+1934,Franklin D Roosevelt,Democratic,,In Person,4
+1947,Harry S Truman,Democratic,First Televised Address,Televised,20
+1953,Dwight D Eisenhower,Republican,,Televised,4
+1961,John F Kennedy,Democratic,,Televised,4
+1964,Lyndon B Johnson,Democratic,,Televised,4
+1970,Richard Nixon,Republican,,Televised,4
+1975,Gerald R Ford,Republican,,Televised,4
+1978,Jimmy Carter,Democratic,,Televised,4
+1982,Ronald Reagan,Republican,,Televised,4
+1989,George Bush,Republican,,Televised,4
+1993,William J Clinton,Democratic,,Televised,4
+2001,George W Bush,Republican,,Televised,4
+2009,Barack Obama,Democratic,,Televised,4
+2017,Donald J Trump,Republican,,Televised,4
+2021,Joseph R Biden,Democratic,,Televised,4

@@ -25,6 +25,12 @@ const partyColors = {
 // Declare chart configurations
 const chartConfigs = [
   {
+    step: 0,
+    chartGenerator: (container, data) => new TimelineChart(container, data),
+    dataPath: 'data/sotu-speech-delivery-method-timeline.csv',
+    visId: 'vis-brush',
+  },
+  {
     step: 2,
     chartGenerator: (container, data) => new RacingBarsChart(container, data),
     dataPath: 'data/speech_length_agg.csv',

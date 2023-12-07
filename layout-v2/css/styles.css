@@ -12,6 +12,10 @@
     --pres-name: #262626;
     --text-link: #393f57;
 
+    --delivery-in-writing: #738A7C;
+    --delivery-in-person: #AA8CAD;
+    --delivery-televised: #D17A9E;
+
     --party-republican: #DB767B;
     --party-democrat: #53AEF4;
     --party-whig: #E2DE91;
@@ -116,6 +120,27 @@ body {
 .pres-name {
     color: var(--pres-name);
     font-weight: 600;
+}
+
+.label {
+    font-family: var(--text-title-font);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-title);
+}
+
+.small-annotation {
+    font-family: var(--text-title-font);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--pres-name);
+}
+
+.smallest-annotation {
+    font-family: var(--text-title-font);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--pres-name);
 }
 
 .link {
@@ -223,6 +248,20 @@ br {
     max-height: var(--vis-focus-max-height);
 }
 
+/* TIMELINE CHART */
+
+.in-person {
+    fill: var(--delivery-in-person);
+}
+
+.in-writing {
+    fill: var(--delivery-in-writing);
+}
+
+.televised {
+    fill: var(--delivery-televised);
+}
+
 
 /* SPEECH LENGTH TRANSITION */
 .big-stat {
@@ -304,13 +343,6 @@ br {
 
 
 /* BEE SWARM */
-
-.label {
-    font-family: var(--text-title-font);
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--text-title);
-}
 
 .theme-label {
     fill: var(--background-section);
