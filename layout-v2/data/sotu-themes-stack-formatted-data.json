@@ -1,0 +1,6166 @@
+[
+    {
+        "year": 1790,
+        "data": [
+            {
+                "name": "George Washington",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 10
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 6
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 7
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1791,
+        "data": [
+            {
+                "name": "George Washington",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 8
+                    },
+                    {
+                        "theme": "border",
+                        "count": 4
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 24
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 9
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1792,
+        "data": [
+            {
+                "name": "George Washington",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 11
+                    },
+                    {
+                        "theme": "war",
+                        "count": 18
+                    },
+                    {
+                        "theme": "border",
+                        "count": 4
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 15
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1793,
+        "data": [
+            {
+                "name": "George Washington",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 24
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 16
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 8
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1794,
+        "data": [
+            {
+                "name": "George Washington",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 14
+                    },
+                    {
+                        "theme": "war",
+                        "count": 22
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 16
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1795,
+        "data": [
+            {
+                "name": "George Washington",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 17
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 12
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1796,
+        "data": [
+            {
+                "name": "George Washington",
+                "counts": [
+                    {
+                        "theme": "border",
+                        "count": 6
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 22
+                    },
+                    {
+                        "theme": "war",
+                        "count": 23
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1797,
+        "data": [
+            {
+                "name": "John Adams",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "war",
+                        "count": 20
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 23
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1798,
+        "data": [
+            {
+                "name": "John Adams",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 28
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 6
+                    },
+                    {
+                        "theme": "war",
+                        "count": 16
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1799,
+        "data": [
+            {
+                "name": "John Adams",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 14
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    },
+                    {
+                        "theme": "war",
+                        "count": 7
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1800,
+        "data": [
+            {
+                "name": "John Adams",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 6
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 18
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 6
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1801,
+        "data": [
+            {
+                "name": "Thomas Jefferson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 27
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 21
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 5
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1802,
+        "data": [
+            {
+                "name": "Thomas Jefferson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 12
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 30
+                    },
+                    {
+                        "theme": "border",
+                        "count": 6
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1803,
+        "data": [
+            {
+                "name": "Thomas Jefferson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 14
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 18
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 5
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1804,
+        "data": [
+            {
+                "name": "Thomas Jefferson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 18
+                    },
+                    {
+                        "theme": "war",
+                        "count": 19
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 9
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1805,
+        "data": [
+            {
+                "name": "Thomas Jefferson",
+                "counts": [
+                    {
+                        "theme": "border",
+                        "count": 5
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 18
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "war",
+                        "count": 24
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1806,
+        "data": [
+            {
+                "name": "Thomas Jefferson",
+                "counts": [
+                    {
+                        "theme": "border",
+                        "count": 4
+                    },
+                    {
+                        "theme": "war",
+                        "count": 24
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 11
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 19
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1807,
+        "data": [
+            {
+                "name": "Thomas Jefferson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 28
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 19
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 8
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 2
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1808,
+        "data": [
+            {
+                "name": "Thomas Jefferson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 25
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 9
+                    },
+                    {
+                        "theme": "war",
+                        "count": 14
+                    },
+                    {
+                        "theme": "border",
+                        "count": 7
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1809,
+        "data": [
+            {
+                "name": "James Madison",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 15
+                    },
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1810,
+        "data": [
+            {
+                "name": "James Madison",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 19
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    },
+                    {
+                        "theme": "war",
+                        "count": 20
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1811,
+        "data": [
+            {
+                "name": "James Madison",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 25
+                    },
+                    {
+                        "theme": "war",
+                        "count": 11
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1812,
+        "data": [
+            {
+                "name": "James Madison",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 3
+                    },
+                    {
+                        "theme": "war",
+                        "count": 13
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1813,
+        "data": [
+            {
+                "name": "James Madison",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 71
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 15
+                    },
+                    {
+                        "theme": "border",
+                        "count": 8
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1814,
+        "data": [
+            {
+                "name": "James Madison",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 46
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 18
+                    },
+                    {
+                        "theme": "border",
+                        "count": 4
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1815,
+        "data": [
+            {
+                "name": "James Madison",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 42
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 26
+                    },
+                    {
+                        "theme": "border",
+                        "count": 6
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1816,
+        "data": [
+            {
+                "name": "James Madison",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 25
+                    },
+                    {
+                        "theme": "war",
+                        "count": 12
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1817,
+        "data": [
+            {
+                "name": "James Monroe",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 36
+                    },
+                    {
+                        "theme": "war",
+                        "count": 15
+                    },
+                    {
+                        "theme": "border",
+                        "count": 19
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1818,
+        "data": [
+            {
+                "name": "James Monroe",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 12
+                    },
+                    {
+                        "theme": "war",
+                        "count": 21
+                    },
+                    {
+                        "theme": "border",
+                        "count": 7
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1819,
+        "data": [
+            {
+                "name": "James Monroe",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 38
+                    },
+                    {
+                        "theme": "border",
+                        "count": 9
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    },
+                    {
+                        "theme": "war",
+                        "count": 8
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1820,
+        "data": [
+            {
+                "name": "James Monroe",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 31
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    },
+                    {
+                        "theme": "war",
+                        "count": 17
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1821,
+        "data": [
+            {
+                "name": "James Monroe",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 32
+                    },
+                    {
+                        "theme": "border",
+                        "count": 17
+                    },
+                    {
+                        "theme": "war",
+                        "count": 16
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 65
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1822,
+        "data": [
+            {
+                "name": "James Monroe",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 6
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 46
+                    },
+                    {
+                        "theme": "border",
+                        "count": 10
+                    },
+                    {
+                        "theme": "war",
+                        "count": 36
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1823,
+        "data": [
+            {
+                "name": "James Monroe",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 47
+                    },
+                    {
+                        "theme": "war",
+                        "count": 38
+                    },
+                    {
+                        "theme": "border",
+                        "count": 10
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 8
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1824,
+        "data": [
+            {
+                "name": "James Monroe",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 79
+                    },
+                    {
+                        "theme": "border",
+                        "count": 21
+                    },
+                    {
+                        "theme": "war",
+                        "count": 57
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 14
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1825,
+        "data": [
+            {
+                "name": "John Quincy Adams",
+                "counts": [
+                    {
+                        "theme": "border",
+                        "count": 15
+                    },
+                    {
+                        "theme": "war",
+                        "count": 41
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 49
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 12
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1826,
+        "data": [
+            {
+                "name": "John Quincy Adams",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 77
+                    },
+                    {
+                        "theme": "border",
+                        "count": 7
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "war",
+                        "count": 27
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1827,
+        "data": [
+            {
+                "name": "John Quincy Adams",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 32
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 50
+                    },
+                    {
+                        "theme": "border",
+                        "count": 14
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1828,
+        "data": [
+            {
+                "name": "John Quincy Adams",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 40
+                    },
+                    {
+                        "theme": "border",
+                        "count": 9
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 109
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 14
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1829,
+        "data": [
+            {
+                "name": "Andrew Jackson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 120
+                    },
+                    {
+                        "theme": "war",
+                        "count": 45
+                    },
+                    {
+                        "theme": "border",
+                        "count": 15
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 36
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1830,
+        "data": [
+            {
+                "name": "Andrew Jackson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 59
+                    },
+                    {
+                        "theme": "war",
+                        "count": 6
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1831,
+        "data": [
+            {
+                "name": "Andrew Jackson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 93
+                    },
+                    {
+                        "theme": "war",
+                        "count": 19
+                    },
+                    {
+                        "theme": "border",
+                        "count": 12
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 30
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1832,
+        "data": [
+            {
+                "name": "Andrew Jackson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 107
+                    },
+                    {
+                        "theme": "war",
+                        "count": 35
+                    },
+                    {
+                        "theme": "border",
+                        "count": 15
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 12
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1833,
+        "data": [
+            {
+                "name": "Andrew Jackson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 31
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1834,
+        "data": [
+            {
+                "name": "Andrew Jackson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 86
+                    },
+                    {
+                        "theme": "war",
+                        "count": 16
+                    },
+                    {
+                        "theme": "border",
+                        "count": 8
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 15
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1835,
+        "data": [
+            {
+                "name": "Andrew Jackson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 17
+                    },
+                    {
+                        "theme": "war",
+                        "count": 6
+                    },
+                    {
+                        "theme": "border",
+                        "count": 7
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1836,
+        "data": [
+            {
+                "name": "Andrew Jackson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 59
+                    },
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "border",
+                        "count": 6
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1837,
+        "data": [
+            {
+                "name": "Martin Van Buren",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 91
+                    },
+                    {
+                        "theme": "war",
+                        "count": 13
+                    },
+                    {
+                        "theme": "border",
+                        "count": 6
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 11
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1838,
+        "data": [
+            {
+                "name": "Martin Van Buren",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 7
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1839,
+        "data": [
+            {
+                "name": "Martin Van Buren",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 50
+                    },
+                    {
+                        "theme": "war",
+                        "count": 16
+                    },
+                    {
+                        "theme": "border",
+                        "count": 15
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 11
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1840,
+        "data": [
+            {
+                "name": "Martin Van Buren",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 39
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 121
+                    },
+                    {
+                        "theme": "border",
+                        "count": 18
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1841,
+        "data": [
+            {
+                "name": "John Tyler",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 71
+                    },
+                    {
+                        "theme": "war",
+                        "count": 18
+                    },
+                    {
+                        "theme": "border",
+                        "count": 18
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 26
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1842,
+        "data": [
+            {
+                "name": "John Tyler",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 18
+                    },
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 5
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1843,
+        "data": [
+            {
+                "name": "John Tyler",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 39
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 93
+                    },
+                    {
+                        "theme": "border",
+                        "count": 17
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 11
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1844,
+        "data": [
+            {
+                "name": "John Tyler",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 45
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 36
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    },
+                    {
+                        "theme": "border",
+                        "count": 16
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1845,
+        "data": [
+            {
+                "name": "James Polk",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 51
+                    },
+                    {
+                        "theme": "war",
+                        "count": 37
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 23
+                    },
+                    {
+                        "theme": "border",
+                        "count": 36
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1846,
+        "data": [
+            {
+                "name": "James Polk",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 25
+                    },
+                    {
+                        "theme": "border",
+                        "count": 30
+                    },
+                    {
+                        "theme": "war",
+                        "count": 54
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1847,
+        "data": [
+            {
+                "name": "James Polk",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 5
+                    },
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1848,
+        "data": [
+            {
+                "name": "James Polk",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 92
+                    },
+                    {
+                        "theme": "border",
+                        "count": 28
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 49
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 4
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1849,
+        "data": [
+            {
+                "name": "Zachary Taylor",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 20
+                    },
+                    {
+                        "theme": "border",
+                        "count": 14
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 18
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 48
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1850,
+        "data": [
+            {
+                "name": "Millard Fillmore",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 101
+                    },
+                    {
+                        "theme": "border",
+                        "count": 14
+                    },
+                    {
+                        "theme": "war",
+                        "count": 25
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 24
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1851,
+        "data": [
+            {
+                "name": "Millard Fillmore",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 30
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 92
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 33
+                    },
+                    {
+                        "theme": "border",
+                        "count": 13
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1852,
+        "data": [
+            {
+                "name": "Millard Fillmore",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 42
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 128
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 21
+                    },
+                    {
+                        "theme": "border",
+                        "count": 25
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1853,
+        "data": [
+            {
+                "name": "Franklin Pierce",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 52
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 12
+                    },
+                    {
+                        "theme": "war",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1854,
+        "data": [
+            {
+                "name": "Franklin Pierce",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 3
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 5
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1855,
+        "data": [
+            {
+                "name": "Franklin Pierce",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 78
+                    },
+                    {
+                        "theme": "war",
+                        "count": 87
+                    },
+                    {
+                        "theme": "border",
+                        "count": 48
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 38
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1856,
+        "data": [
+            {
+                "name": "Franklin Pierce",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1857,
+        "data": [
+            {
+                "name": "James Buchanan",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 34
+                    },
+                    {
+                        "theme": "war",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1858,
+        "data": [
+            {
+                "name": "James Buchanan",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 3
+                    },
+                    {
+                        "theme": "border",
+                        "count": 9
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 5
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 3
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1859,
+        "data": [
+            {
+                "name": "James Buchanan",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 46
+                    },
+                    {
+                        "theme": "war",
+                        "count": 17
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 13
+                    },
+                    {
+                        "theme": "border",
+                        "count": 15
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1860,
+        "data": [
+            {
+                "name": "James Buchanan",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 22
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 25
+                    },
+                    {
+                        "theme": "border",
+                        "count": 14
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 33
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1861,
+        "data": [
+            {
+                "name": "Abraham Lincoln",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 19
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 23
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1862,
+        "data": [
+            {
+                "name": "Abraham Lincoln",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 39
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 50
+                    },
+                    {
+                        "theme": "border",
+                        "count": 20
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 8
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1863,
+        "data": [
+            {
+                "name": "Abraham Lincoln",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 10
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 9
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1864,
+        "data": [
+            {
+                "name": "Abraham Lincoln",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 17
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 25
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 5
+                    },
+                    {
+                        "theme": "border",
+                        "count": 8
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1865,
+        "data": [
+            {
+                "name": "Andrew Johnson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 5
+                    },
+                    {
+                        "theme": "war",
+                        "count": 14
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    },
+                    {
+                        "theme": "border",
+                        "count": 4
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1866,
+        "data": [
+            {
+                "name": "Andrew Johnson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1867,
+        "data": [
+            {
+                "name": "Andrew Johnson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 13
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 13
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 8
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1868,
+        "data": [
+            {
+                "name": "Andrew Johnson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 46
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    },
+                    {
+                        "theme": "war",
+                        "count": 42
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1869,
+        "data": [
+            {
+                "name": "Ulysses S Grant",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 5
+                    },
+                    {
+                        "theme": "border",
+                        "count": 4
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 28
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 6
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1870,
+        "data": [
+            {
+                "name": "Ulysses S Grant",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 25
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 32
+                    },
+                    {
+                        "theme": "border",
+                        "count": 15
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1871,
+        "data": [
+            {
+                "name": "Ulysses S Grant",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1872,
+        "data": [
+            {
+                "name": "Ulysses S Grant",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 7
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 11
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 14
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1873,
+        "data": [
+            {
+                "name": "Ulysses S Grant",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 99
+                    },
+                    {
+                        "theme": "border",
+                        "count": 12
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 29
+                    },
+                    {
+                        "theme": "war",
+                        "count": 28
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1874,
+        "data": [
+            {
+                "name": "Ulysses S Grant",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 63
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "war",
+                        "count": 7
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 13
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1875,
+        "data": [
+            {
+                "name": "Ulysses S Grant",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 85
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 31
+                    },
+                    {
+                        "theme": "border",
+                        "count": 23
+                    },
+                    {
+                        "theme": "war",
+                        "count": 39
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1876,
+        "data": [
+            {
+                "name": "Ulysses S Grant",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 6
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1877,
+        "data": [
+            {
+                "name": "Rutherford B Hayes",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 8
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 20
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1878,
+        "data": [
+            {
+                "name": "Rutherford B Hayes",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 6
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 8
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1879,
+        "data": [
+            {
+                "name": "Rutherford B Hayes",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 42
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 18
+                    },
+                    {
+                        "theme": "border",
+                        "count": 9
+                    },
+                    {
+                        "theme": "war",
+                        "count": 7
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1880,
+        "data": [
+            {
+                "name": "Rutherford B Hayes",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 12
+                    },
+                    {
+                        "theme": "war",
+                        "count": 8
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1881,
+        "data": [
+            {
+                "name": "Chester A Arthur",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 22
+                    },
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "border",
+                        "count": 16
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1882,
+        "data": [
+            {
+                "name": "Chester A Arthur",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1883,
+        "data": [
+            {
+                "name": "Chester A Arthur",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1884,
+        "data": [
+            {
+                "name": "Chester A Arthur",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1885,
+        "data": [
+            {
+                "name": "Grover Cleveland",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 147
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 32
+                    },
+                    {
+                        "theme": "war",
+                        "count": 41
+                    },
+                    {
+                        "theme": "border",
+                        "count": 45
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1886,
+        "data": [
+            {
+                "name": "Grover Cleveland",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 48
+                    },
+                    {
+                        "theme": "war",
+                        "count": 16
+                    },
+                    {
+                        "theme": "border",
+                        "count": 17
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 16
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1887,
+        "data": [
+            {
+                "name": "Grover Cleveland",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 61
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1888,
+        "data": [
+            {
+                "name": "Grover Cleveland",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 96
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 25
+                    },
+                    {
+                        "theme": "war",
+                        "count": 12
+                    },
+                    {
+                        "theme": "border",
+                        "count": 23
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1889,
+        "data": [
+            {
+                "name": "Benjamin Harrison",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 65
+                    },
+                    {
+                        "theme": "border",
+                        "count": 24
+                    },
+                    {
+                        "theme": "war",
+                        "count": 4
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 6
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1890,
+        "data": [
+            {
+                "name": "Benjamin Harrison",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 49
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 15
+                    },
+                    {
+                        "theme": "war",
+                        "count": 14
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1891,
+        "data": [
+            {
+                "name": "Benjamin Harrison",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1892,
+        "data": [
+            {
+                "name": "Benjamin Harrison",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 125
+                    },
+                    {
+                        "theme": "border",
+                        "count": 7
+                    },
+                    {
+                        "theme": "war",
+                        "count": 6
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1893,
+        "data": [
+            {
+                "name": "Grover Cleveland",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 27
+                    },
+                    {
+                        "theme": "border",
+                        "count": 13
+                    },
+                    {
+                        "theme": "war",
+                        "count": 19
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 15
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1894,
+        "data": [
+            {
+                "name": "Grover Cleveland",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 49
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 11
+                    },
+                    {
+                        "theme": "war",
+                        "count": 34
+                    },
+                    {
+                        "theme": "border",
+                        "count": 19
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1895,
+        "data": [
+            {
+                "name": "Grover Cleveland",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 70
+                    },
+                    {
+                        "theme": "border",
+                        "count": 37
+                    },
+                    {
+                        "theme": "war",
+                        "count": 28
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 17
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 2
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1896,
+        "data": [
+            {
+                "name": "Grover Cleveland",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 24
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 10
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1897,
+        "data": [
+            {
+                "name": "William Mc Kinley",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 94
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 97
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 37
+                    },
+                    {
+                        "theme": "border",
+                        "count": 40
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1898,
+        "data": [
+            {
+                "name": "William Mc Kinley",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 56
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 19
+                    },
+                    {
+                        "theme": "border",
+                        "count": 7
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1899,
+        "data": [
+            {
+                "name": "William Mc Kinley",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 17
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1900,
+        "data": [
+            {
+                "name": "William Mc Kinley",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 5
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 7
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1901,
+        "data": [
+            {
+                "name": "Theodore Roosevelt",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1902,
+        "data": [
+            {
+                "name": "Theodore Roosevelt",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 12
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1903,
+        "data": [
+            {
+                "name": "Theodore Roosevelt",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 23
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1904,
+        "data": [
+            {
+                "name": "Theodore Roosevelt",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 102
+                    },
+                    {
+                        "theme": "war",
+                        "count": 12
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 41
+                    },
+                    {
+                        "theme": "border",
+                        "count": 14
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1905,
+        "data": [
+            {
+                "name": "Theodore Roosevelt",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 32
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1906,
+        "data": [
+            {
+                "name": "Theodore Roosevelt",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 27
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 100
+                    },
+                    {
+                        "theme": "war",
+                        "count": 21
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1907,
+        "data": [
+            {
+                "name": "Theodore Roosevelt",
+                "counts": [
+                    {
+                        "theme": "climate",
+                        "count": 3
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 66
+                    },
+                    {
+                        "theme": "war",
+                        "count": 4
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 26
+                    },
+                    {
+                        "theme": "border",
+                        "count": 13
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1908,
+        "data": [
+            {
+                "name": "Theodore Roosevelt",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 33
+                    },
+                    {
+                        "theme": "border",
+                        "count": 4
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1909,
+        "data": [
+            {
+                "name": "William H Taft",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 16
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 9
+                    },
+                    {
+                        "theme": "border",
+                        "count": 20
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1910,
+        "data": [
+            {
+                "name": "William H Taft",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 26
+                    },
+                    {
+                        "theme": "border",
+                        "count": 19
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 13
+                    },
+                    {
+                        "theme": "war",
+                        "count": 9
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1911,
+        "data": [
+            {
+                "name": "William H Taft",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1912,
+        "data": [
+            {
+                "name": "William H Taft",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 53
+                    },
+                    {
+                        "theme": "war",
+                        "count": 27
+                    },
+                    {
+                        "theme": "border",
+                        "count": 9
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1913,
+        "data": [
+            {
+                "name": "Woodrow Wilson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 37
+                    },
+                    {
+                        "theme": "border",
+                        "count": 8
+                    },
+                    {
+                        "theme": "war",
+                        "count": 10
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1914,
+        "data": [
+            {
+                "name": "Woodrow Wilson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 57
+                    },
+                    {
+                        "theme": "war",
+                        "count": 32
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1915,
+        "data": [
+            {
+                "name": "Woodrow Wilson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 56
+                    },
+                    {
+                        "theme": "border",
+                        "count": 10
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 100
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1916,
+        "data": [
+            {
+                "name": "Woodrow Wilson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 36
+                    },
+                    {
+                        "theme": "border",
+                        "count": 7
+                    },
+                    {
+                        "theme": "war",
+                        "count": 7
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1917,
+        "data": [
+            {
+                "name": "Woodrow Wilson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 7
+                    },
+                    {
+                        "theme": "war",
+                        "count": 27
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1918,
+        "data": [
+            {
+                "name": "Woodrow Wilson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 76
+                    },
+                    {
+                        "theme": "war",
+                        "count": 60
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 3
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1919,
+        "data": [
+            {
+                "name": "Woodrow Wilson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 12
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    },
+                    {
+                        "theme": "war",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1920,
+        "data": [
+            {
+                "name": "Woodrow Wilson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1921,
+        "data": [
+            {
+                "name": "Warren G Harding",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 5
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1922,
+        "data": [
+            {
+                "name": "Warren G Harding",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1923,
+        "data": [
+            {
+                "name": "Calvin Coolidge",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 8
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 35
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 9
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1924,
+        "data": [
+            {
+                "name": "Calvin Coolidge",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 33
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1925,
+        "data": [
+            {
+                "name": "Calvin Coolidge",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 15
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 1
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1926,
+        "data": [
+            {
+                "name": "Calvin Coolidge",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 61
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1927,
+        "data": [
+            {
+                "name": "Calvin Coolidge",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 21
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 130
+                    },
+                    {
+                        "theme": "border",
+                        "count": 6
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 11
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1928,
+        "data": [
+            {
+                "name": "Calvin Coolidge",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 114
+                    },
+                    {
+                        "theme": "war",
+                        "count": 38
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 15
+                    },
+                    {
+                        "theme": "border",
+                        "count": 12
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1929,
+        "data": [
+            {
+                "name": "Herbert Hoover",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 30
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 53
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 6
+                    },
+                    {
+                        "theme": "border",
+                        "count": 6
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1930,
+        "data": [
+            {
+                "name": "Herbert Hoover",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 25
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1931,
+        "data": [
+            {
+                "name": "Herbert Hoover",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 85
+                    },
+                    {
+                        "theme": "war",
+                        "count": 10
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1932,
+        "data": [
+            {
+                "name": "Herbert Hoover",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 33
+                    },
+                    {
+                        "theme": "war",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1934,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 36
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "war",
+                        "count": 4
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1935,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 59
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1936,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "war",
+                        "count": 13
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1937,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 38
+                    },
+                    {
+                        "theme": "war",
+                        "count": 13
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1938,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 14
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1939,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1940,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 26
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 21
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1941,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 35
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 6
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1942,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1943,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1944,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 14
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1945,
+        "data": [
+            {
+                "name": "Franklin D Roosevelt",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 10
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1946,
+        "data": [
+            {
+                "name": "Harry S Truman",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 21
+                    },
+                    {
+                        "theme": "war",
+                        "count": 8
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1947,
+        "data": [
+            {
+                "name": "Harry S Truman",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 21
+                    },
+                    {
+                        "theme": "war",
+                        "count": 13
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1948,
+        "data": [
+            {
+                "name": "Harry S Truman",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 4
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1949,
+        "data": [
+            {
+                "name": "Harry S Truman",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 7
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 81
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1950,
+        "data": [
+            {
+                "name": "Harry S Truman",
+                "counts": [
+                    {
+                        "theme": "border",
+                        "count": 12
+                    },
+                    {
+                        "theme": "war",
+                        "count": 34
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 111
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 4
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 6
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1951,
+        "data": [
+            {
+                "name": "Harry S Truman",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 5
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1952,
+        "data": [
+            {
+                "name": "Harry S Truman",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 16
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1953,
+        "data": [
+            {
+                "name": "Dwight D Eisenhower",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 42
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 23
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Harry S Truman",
+                "counts": [
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 20
+                    },
+                    {
+                        "theme": "war",
+                        "count": 16
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1954,
+        "data": [
+            {
+                "name": "Dwight D Eisenhower",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 26
+                    },
+                    {
+                        "theme": "war",
+                        "count": 40
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1955,
+        "data": [
+            {
+                "name": "Dwight D Eisenhower",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 67
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 37
+                    },
+                    {
+                        "theme": "border",
+                        "count": 6
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 7
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1956,
+        "data": [
+            {
+                "name": "Dwight D Eisenhower",
+                "counts": [
+                    {
+                        "theme": "climate",
+                        "count": 6
+                    },
+                    {
+                        "theme": "war",
+                        "count": 62
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 70
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 8
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1957,
+        "data": [
+            {
+                "name": "Dwight D Eisenhower",
+                "counts": [
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 31
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1958,
+        "data": [
+            {
+                "name": "Dwight D Eisenhower",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 14
+                    },
+                    {
+                        "theme": "war",
+                        "count": 35
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1959,
+        "data": [
+            {
+                "name": "Dwight D Eisenhower",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1960,
+        "data": [
+            {
+                "name": "Dwight D Eisenhower",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1961,
+        "data": [
+            {
+                "name": "Dwight D Eisenhower",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 5
+                    }
+                ]
+            },
+            {
+                "name": "John F Kennedy",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 35
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1962,
+        "data": [
+            {
+                "name": "John F Kennedy",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1963,
+        "data": [
+            {
+                "name": "John F Kennedy",
+                "counts": [
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 5
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 20
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1964,
+        "data": [
+            {
+                "name": "Lyndon B Johnson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 46
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1965,
+        "data": [
+            {
+                "name": "Lyndon B Johnson",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 6
+                    },
+                    {
+                        "theme": "war",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1966,
+        "data": [
+            {
+                "name": "Lyndon B Johnson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 8
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1967,
+        "data": [
+            {
+                "name": "Lyndon B Johnson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 5
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 3
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1968,
+        "data": [
+            {
+                "name": "Lyndon B Johnson",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 10
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1969,
+        "data": [
+            {
+                "name": "Lyndon B Johnson",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 3
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1970,
+        "data": [
+            {
+                "name": "Richard Nixon",
+                "counts": [
+                    {
+                        "theme": "climate",
+                        "count": 5
+                    },
+                    {
+                        "theme": "war",
+                        "count": 44
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 46
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 16
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1971,
+        "data": [
+            {
+                "name": "Richard Nixon",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 8
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 38
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1972,
+        "data": [
+            {
+                "name": "Richard Nixon",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "war",
+                        "count": 27
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 16
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1973,
+        "data": [
+            {
+                "name": "Richard Nixon",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 5
+                    },
+                    {
+                        "theme": "war",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1974,
+        "data": [
+            {
+                "name": "Richard Nixon",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 15
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 5
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1975,
+        "data": [
+            {
+                "name": "Gerald R Ford",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 3
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 51
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1976,
+        "data": [
+            {
+                "name": "Gerald R Ford",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 3
+                    },
+                    {
+                        "theme": "war",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1977,
+        "data": [
+            {
+                "name": "Gerald R Ford",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 65
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    },
+                    {
+                        "theme": "war",
+                        "count": 36
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 30
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1978,
+        "data": [
+            {
+                "name": "Jimmy Carter",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 119
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 15
+                    },
+                    {
+                        "theme": "war",
+                        "count": 28
+                    },
+                    {
+                        "theme": "border",
+                        "count": 6
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1979,
+        "data": [
+            {
+                "name": "Jimmy Carter",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 6
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 7
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1980,
+        "data": [
+            {
+                "name": "Jimmy Carter",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 5
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1981,
+        "data": [
+            {
+                "name": "Jimmy Carter",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 6
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 5
+                    },
+                    {
+                        "theme": "war",
+                        "count": 4
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1982,
+        "data": [
+            {
+                "name": "Ronald Reagan",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1983,
+        "data": [
+            {
+                "name": "Ronald Reagan",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 8
+                    },
+                    {
+                        "theme": "war",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1984,
+        "data": [
+            {
+                "name": "Ronald Reagan",
+                "counts": [
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 14
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1985,
+        "data": [
+            {
+                "name": "Ronald Reagan",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1986,
+        "data": [
+            {
+                "name": "Ronald Reagan",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 60
+                    },
+                    {
+                        "theme": "war",
+                        "count": 20
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1987,
+        "data": [
+            {
+                "name": "Ronald Reagan",
+                "counts": [
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1988,
+        "data": [
+            {
+                "name": "Ronald Reagan",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 9
+                    },
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1989,
+        "data": [
+            {
+                "name": "George Bush",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 80
+                    },
+                    {
+                        "theme": "war",
+                        "count": 25
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 13
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1990,
+        "data": [
+            {
+                "name": "George Bush",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 44
+                    },
+                    {
+                        "theme": "war",
+                        "count": 24
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 7
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1991,
+        "data": [
+            {
+                "name": "George Bush",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 15
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 27
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1992,
+        "data": [
+            {
+                "name": "George Bush",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 89
+                    },
+                    {
+                        "theme": "war",
+                        "count": 21
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 9
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1993,
+        "data": [
+            {
+                "name": "William J Clinton",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 128
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 4
+                    },
+                    {
+                        "theme": "war",
+                        "count": 10
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 6
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1994,
+        "data": [
+            {
+                "name": "William J Clinton",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 63
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    },
+                    {
+                        "theme": "war",
+                        "count": 6
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1995,
+        "data": [
+            {
+                "name": "William J Clinton",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 3
+                    },
+                    {
+                        "theme": "war",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1996,
+        "data": [
+            {
+                "name": "William J Clinton",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 35
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 77
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 35
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 10
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 7
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1997,
+        "data": [
+            {
+                "name": "William J Clinton",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 8
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 48
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 5
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1998,
+        "data": [
+            {
+                "name": "William J Clinton",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 35
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 1999,
+        "data": [
+            {
+                "name": "William J Clinton",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    },
+                    {
+                        "theme": "war",
+                        "count": 7
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 95
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2000,
+        "data": [
+            {
+                "name": "William J Clinton",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 57
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 6
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 11
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2001,
+        "data": [
+            {
+                "name": "George W Bush",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 78
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 3
+                    },
+                    {
+                        "theme": "war",
+                        "count": 9
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2002,
+        "data": [
+            {
+                "name": "George W Bush",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 53
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 13
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 12
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    },
+                    {
+                        "theme": "border",
+                        "count": 4
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2003,
+        "data": [
+            {
+                "name": "George W Bush",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 20
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2004,
+        "data": [
+            {
+                "name": "George W Bush",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 39
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 8
+                    },
+                    {
+                        "theme": "border",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 7
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 6
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2005,
+        "data": [
+            {
+                "name": "George W Bush",
+                "counts": [
+                    {
+                        "theme": "border",
+                        "count": 7
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 60
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 10
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 5
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 64
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2006,
+        "data": [
+            {
+                "name": "George W Bush",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 8
+                    },
+                    {
+                        "theme": "war",
+                        "count": 57
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 50
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 4
+                    },
+                    {
+                        "theme": "border",
+                        "count": 8
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2007,
+        "data": [
+            {
+                "name": "George W Bush",
+                "counts": [
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 26
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2008,
+        "data": [
+            {
+                "name": "George W Bush",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 39
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2009,
+        "data": [
+            {
+                "name": "Barack Obama",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 49
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 3
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2010,
+        "data": [
+            {
+                "name": "Barack Obama",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 48
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2011,
+        "data": [
+            {
+                "name": "Barack Obama",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 7
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2012,
+        "data": [
+            {
+                "name": "Barack Obama",
+                "counts": [
+                    {
+                        "theme": "climate",
+                        "count": 29
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 85
+                    },
+                    {
+                        "theme": "war",
+                        "count": 5
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 4
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2013,
+        "data": [
+            {
+                "name": "Barack Obama",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 5
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 57
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 3
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2014,
+        "data": [
+            {
+                "name": "Barack Obama",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 29
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2015,
+        "data": [
+            {
+                "name": "Barack Obama",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 9
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 59
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 5
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2016,
+        "data": [
+            {
+                "name": "Barack Obama",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 4
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 2
+                    },
+                    {
+                        "theme": "guns",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 3
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2017,
+        "data": [
+            {
+                "name": "Donald J Trump",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 9
+                    },
+                    {
+                        "theme": "border",
+                        "count": 5
+                    },
+                    {
+                        "theme": "war",
+                        "count": 7
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 2
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 7
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2018,
+        "data": [
+            {
+                "name": "Donald J Trump",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2019,
+        "data": [
+            {
+                "name": "Donald J Trump",
+                "counts": [
+                    {
+                        "theme": "economy",
+                        "count": 18
+                    },
+                    {
+                        "theme": "immigration",
+                        "count": 1
+                    },
+                    {
+                        "theme": "crime",
+                        "count": 2
+                    },
+                    {
+                        "theme": "war",
+                        "count": 7
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2020,
+        "data": [
+            {
+                "name": "Donald J Trump",
+                "counts": [
+                    {
+                        "theme": "crime",
+                        "count": 1
+                    },
+                    {
+                        "theme": "war",
+                        "count": 2
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 8
+                    },
+                    {
+                        "theme": "border",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2021,
+        "data": [
+            {
+                "name": "Joseph R Biden",
+                "counts": [
+                    {
+                        "theme": "war",
+                        "count": 4
+                    },
+                    {
+                        "theme": "economy",
+                        "count": 20
+                    },
+                    {
+                        "theme": "border",
+                        "count": 3
+                    },
+                    {
+                        "theme": "climate",
+                        "count": 1
+                    }
+                ]
+            }
+        ]
+    }
+]

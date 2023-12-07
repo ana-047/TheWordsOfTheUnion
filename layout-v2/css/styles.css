@@ -10,6 +10,7 @@
     --text-title: #424242;
     --text-contrast: #EFEFEF;
     --pres-name: #262626;
+    --text-link: #393f57;
 
     --party-republican: #DB767B;
     --party-democrat: #53AEF4;
@@ -115,6 +116,25 @@ body {
 .pres-name {
     color: var(--pres-name);
     font-weight: 600;
+}
+
+.link {
+    color: var(--text-link);
+    font-weight: bold;
+}
+
+.link:hover {
+    color: var(--text-default);
+    background-color: var(--selected);
+}
+
+li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+br {
+    margin: 0;
+    padding: 0;
 }
 
 .chart-controls{

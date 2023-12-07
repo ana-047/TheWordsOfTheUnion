@@ -69,6 +69,7 @@ const chartConfigs = [
   {
     step: 7,
     chartGenerator: (container, data) => new DripBarChart(container, data),
+    // dataPath: 'data/sotu-themes-stack-formatted-data.json',
     dataPath: 'data/sotu-all-themes-and-sentiment.json',
     visId: 'vis-focus-primary',
   },
@@ -81,6 +82,7 @@ const chartConfigs = [
   {
     step: 8,
     chartGenerator: (container, data) => new DripBarChart(container, data),
+    // dataPath: 'data/sotu-themes-stack-formatted-data.json',
     dataPath: 'data/sotu-all-themes-and-sentiment.json',
     visId: 'vis-focus-primary',
   },
@@ -93,6 +95,7 @@ const chartConfigs = [
   {
     step: 9,
     chartGenerator: (container, data) => new DripBarChart(container, data),
+    // dataPath: 'data/sotu-themes-stack-formatted-data.json',
     dataPath: 'data/sotu-all-themes-and-sentiment.json',
     visId: 'vis-focus-primary',
   },
