@@ -7,6 +7,9 @@ class GlobeChart {
     this.countries = null;
     this.path = null;
 
+    // Prep for section changes
+    this.localSectionIndex = null;
+
     // Set up button handling
     d3.select('#exploreGlobe').on('click', () => this.toggleProjection());
     d3.select('#resetGlobe').on('click', () => this.resetProjection());
@@ -16,6 +19,19 @@ class GlobeChart {
   }
 
   init() {
+    // Listen for the sectionChange event and update the chart accordingly to highlight specific countries
+    document.addEventListener('sectionChange', () => {
+      if ([10, 11, 12].includes(globalSectionIndex)) {
+        this.handleCountryClick();
+      } else if ([11].includes(globalSectionIndex)) {
+        // this.doSomething()
+      } else if ([12].includes(globalSectionIndex)) {
+        // this.doSomething()
+      } else {
+        // this.doSomething()
+      }
+    });
+
     // Get the bounding box of the SVG element
     this.svgBoundingBox = this.svg.node().getBoundingClientRect();
 
@@ -49,12 +65,13 @@ class GlobeChart {
       .attr('class', 'deactivated'); // Hide the chart until it's called by the Display class
 
     this.render();
+    // this.updateMap([null]);
   }
 
   render() {
     this.path = d3.geoPath().projection(this.initialProjection);
 
-    // Create a blue background for the globe
+    // Create a background for the globe
     this.chart.append('g')
       .attr('class', 'globe-background-circle')
       .append('circle')
@@ -63,8 +80,10 @@ class GlobeChart {
       .attr('r', this.mapScale)
       .attr('class', 'globe-background');
 
+    // Define the countries
     this.countries = topojson.feature(this.data, this.data.objects.countries).features;
 
+    // Create the map
     this.chart.selectAll('.country')
       .data(this.countries)
       .enter()
@@ -102,19 +121,21 @@ class GlobeChart {
     // Update global countrySection variable and trigger change detection
     globalCountrySelection = null;
     triggerCountryChange();
-    console.log('global selectedCountry is:', globalCountrySelection);
+    // console.log('global selectedCountry is:', globalCountrySelection);
 
     // Deselect all countries on the globe
-    vis.chart.selectAll('.country')
+    vis.svg.selectAll('.country')
       .classed('selected', false);
 
     // Update globe projection
     vis.path = d3.geoPath().projection(vis.initialProjection);
 
     vis.chart.selectAll('.country')
-      .transition()
-      .duration(1000)
+      // .transition()
+      // .duration(1000)
       .attr('d', vis.path);
+
+    vis.chart.raise();
 
     vis.isEquirectangular = vis.path.projection() === vis.equirectangularProjection;
 
@@ -132,29 +153,163 @@ class GlobeChart {
     });
   }
 
+  updateMap(countriesToHighlight) {
+    const vis = this;
+    // Pass in an array of country names to highlight based on global index
+    vis.highlightList = countriesToHighlight;
+
+    // Reset country color classes
+    vis.chart.selectAll('.country')
+      .attr('class', '')
+      .attr('class', 'country');
+
+    // Update the map with new color classes
+    vis.chart.selectAll('.country')
+      .attr('class', (d) => {
+        const countryName = vis.getCountryName(d);
+        if (vis.highlightList.includes(countryName)) {
+          let className;
+          switch (countryName) {
+            case 'Mexico':
+              className = 'country-mx';
+              break;
+            case 'United Kingdom':
+              className = 'country-uk';
+              break;
+            case 'China':
+              className = 'country-ch';
+              break;
+            case 'Afghanistan':
+              className = 'country-af';
+              break;
+            case 'Iran':
+              className = 'country-ir';
+              break;
+            case 'Russia':
+              className = 'country-ru';
+              break;
+            case 'Syria':
+              className = 'country-sy';
+              break;
+            case 'Cuba':
+              className = 'country-cu';
+              break;
+            case 'North Korea':
+              className = 'country-nk';
+              break;
+            default:
+              className = 'country';
+          }
+          return `country ${className}`; // Add both 'country' and specific class
+        }
+        return 'country'; // Default class
+      });
+  }
+
   handleCountryClick(event, d) {
     const vis = this;
 
     // Check if map is in explore mode
     if (vis.path.projection() === vis.equirectangularProjection) {
-      // Get the name of the clicked country
-      const clickedCountryName = vis.getCountryName(d);
-      console.log('clickedCountryName is', clickedCountryName);
 
-      // Update local class property
-      vis.selectedCountry = (vis.selectedCountry === clickedCountryName) ? null : clickedCountryName;
-      console.log('selectedCountry is', vis.selectedCountry);
+      // Check if d exists
+      if (d) {
+        // If d exists, then we came from a click event
+        // Get the name of the clicked country
+        const clickedCountryName = vis.getCountryName(d);
+        // console.log('clickedCountryName is', clickedCountryName);
 
-      // Update global countrySection variable and trigger change detection
-      globalCountrySelection = vis.selectedCountry;
-      triggerCountryChange();
-      console.log('global selectedCountry is:', globalCountrySelection);
+        // Update local class property
+        vis.selectedCountry = (vis.selectedCountry === clickedCountryName) ? null : clickedCountryName;
+        // console.log('selectedCountry is', vis.selectedCountry);
 
-      // Update GlobeChart styles
-      // noinspection RedundantConditionalExpressionJS
-      vis.chart.selectAll('.country')
-      // eslint-disable-next-line no-unneeded-ternary
-        .classed('selected', (country) => ((vis.getCountryName(country) === vis.selectedCountry) ? true : false));
+        if (vis.selectedCountry) {
+          // Update global countrySection variable and trigger change detection
+          globalCountrySelection = vis.selectedCountry;
+          triggerCountryChange();
+          // console.log('global selectedCountry is:', globalCountrySelection);
+        } else {
+          // reset the vis to its previous state
+          switch (globalSectionIndex) {
+            case 10:
+              vis.selectedCountry = null;
+              vis.updateMap([vis.selectedCountry]);
+              globalCountrySelection = vis.selectedCountry;
+              triggerCountryChange();
+              break;
+            case 11:
+              vis.selectedCountry = ['Mexico', 'United Kingdom'];
+              vis.updateMap(vis.selectedCountry);
+              globalCountrySelection = vis.selectedCountry;
+              triggerCountryChange();
+              break;
+            case 12:
+              vis.selectedCountry = ['China', 'Afghanistan', 'Iran', 'Russia', 'Syria', 'Cuba', 'North Korea'];
+              vis.updateMap(vis.selectedCountry);
+              globalCountrySelection = vis.selectedCountry;
+              triggerCountryChange();
+              break;
+            default:
+              vis.updateMap([null]);
+              break;
+          }
+        }
+
+        // Update global countrySection variable and trigger change detection
+        // globalCountrySelection = vis.selectedCountry;
+        // triggerCountryChange();
+        // console.log('global selectedCountry is:', globalCountrySelection);
+
+        // Update GlobeChart styles
+        // noinspection RedundantConditionalExpressionJS
+        vis.chart.selectAll('.country')
+          // eslint-disable-next-line no-unneeded-ternary
+          .classed('selected', (country) => ((vis.getCountryName(country) === vis.selectedCountry) ? true : false));
+      } else {
+        // If there's no d, then we just came from the sectionChange event listener
+        // For the initial section
+        if (globalSectionIndex <= 10) {
+          if (this.localSectionIndex === 10) {
+          } else {
+            // Reset the map
+            vis.resetProjection();
+            vis.selectedCountry = null;
+            vis.updateMap([null]);
+
+            // Update local section index to avoid repeat animations
+            vis.localSectionIndex = 10;
+          }
+        } else if (globalSectionIndex === 11) {
+          if (this.localSectionIndex === 11) {
+          } else {
+            // Set the map to expanded mode
+            vis.resetProjection();
+            vis.toggleProjection();
+            vis.updateMap(['Mexico', 'United Kingdom']);
+
+            // Highlight the relevant countries
+            vis.selectedCountry = null;
+
+            // Update local section index to avoid repeat animations
+            vis.localSectionIndex = 11;
+          }
+        } else if (globalSectionIndex === 12) {
+          if (this.localSectionIndex === 12) {
+          } else {
+            // Set the map to expanded mode
+            vis.resetProjection();
+            vis.toggleProjection();
+            vis.updateMap(['China', 'Afghanistan', 'Iran', 'Russia', 'Syria', 'Cuba', 'North Korea']);
+
+            // Highlight the relevant countries
+            vis.selectedCountry = null;
+
+            // Update local section index to avoid repeat animations
+            vis.localSectionIndex = 12;
+          }
+        }
+      }
+
     } else if (vis.path.projection() === vis.initialProjection) {
       // If the map isn't in explore mode, activate explore mode
       vis.toggleProjection();
@@ -167,6 +322,7 @@ class GlobeChart {
 
   activate() {
     // Method allows Display class to show this chart
+    this.chart.raise();
     this.chart.classed('deactivated', false);
     // this.chart.classed('activated', true);
   }
@@ -175,5 +331,6 @@ class GlobeChart {
     // Method allows Display class to hide this chart
     // this.chart.classed('activated', false);
     this.chart.classed('deactivated', true);
+    this.chart.lower();
   }
 }

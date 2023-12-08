@@ -519,11 +519,47 @@ video {
     box-shadow: 0 8px 30px var(--shadow-tooltip);
 
     font-family: var(--text-title-font);
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: normal;
     margin-bottom: 10px;
     color: var(--text-title);
     line-height: 1.2em;
+}
+
+.country-mx {
+    fill: var(--theme-economy);
+}
+
+.country-uk {
+    fill: var(--theme-guns);
+}
+
+.country-ch {
+    fill: var(--party-republican);
+}
+
+.country-af {
+    fill: var(--theme-climate);
+}
+
+.country-ir {
+    fill: var(--theme-border);
+}
+
+.country-ru {
+    fill: var(--theme-war);
+}
+
+.country-sy {
+    fill: var(--theme-law-crime);
+}
+
+.country-cu {
+    fill: var(--theme-economy);
+}
+
+.country-nk {
+    fill: var(--theme-guns);
 }
 
 
