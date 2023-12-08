@@ -97,6 +97,7 @@
                     <br/>
                     <select id="presidents" name="presidents"></select>
                 </div>
+
                 <div class="chart-controls flex-horizontal">
                     <button id="startBars">Start</button>
                     <button id="resetBars">Reset</button>
@@ -265,8 +266,8 @@
                 <!-- <div class="title">The World Stage</div>-->
                 <p>
                     In recent years, the focus of State of the Union addresses
-                    has shifted from prominent mentions of <b>Mexico</b>, a neighbor,
-                    and <b>Great Britain</b>, a longstanding ally...
+                    has shifted from prominent mentions of <b><span class="country-mx">Mexico</span></b>, a neighbor,
+                    and <b><span class="country-uk">Great Britain</span></b>, a longstanding ally...
                 </p>
             </section>
 
@@ -278,9 +279,9 @@
                     with which the United States has engaged in conflicts.
                 </p>
                 <p>
-                    Over the past decade, <b>China</b>, <b>Afghanistan</b>,
-                    <b>Iran</b>, <b>Russia</b>, <b>Syria</b>, <b>Cuba</b>,
-                    and <b>North Korea</b> have featured prominently
+                    Over the past decade, <b><span class="country-ch">China</span></b>, <b><span class="country-af">Afghanistan</span></b>,
+                    <b><span class="country-ir">Iran</span></b>, <b><span class="country-ru">Russia</span></b>, <b><span class="country-sy">Syria</span></b>, <b><span class="country-cu">Cuba</span></b>,
+                    and <b><span class="country-nk">North Korea</span></b> have featured prominently
                     in these addresses, marking a notable shift in the
                     geopolitical landscape addressed by U.S. presidents.
                 </p>
@@ -343,7 +344,7 @@
 
     <!-- Visualization Containers -->
     <div class="vis-container" id="vis-container">
-        <h1 class="visualization vis-title" id="vis-title">The State of the Union: A Time Honored Tradition</h1>
+        <h1 class="visualization vis-title" id="vis-title">The Words of the Union</h1>
         <div class="visualization vis-brush" id="vis-brush"></div>
         <div class="visualization video-container hidden" id="vis-video">
             <video id="truman-sotu-video" controls="controls" preload="none" onclick="this.play()">

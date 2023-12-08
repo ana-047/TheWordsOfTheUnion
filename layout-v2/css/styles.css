@@ -572,38 +572,47 @@ text {
 
 .country-mx {
     fill: var(--theme-economy);
+    color: var(--theme-economy);
 }
 
 .country-uk {
     fill: var(--theme-guns);
+    color: var(--theme-guns);
 }
 
 .country-ch {
     fill: var(--party-republican);
+    color: var(--party-republican);
 }
 
 .country-af {
     fill: var(--theme-climate);
+    color: var(--theme-climate);
 }
 
 .country-ir {
     fill: var(--theme-border);
+    color: var(--theme-border);
 }
 
 .country-ru {
     fill: var(--theme-war);
+    color: var(--theme-war);
 }
 
 .country-sy {
     fill: var(--theme-law-crime);
+    color: var(--theme-law-crime);
 }
 
 .country-cu {
     fill: var(--theme-economy);
+    color: var(--theme-economy);
 }
 
 .country-nk {
     fill: var(--theme-guns);
+    color: var(--theme-guns);
 }
 
 

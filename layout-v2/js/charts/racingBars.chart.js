@@ -65,7 +65,7 @@ class RacingBarsChart {
         .attr('class', 'axis axis-label')
         .attr('text-anchor', 'middle')
         .attr('x', vis.width / 2)
-        .attr('y', vis.height + vis.margin.bottom)
+        .attr('y', vis.height + vis.margin.bottom -5)
         .text('Average SOTU Speech Word Count');
 
 // Add y-axis title
