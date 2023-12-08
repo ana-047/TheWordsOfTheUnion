@@ -71,7 +71,7 @@ class TimelineChart {
       .attr("transform", d => `translate(${this.xScale(d.year)}, ${this.yScale(d.y_position) - 4})`);
 
     // Draw lines from each circle to y = 0
-    const lines = this.chart.selectAll("line")
+    this.lines = this.chart.selectAll("line")
       .data(this.data)
       .enter()
       .append("line")
