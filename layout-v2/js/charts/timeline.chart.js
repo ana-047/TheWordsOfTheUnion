@@ -1,3 +1,4 @@
+// TODO Add tooltip
 class TimelineChart {
   constructor(svgContainer, data) {
     // Container assignment

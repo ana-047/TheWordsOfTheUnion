@@ -1,4 +1,4 @@
-// TODO Fix tooltip text
+// DONE Fix tooltip text
 
 class DripBarChart {
   constructor(svgContainer, data) {

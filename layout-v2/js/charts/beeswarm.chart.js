@@ -149,7 +149,7 @@ class BeeswarmChart {
     }
 
     // Appending circles to the chart
-    const circles = vis.chart
+    vis.circles = vis.chart
       .selectAll('circle')
       .data(vis.circlesData)
       .enter()
@@ -157,14 +157,14 @@ class BeeswarmChart {
       .attr('cx', (d) => d.x)
       .attr('cy', (d) => d.y)
       .attr('r', this.radius)
-      .attr('class', (d) => `dot ${d.t}`) // Add class based on 't' property
+      .attr('class', (d) => `dot ${d.t}`) // Add class based on t property
       .on('mouseover', handleMouseOver)
       .on('mouseout', handleMouseOut);
 
     vis.initLegend();
     vis.renderAxes();
 
-    function handleMouseOver(event, d) {
+    function handleMouseOver(event) {
       // console.log('beeswarm tooltip trigger');
 
       // TOOLTIP HANDLING
@@ -223,7 +223,7 @@ class BeeswarmChart {
         .attr('r', vis.radius * 6); // Set hovered dot radius
     }
 
-    function handleMouseOut(event, d) {
+    function handleMouseOut() {
       // TOOLTIP HANDLING
       // Hide tooltip
       vis.tooltip.transition()
@@ -245,7 +245,7 @@ class BeeswarmChart {
     const vis = this;
     // Render axes
 
-    // X axis on bottom edge
+    // X-axis on bottom edge
     // vis.xAxis = d3.axisBottom().scale(vis.xScale)
     //   .tickFormat(d3.format('d'));
     // vis.chart.append('g')
@@ -253,7 +253,7 @@ class BeeswarmChart {
     //   .attr('transform', `translate(0, ${vis.height + vis.margin.bottom / 2})`)
     //   .call(vis.xAxis);
 
-    // X axis on top edge
+    // X-axis on top edge
     vis.xAxis = d3.axisTop().scale(vis.xScale)
       .tickFormat(d3.format('d'));
     vis.chart.append('g')
@@ -403,7 +403,7 @@ class BeeswarmChart {
     const vis = this;
 
     // Check how many labels are selected
-    const labels = vis.chart.selectAll('.theme-label.selected');
+    vis.labels = vis.chart.selectAll('.theme-label.selected');
 
     // Override potential user selection based on section index
     if (globalSectionIndex === 7) {
@@ -471,7 +471,7 @@ class BeeswarmChart {
     }
   }
 
-  toggleDataVisibility(selectedTheme, show) {
+  toggleDataVisibility() {
     const vis = this;
     // console.log('Toggling visibility for theme:', vis.selectedTheme);
 
