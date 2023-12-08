@@ -38,8 +38,8 @@
     --similar: #556983;
     --different: #D1D9E5;
 
-    --country-default: #545454;
-    --country-disabled: #949494;
+    --country-default: #a9a9a9;
+    --country-disabled: #d9d9d9;
     --country-background: #DCDBDB;
 
     --vis-title-height: 4%;
@@ -524,6 +524,10 @@ video {
     margin-bottom: 10px;
     color: var(--text-title);
     line-height: 1.2em;
+}
+
+.country-disabled {
+    fill: var(--country-disabled);
 }
 
 .country-mx {

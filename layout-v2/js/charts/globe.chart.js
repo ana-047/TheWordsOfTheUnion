@@ -161,7 +161,7 @@ class GlobeChart {
     // Reset country color classes
     vis.chart.selectAll('.country')
       .attr('class', '')
-      .attr('class', 'country');
+      .attr('class', 'country country-disabled');
 
     // Update the map with new color classes
     vis.chart.selectAll('.country')
@@ -202,7 +202,7 @@ class GlobeChart {
           }
           return `country ${className}`; // Add both 'country' and specific class
         }
-        return 'country'; // Default class
+        return 'country country-disabled'; // Default class
       });
   }
 
