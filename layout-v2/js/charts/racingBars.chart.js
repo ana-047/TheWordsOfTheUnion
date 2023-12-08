@@ -69,7 +69,9 @@ class RacingBarsChart {
       .range(vis.partyColors);
 
     const size = 20;
+    const rowGap = 5;
 
+    // Set up the legend groups
     vis.chart.append('g')
       .attr('class', 'legend')
       .selectAll('.myLegend')
@@ -78,7 +80,7 @@ class RacingBarsChart {
       .append('rect')
       .attr('class', 'myLegend')
       .attr('x', vis.width - 100)
-      .attr('y', (d, i) => 10 + i * (size + 5))
+      .attr('y', (d, i) => (i * (size + rowGap)))
       .attr('width', size)
       .attr('height', size)
       .style('fill', (d) => color(d));
@@ -89,14 +91,15 @@ class RacingBarsChart {
       .data(keys)
       .enter()
       .append('text')
-      .attr('class', 'myLabels')
+      .attr('class', 'myLabels label')
       .attr('x', vis.width - 100 + size * 1.2)
-      .attr('y', (d, i) => 10 + i * (size + 5) + (size / 2))
+      .attr('y', (d, i) => (i * (size + rowGap)) + (size * 0.55) )
       .style('fill', (d) => color(d))
       .text((d) => d)
       .attr('text-anchor', 'left')
-      .style('alignment-baseline', 'middle');
+      .style('dominant-baseline', 'middle'); // I think dominant-baseline is for svg text and alignment-baseline is for other things?
 
+    // Sort the data and prep for display
     vis.displayData = vis.data.sort((a, b) => a.year - b.year);
 
     const t = 800;
