@@ -217,6 +217,26 @@ br {
     width: 100%;
 }
 
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+video {
+    margin: 40px 0;
+    /*background-color: var(--background-section);*/
+    background-color: black;
+    padding: 0;
+    max-height: 400px;
+    min-width: 640px;
+    max-width: fit-content;
+    box-shadow: 0 8px 30px var(--shadow-section);
+    border-radius: 8px;
+    overflow: clip;
+}
+
 .vis-title {
     height: var(--vis-title-height);
     min-height: var(--vis-title-height);

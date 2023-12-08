@@ -14,35 +14,37 @@
             <!-- Main Story Content Sections -->
 
             <!-- Background -->
-            <section class="step intro">
+            <section class="step intro intermediate-step">
                 <div class="title ">The State of the Union: <br>A Time Honored Tradition</div>
                 <!-- <div class="title page-title">A Time Honored Tradition</div> -->
                 <p>
-                    On a cold January morning in 1790,
-                    against the backdrop of a fledgling
-                    nation finding its footing,
+                    On a cold January morning in
+                    1790,
                     <b class="pres-name">George Washington</b>
-                    delivered the first State of the Union address.
-                    Aware of his constitutional duty and of the
-                    precedent he was setting
-                    for future presidents.
+                    stood in front of Congress and
+                    delivered the first State of
+                    the Union address.
                 </p>
                 <p>
-                    <b class="pres-name">Thomas Jefferson</b>
-                    abandoned the practice as “monarchical”
-                    and time-consuming, sending written messages instead.
+                    As the leader of a fledgling
+                    nation finding its footing,
+                    his precedent has evolved with time,
+                    but its essence remains standing to this day.
                 </p>
                 <p>
-                    In 1913, <b class="pres-name">Woodrow Wilson</b> reinstated
-                    the practice of delivering the address in person
-                    and in 1947, <b class="pres-name">Harry Truman</b>
-                    delivered the first address to be televised.
+                    Though <b class="pres-name">Thomas Jefferson</b>
+                    elected to send written messages instead of speaking,
+                    <b class="pres-name">Woodrow Wilson</b> reinstated
+                    the practice of delivering the address in person.
                 </p>
                 <p>
-                    The State of the Union has since evolved, reflecting the
-                    resilience of democratic ideals shaped by
-                    presidents throughout history.
+                    In 1947, <b class="pres-name">Harry Truman</b>
+                    delivered the first address to be televised,
+                    which has been the preferred medium ever since.
                 </p>
+                <div class="chart-controls flex-horizontal">
+                    <button id="video-play-button" onclick="document.getElementById('truman-sotu-video').play()">Watch</button>
+                </div>
             </section>
 
             <!-- Introduction and Hook -->
@@ -321,10 +323,17 @@
     <div class="vis-container" id="vis-container">
         <div class="visualization vis-title" id="vis-title">vis title test</div>
         <div class="visualization vis-brush" id="vis-brush"></div>
+<!--        <div class="visualization vis-video"><video src="https://history.house.gov/mediacontent/video/sotu/truman-sotu-1947.mp4"></video></div>-->
+        <div class="visualization video-container" id="vis-video">
+            <video id="truman-sotu-video" controls="controls" preload="none" onclick="this.play()">
+                <source type="video/mp4" src="https://history.house.gov/mediacontent/video/sotu/truman-sotu-1947.mp4">
+            </video>
+        </div>
         <div class="visualization vis-focus-short" id="vis-focus-primary"></div>
         <div class="visualization vis-focus-tall" id="vis-focus-secondary"></div>
     </div>
 </div>
+
 <!-- End of app container -->
     <!-- Libraries and Scripts -->
     <script src="//d3js.org/d3.v7.min.js"></script>
