@@ -225,7 +225,7 @@ class RacingBarsChart {
       .transition()
       .duration(t)
       .delay(11000)
-      .style('stroke', '#83A2FF')
+      .style('stroke', partyColors["party-democrat"])
       .style('stroke-width', 25)
       .style('stroke-dasharray', '5,5');
 
@@ -239,7 +239,7 @@ class RacingBarsChart {
       .transition()
       .duration(t)
       .delay(11000)
-      .style('stroke', '#FF8B8B')
+      .style('stroke', partyColors["party-republican"])
       .style('stroke-width', 25)
       .style('stroke-dasharray', '5,5');
 

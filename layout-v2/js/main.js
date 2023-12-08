@@ -3,18 +3,19 @@
 // COLOR SCHEMES
 // Declare color variables
 const themeColors = {
-  'theme-border': '#F7A072',
-  'theme-climate': '#738A7C',
-  'theme-economy': '#98BB95',
-  'theme-guns': '#909CC2',
-  'theme-immigration': '#85C7F2',
-  'theme-crime': '#D17A9E',
-  'theme-war': '#AA8CAD',
+  'theme-border': '#ffc168',
+  'theme-climate': '#2cefa2',
+  'theme-economy': '#1cc7d0',
+  'theme-guns': '#3369e7',
+  'theme-immigration': '#fd8a63',
+  'theme-crime': '#cf4eff',
+  'theme-war': '#ff3f76',
 };
 
+
 const partyColors = {
-  'party-republican': '#DB767B',
-  'party-democrat': '#53AEF4',
+  'party-republican': '#ff3f76',
+  'party-democrat': '#1cc7d0',
   'party-other': '#A8A8A8',
   'party-whig': '#E2DE91',
   'party-national-union': '#39668C',
