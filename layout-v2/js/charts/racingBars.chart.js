@@ -20,9 +20,11 @@ class RacingBarsChart {
     // Make sure chart height isn't more than window height because the chart div doesn't scroll
     const localHeight = Math.min(containerHeight, globalWindowHeight);
 
+
+
     // Declare local chart margins
     this.margin = {
-      top: 10, right: 20, bottom: 60, left: 120,
+      top: 10, right: 20, bottom: 50, left: 130,
     };
 
     // Declare dimensions for local chart
@@ -56,6 +58,28 @@ class RacingBarsChart {
     vis.chart.append('g')
       .attr('class', 'x-axis axis')
       .attr('transform', `translate(0,${vis.height})`);
+
+
+    // Add x-axis title
+    vis.chart.append('text')
+        .attr('class', 'axis axis-label')
+        .attr('text-anchor', 'middle')
+        .attr('x', vis.width / 2)
+        .attr('y', vis.height + vis.margin.bottom)
+        .text('Average SOTU Speech Word Count');
+
+// Add y-axis title
+    /*
+    vis.chart.append('text')
+        .attr('class', 'axis axis-label')
+        .attr('text-anchor', 'middle')
+        .attr('transform', 'rotate(-90)')
+        .attr('x', -vis.height / 2)
+        .attr('y', -vis.margin.left + 20)
+        .text('President');
+
+
+     */
 
     // Legend
     const keys = ['Republican', 'Democratic', 'Other'];
@@ -231,7 +255,7 @@ class RacingBarsChart {
       // .attr("width", d => vis.x(0))
       .attr('fill', (d) => {
         if (d.name === myPres) {
-          return 'pink';
+          return '#E3CD7A';
         }
         return 'grey';
       })

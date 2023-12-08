@@ -33,7 +33,7 @@ class SplitBarChart {
 
     // Declare local chart margins
     this.margin = {
-      top: 10, right: 20, bottom: 60, left: 120,
+      top: 10, right: 20, bottom: 50, left: 130,
     };
 
     // Declare dimensions for local chart

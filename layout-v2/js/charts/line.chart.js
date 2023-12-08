@@ -10,6 +10,22 @@ class LineChart {
     }
 
     init() {
+        document.addEventListener('themeChange', () => {
+            if (globalThemeSelection) {
+                // Make sure chart resets after the previous stacked bar vis
+                if (globalSectionIndex <7) {
+                    this.selectedTheme = null;
+                } else {
+                    this.selectedTheme = globalThemeSelection.toLowerCase();
+                }
+            } else {
+                this.selectedTheme = null;
+            }
+            // console.log('dripBar detected event theme change', this.selectedTheme);
+            this.updateTheme();
+        });
+
+        //console.log(globalThemeSelection)
 
         const vis = this;
         // Get the bounding box of the SVG element
@@ -24,7 +40,7 @@ class LineChart {
 
         // Declare local chart margins
         vis.margin = {
-            top: 10, right: 200, bottom: 60, left: 120,
+            top: 10, right: 200, bottom: 40, left: 130,
         };
 
         // Declare dimensions for local chart
@@ -37,9 +53,107 @@ class LineChart {
             .attr('transform', `translate(${vis.margin.left},${vis.margin.top})`)
             .attr('class', 'deactivated'); // Hide the chart until it's called by the Display class
 
+        // Add x-axis title
+        /*
+        vis.chart.append('text')
+            .attr('class', 'axis axis-label')
+            .attr('text-anchor', 'middle')
+            .attr('x', vis.width / 2)
+            .attr('y', vis.height + 40)
+            .text('Year');
+            */
+
+
+// Add y-axis title
+        vis.chart.append('text')
+            .attr('class', 'axis axis-label')
+            .attr('text-anchor', 'middle')
+            .attr('transform', 'rotate(-90)')
+            .attr('x', -vis.height / 2)
+            .attr('y', -40)
+            .text('Proportion (%)');
+
+
+        vis.data.forEach(d => {
+            d.year = parseInt(d.year); // Convert to integer
+        });
+
+
         // Set up scales
         vis.xScale = d3.scaleLinear().domain([d3.min(vis.data, d => d.year), d3.max(vis.data, d => d.year)]).range([0, vis.width]);
         vis.yScale = d3.scaleLinear().domain([0, 100]).range([vis.height, 0]);
+
+        // Add axes
+        const xAxis = d3.axisBottom(vis.xScale).tickFormat(d3.format('d'));
+        const yAxis = d3.axisLeft(vis.yScale);
+
+        this.chart
+            .append("g")
+            .attr("transform", `translate(0, ${vis.height})`)
+            .call(xAxis);
+
+        this.chart
+            .append("g")
+            .call(yAxis)
+            .selectAll(".tick text")
+            .text(d => d + '%');
+
+        // Create tooltip skeleton
+        this.tooltip = d3.select('#vis-container').append('div')
+            .attr('class', 'heatmap-tooltip')
+            .style('opacity', 0);
+
+
+        // Add clip path to prevent line overflow
+        vis.chart.append("defs").append("clipPath")
+            .attr("id", "clip")
+            .append("rect")
+            .attr("width", vis.width)
+            .attr("height", vis.height);
+
+        // Create x-scale for brush
+        vis.xBrushScale = d3.scaleLinear()
+            .domain(vis.xScale.domain())
+            .range([0, vis.width]);
+
+        // Create brush
+        vis.brush = d3.brushX()
+            .extent([[0, 0], [vis.width, vis.height]])
+            .on("brush", brushed);
+
+        // Append brush group
+        vis.brushGroup = vis.chart.append("g")
+            .attr("class", "brush")
+            .call(vis.brush);
+
+        // Initialize brush position
+        vis.brushGroup
+            .call(vis.brush.move, [vis.xScale(d3.max(vis.data, d => d.year - 100)), vis.xScale(d3.max(vis.data, d => d.year))]);
+
+        function brushed(event) {
+            if (!event.sourceEvent) return; // Ignore brush-by-zoom
+            if (!event.selection) {
+                // Handle case when the user clicks outside the brush and clears the selection
+                // Add your logic here if needed
+                return;
+            }
+
+            try {
+                const selectedRange = event.selection || vis.xBrushScale.range();
+                const selectedYears = selectedRange.map(vis.xBrushScale.invert);
+
+                // const filteredData = vis.data.filter(d => d.year >= selectedYears[0] && d.year <= selectedYears[1]);
+                globalBrushYears = selectedYears;
+                triggerBrushChange()
+
+                //stackedBarChart.updateBrushYears(globalBrushYears);
+
+
+            } catch (error) {
+                console.error("Error in brushed function:", error);
+            }
+        }
+
 
         vis.wrangleData();
 
@@ -49,6 +163,8 @@ class LineChart {
         const vis = this;
 
         vis.displayData = vis.data.sort((a, b) => a.year - b.year)
+
+        console.log(vis.data)
 
         vis.update();
 
@@ -61,6 +177,15 @@ class LineChart {
         const lineGenerators = {};
         const topics = ["Border", "Climate & Environment", "Economy", "Gun", "Immigration", "Law & Crime", "War & Military"];
 
+       // console.log(this.selectedTheme)
+       // console.log(globalThemeSelection)
+
+        if(globalThemeSelection) {
+            vis.topicsFiltered = topics.filter(key => key === globalThemeSelection);
+        } else {
+            vis.topicsFiltered = topics
+        }
+
         // Get theme colors from main and convert to array
         vis.themeColors = Object.values(themeColors);
 
@@ -68,7 +193,7 @@ class LineChart {
             .domain(topics)
             .range(vis.themeColors);
 
-        topics.forEach(topic => {
+        vis.topicsFiltered.forEach(topic => {
             lineGenerators[topic] = d3
                 .line()
                 .x(d => vis.xScale(d.year))
@@ -76,29 +201,47 @@ class LineChart {
                 .curve(d3.curveBundle.beta(0.3));
         });
 
+
 // Draw lines
-        topics.forEach(topic => {
-            this.chart
+        vis.topicsFiltered.forEach(topic => {
+            const line = this.chart
                 .append("path")
+                .attr("class", d => `allLines ${topic.replace(/[^a-zA-Z0-9]/g, '')}`)
                 .datum(vis.displayData)
+                .transition()
+                .duration(500)
                 .attr("fill", "none")
                 .attr("stroke", vis.colorScale(topic))
                 .attr("stroke-width", 2)
                 .attr("d", lineGenerators[topic]);
+
+
         });
 
-// Add axes
-        const xAxis = d3.axisBottom(vis.xScale);
-        const yAxis = d3.axisLeft(vis.yScale);
 
-        this.chart
-            .append("g")
-            .attr("transform", `translate(0, ${vis.height})`)
-            .call(xAxis);
 
-        this.chart
-            .append("g")
-            .call(yAxis);
+    }
+
+
+
+    updateTheme() {
+
+      if(globalThemeSelection){
+          d3.selectAll(".allLines")
+              .transition()
+              .duration(200)
+              .attr("opacity", 0)
+
+          d3.selectAll("." + globalThemeSelection.replace(/[^a-zA-Z0-9]/g, ''))
+              .transition()
+              .duration(800)
+              .attr("opacity", 1)
+      } else {
+          d3.selectAll(".allLines")
+              .transition()
+              .duration(800)
+              .attr("opacity", 1)
+      }
 
     }
     activate() {

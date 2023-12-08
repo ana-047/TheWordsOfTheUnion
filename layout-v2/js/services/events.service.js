@@ -17,6 +17,13 @@ function triggerSectionPositionChange() {
   document.dispatchEvent(event);
 }
 
+// Declare global year vars for brush line graph
+let globalBrushYears;
+function triggerBrushChange() {
+  const event = new CustomEvent('brushChange', { detail: globalBrushYears });
+  document.dispatchEvent(event);
+}
+
 // Declare global max vis height based on window
 let globalWindowHeight;
 

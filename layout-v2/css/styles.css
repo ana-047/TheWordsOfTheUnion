@@ -23,7 +23,7 @@
     --party-federalist: #96787C;
     --party-other: #A8A8A8;
 
-    --hover: #A49139;
+    --hover: #f3d66a;
     --highlight: #37FC00;
     --selected: #E3CD7A;
 
@@ -70,7 +70,7 @@ body {
     position: relative;
     display: inline-block;
     /*width: 100%;*/
-    max-width: 250px;
+    max-width: 350px;
     top: 0;
     z-index: 90;
     padding-bottom: 200px;
@@ -362,6 +362,20 @@ video {
 }
 
 
+/* stacked bars */
+.mylabels2 {
+    fill: var(--background-section);
+    margin: 4px 8px;
+    padding: 4px 8px;
+}
+
+.mylabels2-background {
+    /*fill: var(--background-section);*/
+    margin: 4px 8px;
+    padding: 4px 8px;
+}
+
+
 /* BEE SWARM */
 
 .theme-label {
@@ -481,6 +495,31 @@ video {
     fill: var(--selected);
 }
 
+.stackedBars:hover{
+    fill: var(--hover);
+}
+
+.racingBars:hover{
+    fill: var(--hover);
+}
+
+.mylabels2:hover{
+    fill: var(--hover);
+}
+
+.theme-label:hover{
+    fill: var(--hover);
+}
+
+h1 {
+    font-family: var(--text-title-font);
+}
+
+text {
+    font-family: var(--text-title-font);
+    font-size: 12px;
+}
+
 
 /* SCATTER PLOT */
 
@@ -529,6 +568,7 @@ video {
 .country-disabled {
     fill: var(--country-disabled);
 }
+
 
 .country-mx {
     fill: var(--theme-economy);

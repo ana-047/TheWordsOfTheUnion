@@ -22,7 +22,7 @@ class HeatmapChart {
 
     // Declare local chart margins
     this.margin = {
-      top: 10, right: 60, bottom: 54, left: 74,
+      top: 10, right: 70, bottom: 65, left: 80,
     };
 
     // Declare dimensions for local chart
@@ -101,7 +101,7 @@ class HeatmapChart {
           .transition()
           .duration(200)
           .style('opacity', 0.9)
-          .style('left', `${offsetX + 10}px`)
+          .style('left', `${offsetX + 30}px`)
           .style('top', `${offsetY - 20}px`);
 
         // Update tooltip contents
