@@ -53,6 +53,7 @@ class Display {
     container.brush = d3.select('#vis-brush');
     container.chartPrimary = d3.select('#vis-focus-primary');
     container.chartSecondary = d3.select('#vis-focus-secondary');
+    container.videoContainer = d3.select('#vis-video');
 
     // Define dimensions
     container.margins = {
@@ -141,6 +142,19 @@ class Display {
       // Update text visibility for focused/unfocused sections
       d3.selectAll('.step')
         .style('opacity', (d, i) => (i === globalSectionIndex ? 1 : 0.3));
+
+      // INTRO VIDEO CONTAINER
+      if (globalSectionIndex < 1) {
+        // Show video for first section
+        container.videoContainer.classed('hidden', false);
+        container.videoContainer.classed('shown', true);
+      } else if (globalSectionIndex >= 1) {
+        // Hide video for later sections
+        container.videoContainer.classed('shown', false);
+        container.videoContainer.classed('hidden', true);
+      } else {
+        console.log('error with toggling video');
+      }
 
       // DIV CONTAINERS
       // Arrow function updates visibility for each div container
