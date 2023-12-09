@@ -135,7 +135,7 @@ class SplitBarChart {
     this.stat.append('rect')
       .attr('x', 0)
       .attr('y', 0)
-      .attr('width', this.width)
+      .attr('width', this.width + this.margin.right)
       .attr('height', this.yScale.bandwidth())
       .attr('fill', '#E3CD7A');
 

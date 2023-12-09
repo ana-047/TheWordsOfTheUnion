@@ -6,10 +6,10 @@ const themeColors = {
   'theme-border': '#F7A072',
   'theme-climate': '#738A7C',
   'theme-economy': '#98BB95',
-  'theme-guns': '#909CC2',
+  'theme-guns': '#7985AF',
   'theme-immigration': '#85C7F2',
   'theme-crime': '#D17A9E',
-  'theme-war': '#AA8CAD',
+  'theme-war': '#A596A6',
 };
 
 const partyColors = {

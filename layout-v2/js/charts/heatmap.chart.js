@@ -22,7 +22,7 @@ class HeatmapChart {
 
     // Declare local chart margins
     this.margin = {
-      top: 10, right: 70, bottom: 65, left: 80,
+      top: 10, right: 10, bottom: 65, left: 80,
     };
 
     // Declare dimensions for local chart

@@ -8,6 +8,7 @@
 
     --text-default: #262626;
     --text-title: #424242;
+    --text-background: #a9a9a9;
     --text-contrast: #EFEFEF;
     --pres-name: #262626;
     --text-link: #393f57;
@@ -28,12 +29,13 @@
     --selected: #E3CD7A;
 
     --theme-economy: #98BB95;
-    --theme-war: #AA8CAD;
+    /*--theme-war: #AA8CAD;*/
     --theme-border: #F7A072;
     --theme-climate: #738A7C;
     --theme-immigration: #85C7F2;
     --theme-law-crime: #D17A9E;
-    --theme-guns: #909CC2;
+    --theme-guns: #7985af;
+    --theme-war: #a596a6;
 
     --similar: #556983;
     --different: #D1D9E5;
@@ -70,14 +72,14 @@ body {
     position: relative;
     display: inline-block;
     /*width: 100%;*/
-    max-width: 350px;
+    max-width: 300px;
     top: 0;
     z-index: 90;
-    padding-bottom: 200px;
+    padding-bottom: 0;
 }
 
 .sections:last-child {
-    margin-bottom: 50vh;
+    margin-bottom: 10px;
 }
 
 .intro {
@@ -219,9 +221,11 @@ br {
 
 .video-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     width: 100%;
+    height: calc(50vh - 16px);
+    padding: 30px 30px 30px 30px;
 }
 
 video {
@@ -230,17 +234,28 @@ video {
     background-color: black;
     padding: 0;
     max-height: 400px;
-    min-width: 640px;
-    max-width: fit-content;
-    box-shadow: 0 8px 30px var(--shadow-section);
+    /*min-width: 640px;*/
+    width: 94%;
+    /*max-width: fit-content;*/
+    box-shadow: 0 4px 30px var(--shadow-section);
     border-radius: 8px;
-    overflow: clip;
 }
 
 .vis-title {
+    /* Layout */
     height: var(--vis-title-height);
     min-height: var(--vis-title-height);
     max-height: var(--vis-title-height);
+    width: 100%;
+    margin-left: 10px;
+
+    /* Styles */
+    text-align: right;
+    font-family: var(--text-title-font);
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-background);
+    line-height: 1.2em;
 }
 
 .vis-brush {
