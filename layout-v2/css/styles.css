@@ -16,8 +16,8 @@
     --delivery-in-person: #AA8CAD;
     --delivery-televised: #D17A9E;
 
-    --party-republican: #ff3f76;
-    --party-democrat: #1cc7d0;
+    --party-republican: #DB767B;
+    --party-democrat: #53AEF4;
     --party-whig: #E2DE91;
     --party-national-union: #39668C;
     --party-federalist: #96787C;
@@ -27,13 +27,13 @@
     --highlight: #37FC00;
     --selected: #E3CD7A;
 
-    --theme-economy: #1cc7d0;
-    --theme-war: #ff3f76;
-    --theme-border: #ffc168;
-    --theme-climate: #2cefa2;
-    --theme-immigration: #fd8a63;
-    --theme-law-crime: #cf4eff;
-    --theme-guns: #3369e7;
+    --theme-economy: #98BB95;
+    --theme-war: #AA8CAD;
+    --theme-border: #F7A072;
+    --theme-climate: #738A7C;
+    --theme-immigration: #85C7F2;
+    --theme-law-crime: #D17A9E;
+    --theme-guns: #909CC2;
 
     --similar: #556983;
     --different: #D1D9E5;
@@ -593,12 +593,11 @@ text {
 .country-ir {
     fill: var(--theme-border);
     color: var(--theme-border);
-
 }
 
 .country-ru {
-    fill: var(--theme-immigration);
-    color: var(--theme-immigration);
+    fill: var(--theme-war);
+    color: var(--theme-war);
 }
 
 .country-sy {
