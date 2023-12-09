@@ -56,7 +56,16 @@ class GlobeChart {
 
     // Define projection scales
     this.initialProjection = d3.geoOrthographic().scale(this.mapScale).translate([this.width * 0.5, this.height * 0.5]);
-    this.equirectangularProjection = d3.geoEquirectangular().scale(this.mapScale * 0.8).translate([this.width * 0.5, this.height * 0.65]);
+    //this.equirectangularProjection = d3.geoEquirectangular().scale(this.mapScale * 0.6).translate([this.width * 0.41, this.height * 0.68]);
+
+    const widthToHeightRatio = this.width / this.height;
+    const maxScale = 0.3; // Adjust this as needed
+
+    this.equirectangularProjection = d3.geoEquirectangular()
+      .scale(Math.min(widthToHeightRatio * this.mapScale * maxScale, this.mapScale)) // Dynamic scaling based on width
+      .translate([this.width / 2, this.height * 0.5]); // Centering projection within the container
+
+
 
     // Create a chart group that will hold the actual chart
     // (The parent SVG will hold multiple chart groups and display them as needed)
@@ -201,6 +210,8 @@ class GlobeChart {
               className = 'country';
           }
           return `country ${className}`; // Add both 'country' and specific class
+        } else if (countryName === 'Antarctica') {
+          return `country country-hidden`;
         }
         return 'country country-disabled'; // Default class
       });

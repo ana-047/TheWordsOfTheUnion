@@ -46,7 +46,7 @@ class ScatterPlot {
 
     // Declare local chart margins
     this.margin = {
-      top: 40, right: 20, bottom: 20, left: 60,
+      top: 40, right: 10, bottom: 30, left: 60,
     };
 
     // Declare dimensions for local chart
@@ -227,7 +227,8 @@ class ScatterPlot {
       .attr('x', vis.width * 0.5)
       .attr('y', vis.margin.top * -0.3)
       .style('text-anchor', 'middle')
-      .text(titleString);
+      .text(titleString)
+      .attr('class', 'scatter-title');
 
     // Tooltip handling
     vis.chart.selectAll('circle')

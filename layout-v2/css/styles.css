@@ -546,7 +546,7 @@ text {
 
 .scatter-title {
     font-family: var(--text-title-font);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: var(--text-title);
     line-height: 1.2em;
@@ -630,6 +630,11 @@ text {
 .country-nk {
     fill: var(--theme-guns);
     color: var(--theme-guns);
+}
+
+.country-hidden {
+    pointer-events: none;
+    opacity: 0;
 }
 
 
