@@ -27,7 +27,7 @@ class ScatterPlot {
 
     // Listen for the sectionChange event and update the chart accordingly to highlight specific countries
     document.addEventListener('sectionChange', () => {
-      if ([10, 11, 12].includes(globalSectionIndex)) {
+      if ([11, 12, 13].includes(globalSectionIndex)) {
         this.handleFocusState();
       } else {
         // this.doSomething()
@@ -289,35 +289,35 @@ class ScatterPlot {
 
   handleFocusState() {
     const vis = this;
-    if (globalSectionIndex === 11) {
-      if (this.localSectionIndex === 11) {
+    if (globalSectionIndex === 12) {
+      if (this.localSectionIndex === 12) {
       } else {
         // Show Mexico and UK
         vis.selectedCountryNames = ['Mexico', 'United Kingdom'];
         vis.update();
 
         // Update local section index to avoid repeat animations
-        vis.localSectionIndex = 11;
+        vis.localSectionIndex = 12;
       }
-    } else if (globalSectionIndex === 12) {
-      if (this.localSectionIndex === 12) {
+    } else if (globalSectionIndex === 13) {
+      if (this.localSectionIndex === 13) {
       } else {
         // Show China, Afghanistan, Iran, Russia, Syria, Cuba, and North Korea
         vis.selectedCountryNames = ['China', 'Afghanistan', 'Iran', 'Russia', 'Syria', 'Cuba', 'North Korea'];
         vis.update();
 
         // Update local section index to avoid repeat animations
-        vis.localSectionIndex = 12;
+        vis.localSectionIndex = 13;
       }
     } else {
-      if (this.localSectionIndex === 10) {
+      if (this.localSectionIndex === 11) {
       } else {
         // Clear the selection
         vis.selectedCountryNames = [null];
         vis.update();
 
         // Update local section index to avoid repeat animations
-        vis.localSectionIndex = 10;
+        vis.localSectionIndex = 11;
       }
     }
   }

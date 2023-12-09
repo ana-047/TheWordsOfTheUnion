@@ -21,11 +21,11 @@ class GlobeChart {
   init() {
     // Listen for the sectionChange event and update the chart accordingly to highlight specific countries
     document.addEventListener('sectionChange', () => {
-      if ([10, 11, 12].includes(globalSectionIndex)) {
+      if ([11, 12, 13].includes(globalSectionIndex)) {
         this.handleCountryClick();
-      } else if ([11].includes(globalSectionIndex)) {
-        // this.doSomething()
       } else if ([12].includes(globalSectionIndex)) {
+        // this.doSomething()
+      } else if ([13].includes(globalSectionIndex)) {
         // this.doSomething()
       } else {
         // this.doSomething()
@@ -231,19 +231,19 @@ class GlobeChart {
         } else {
           // reset the vis to its previous state
           switch (globalSectionIndex) {
-            case 10:
+            case 11:
               vis.selectedCountry = null;
               vis.updateMap([vis.selectedCountry]);
               globalCountrySelection = vis.selectedCountry;
               triggerCountryChange();
               break;
-            case 11:
+            case 12:
               vis.selectedCountry = ['Mexico', 'United Kingdom'];
               vis.updateMap(vis.selectedCountry);
               globalCountrySelection = vis.selectedCountry;
               triggerCountryChange();
               break;
-            case 12:
+            case 13:
               vis.selectedCountry = ['China', 'Afghanistan', 'Iran', 'Russia', 'Syria', 'Cuba', 'North Korea'];
               vis.updateMap(vis.selectedCountry);
               globalCountrySelection = vis.selectedCountry;
@@ -268,27 +268,13 @@ class GlobeChart {
       } else {
         // If there's no d, then we just came from the sectionChange event listener
         // For the initial section
-        if (globalSectionIndex <= 10) {
-          if (this.localSectionIndex === 10) {
+        if (globalSectionIndex <= 11) {
+          if (this.localSectionIndex === 11) {
           } else {
             // Reset the map
             vis.resetProjection();
             vis.selectedCountry = null;
             vis.updateMap([null]);
-
-            // Update local section index to avoid repeat animations
-            vis.localSectionIndex = 10;
-          }
-        } else if (globalSectionIndex === 11) {
-          if (this.localSectionIndex === 11) {
-          } else {
-            // Set the map to expanded mode
-            vis.resetProjection();
-            vis.toggleProjection();
-            vis.updateMap(['Mexico', 'United Kingdom']);
-
-            // Highlight the relevant countries
-            vis.selectedCountry = null;
 
             // Update local section index to avoid repeat animations
             vis.localSectionIndex = 11;
@@ -299,13 +285,27 @@ class GlobeChart {
             // Set the map to expanded mode
             vis.resetProjection();
             vis.toggleProjection();
-            vis.updateMap(['China', 'Afghanistan', 'Iran', 'Russia', 'Syria', 'Cuba', 'North Korea']);
+            vis.updateMap(['Mexico', 'United Kingdom']);
 
             // Highlight the relevant countries
             vis.selectedCountry = null;
 
             // Update local section index to avoid repeat animations
             vis.localSectionIndex = 12;
+          }
+        } else if (globalSectionIndex === 13) {
+          if (this.localSectionIndex === 13) {
+          } else {
+            // Set the map to expanded mode
+            vis.resetProjection();
+            vis.toggleProjection();
+            vis.updateMap(['China', 'Afghanistan', 'Iran', 'Russia', 'Syria', 'Cuba', 'North Korea']);
+
+            // Highlight the relevant countries
+            vis.selectedCountry = null;
+
+            // Update local section index to avoid repeat animations
+            vis.localSectionIndex = 13;
           }
         }
       }
