@@ -54,10 +54,16 @@ class TimelineChart {
     this.yAxis = this.chart.append('g')
       .attr('transform', `translate(${-0.05 * this.margin.left}, 0)`);
 
+    // Create tooltip skeleton
+    this.tooltip = d3.select('#vis-container').append('div')
+      .attr('class', 'timeline-tooltip')
+      .style('opacity', 0);
+
     this.update();
   }
 
   update() {
+    const vis = this;
     // Make the data is available to the update method
     const { data } = this;
 
@@ -90,6 +96,34 @@ class TimelineChart {
           return mode.replace(/\s+/g, '-').toLowerCase();
         }
         return preProcessClass(mode);
+      })
+      .on('mouseover', (event, d) => {
+        // Get the client offsets so the tooltip appears over the mouse
+        const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
+
+        // Render the tooltip and update position
+        vis.tooltip
+          .transition()
+          .duration(200)
+          .style('opacity', 0.9)
+          .style('left', `${offsetX + 10}px`)
+          .style('top', `${offsetY - 20}px`);
+
+        // Update tooltip contents
+        vis.tooltip
+          .html(`
+            <span class="pres-name">${d.name}</span>
+            <br><span class="label"> (${d.party})</span>
+            <br><span class="label">${d.year}</span>
+            
+          `);
+      })
+      .on('mouseout', (event, d) => {
+        // Hide the tooltip
+        vis.tooltip
+          .transition()
+          .duration(200)
+          .style('opacity', 0);
       });
 
     // Append annotation text
