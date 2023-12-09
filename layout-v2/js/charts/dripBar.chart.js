@@ -17,7 +17,7 @@ class DripBarChart {
     document.addEventListener('themeChange', () => {
       if (globalThemeSelection) {
         // Make sure chart resets after the previous stacked bar vis
-        if (globalSectionIndex <7) {
+        if (globalSectionIndex <8) {
           this.selectedTheme = null;
         } else {
           this.selectedTheme = globalThemeSelection.toLowerCase();
@@ -31,10 +31,10 @@ class DripBarChart {
 
     // Listen for the sectionChange event and update the chart accordingly to highlight specific years
     document.addEventListener('sectionChange', () => {
-      if ([8].includes(globalSectionIndex)) {
+      if ([9].includes(globalSectionIndex)) {
         // Highlight 1906
         this.selectedYear = 1906;
-      } else if ([9].includes(globalSectionIndex)) {
+      } else if ([10].includes(globalSectionIndex)) {
         // Highlight 1897
         this.selectedYear = 1897;
       } else {

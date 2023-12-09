@@ -29,7 +29,7 @@ class BeeswarmChart {
   init() {
     // Listen for the sectionChange event and update the chart accordingly to highlight specific themes
     document.addEventListener('sectionChange', () => {
-      if ([7, 8, 9].includes(globalSectionIndex)) {
+      if ([8, 9, 10].includes(globalSectionIndex)) {
         // console.log('beeswarm caught event, section is ', globalSectionIndex);
         this.toggleLegendSelectors();
       }
@@ -406,9 +406,9 @@ class BeeswarmChart {
     vis.labels = vis.chart.selectAll('.theme-label.selected');
 
     // Override potential user selection based on section index
-    if (globalSectionIndex === 7) {
+    if (globalSectionIndex === 8) {
       // Avoid repeatedly triggering animation changes
-      if (this.localSectionIndex !== 7) {
+      if (this.localSectionIndex !== 8) {
         // Update the selection property and trigger global update
         vis.selectedTheme = null;
         globalThemeSelection = vis.selectedTheme;
@@ -426,11 +426,11 @@ class BeeswarmChart {
           .style('display', 'initial');
 
         // Update local section index
-        this.localSectionIndex = 7;
+        this.localSectionIndex = 8;
       }
-    } else if (globalSectionIndex === 8) {
+    } else if (globalSectionIndex === 9) {
       // Avoid repeatedly triggering animation changes
-      if (this.localSectionIndex !== 8) {
+      if (this.localSectionIndex !== 9) {
         // Update the selection property and trigger global update
         vis.selectedTheme = 'crime';
         globalThemeSelection = vis.selectedTheme.toLowerCase();
@@ -446,11 +446,11 @@ class BeeswarmChart {
         vis.toggleDataVisibility(vis.selectedTheme, true);
 
         // Update local section index
-        this.localSectionIndex = 8;
+        this.localSectionIndex = 9;
       }
-    } else if (globalSectionIndex === 9) {
+    } else if (globalSectionIndex === 10) {
       // Avoid repeatedly triggering animation changes
-      if (this.localSectionIndex !== 9) {
+      if (this.localSectionIndex !== 10) {
         // Update the selection property and trigger global update
         vis.selectedTheme = 'war';
         globalThemeSelection = vis.selectedTheme.toLowerCase();
@@ -466,7 +466,7 @@ class BeeswarmChart {
         vis.toggleDataVisibility(vis.selectedTheme, true);
 
         // Update local section index
-        this.localSectionIndex = 9;
+        this.localSectionIndex = 10;
       }
     }
   }
