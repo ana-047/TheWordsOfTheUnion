@@ -300,7 +300,8 @@ video {
 
 /* SPEECH LENGTH TRANSITION */
 .big-stat {
-    font-size: 100px;
+    font-size: 80px;
+    font-size: 8vw;
     font-family: var(--text-title-font);
     fill: var(--text-default)
 }
