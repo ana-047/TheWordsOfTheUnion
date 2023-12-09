@@ -45,7 +45,8 @@
     --country-background: #DCDBDB;
 
     --vis-title-height: 4%;
-    --vis-brush-height: 20%;
+    /*--vis-brush-height: 20%;*/
+    --vis-brush-height: 196px;
     --vis-legend-height: 8%;
     --vis-focus-min-height: 40%;
     --vis-focus-max-height: 80%;
@@ -702,6 +703,10 @@ text {
     max-height: 0 !important;
     opacity: 0;
     transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.disappear {
+    display: none;
 }
 
 .shown {

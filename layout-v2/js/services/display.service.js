@@ -146,12 +146,22 @@ class Display {
       // INTRO VIDEO CONTAINER
       if (globalSectionIndex < 1) {
         // Show video for first section
+        container.videoContainer.classed('disappear', false);
         container.videoContainer.classed('hidden', false);
         container.videoContainer.classed('shown', true);
+        container.videoContainer.selectAll('*')
+          .classed('disappear', false)
+          .classed('hidden', false)
+          .classed('shown', true);
       } else if (globalSectionIndex >= 1) {
         // Hide video for later sections
         container.videoContainer.classed('shown', false);
         container.videoContainer.classed('hidden', true);
+        container.videoContainer.classed('disappear', true);
+        container.videoContainer.selectAll('*')
+          .classed('shown', false)
+          .classed('hidden', true)
+          .classed('disappear', true);
       } else {
         console.log('error with toggling video');
       }
