@@ -189,8 +189,8 @@ class StackedBarChart {
           if (vis.selectedTheme === d && counter === 1) {
             // Update the selection property and trigger global update
             vis.selectedTheme = null;
-            globalThemeSelection = vis.selectedTheme;
-            triggerThemeChange();
+            globalLineSelection = vis.selectedTheme;
+            triggerLineChange();
 
             // Turn off the filter
             // Select all items
@@ -202,8 +202,8 @@ class StackedBarChart {
           } else {
             // Update the selection property and trigger global update
             vis.selectedTheme = d;
-            globalThemeSelection = vis.selectedTheme;
-            triggerThemeChange();
+            globalLineSelection = vis.selectedTheme;
+            triggerLineChange();
 
             // Deselect all items
             vis.chart.selectAll('.mylabels2').classed('selected', false);
@@ -244,8 +244,8 @@ class StackedBarChart {
 
     const sortData = vis.data.sort((a, b) => a.year - b.year).filter(d => d.year >= minYear && d.year <= maxYear);
 
-    if(globalThemeSelection) {
-      vis.keysNew = Object.keys(sortData[0]).slice(2).filter(key => key === globalThemeSelection);
+    if(globalLineSelection) {
+      vis.keysNew = Object.keys(sortData[0]).slice(2).filter(key => key === globalLineSelection);
     } else {
       vis.keysNew = Object.keys(sortData[0]).slice(2)
     }

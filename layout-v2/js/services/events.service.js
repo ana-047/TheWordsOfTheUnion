@@ -1,4 +1,5 @@
 // EVENT HANDLING
+
 // Declare global section index vars
 let globalSectionIndex;
 
@@ -19,6 +20,8 @@ function triggerSectionPositionChange() {
 
 // Declare global year vars for brush line graph
 let globalBrushYears;
+
+// Set up global brush event handling within a section
 function triggerBrushChange() {
   const event = new CustomEvent('brushChange', { detail: globalBrushYears });
   document.dispatchEvent(event);
@@ -48,5 +51,14 @@ let globalThemeSelection;
 // Set up global theme selector event handling
 function triggerThemeChange() {
   const event = new CustomEvent('themeChange', { detail: globalThemeSelection });
+  document.dispatchEvent(event);
+}
+
+// Declare global theme selector for line chart theme visualization
+let globalLineSelection;
+
+// Set up global line theme selector event handling
+function triggerLineChange() {
+  const event = new CustomEvent('lineChange', { detail: globalLineSelection });
   document.dispatchEvent(event);
 }
