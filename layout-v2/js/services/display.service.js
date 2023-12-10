@@ -54,6 +54,8 @@ class Display {
     container.chartPrimary = d3.select('#vis-focus-primary');
     container.chartSecondary = d3.select('#vis-focus-secondary');
     container.videoContainer = d3.select('#vis-video');
+    container.photoContainer = d3.select('#vis-photo');
+    container.summaryContainer = d3.select('#vis-summary');
 
     // Define dimensions
     container.margins = {
@@ -166,7 +168,53 @@ class Display {
         console.log('error with toggling video');
       }
 
-      // DIV CONTAINERS
+      // INTRO PHOTO CONTAINER
+      if (globalSectionIndex === 1) {
+        // Show video for first section
+        container.photoContainer.classed('disappear', false);
+        container.photoContainer.classed('hidden', false);
+        container.photoContainer.classed('shown', true);
+        container.photoContainer.selectAll('*')
+          .classed('disappear', false)
+          .classed('hidden', false)
+          .classed('shown', true);
+      } else if (globalSectionIndex !== 1) {
+        // Hide video for later sections
+        container.photoContainer.classed('shown', false);
+        container.photoContainer.classed('hidden', true);
+        container.photoContainer.classed('disappear', true);
+        container.photoContainer.selectAll('*')
+          .classed('shown', false)
+          .classed('hidden', true)
+          .classed('disappear', true);
+      } else {
+        console.log('error with toggling photo');
+      }
+
+      // SUMMARY CONTAINER
+      if (globalSectionIndex === 14) {
+        // Show video for first section
+        container.summaryContainer.classed('disappear', false);
+        container.summaryContainer.classed('hidden', false);
+        container.summaryContainer.classed('shown', true);
+        container.summaryContainer.selectAll('*')
+          .classed('disappear', false)
+          .classed('hidden', false)
+          .classed('shown', true);
+      } else if (globalSectionIndex !== 14) {
+        // Hide video for later sections
+        container.summaryContainer.classed('shown', false);
+        container.summaryContainer.classed('hidden', true);
+        container.summaryContainer.classed('disappear', true);
+        container.summaryContainer.selectAll('*')
+          .classed('shown', false)
+          .classed('hidden', true)
+          .classed('disappear', true);
+      } else {
+        console.log('error with toggling summary');
+      }
+
+      // CHART DIV CONTAINERS
       // Arrow function updates visibility for each div container
       // Needs to be arrow function to retain access to the 'this' ('container') context
       const toggleVisibility = (containerElement, plots, visId) => {

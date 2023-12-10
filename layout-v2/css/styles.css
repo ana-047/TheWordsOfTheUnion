@@ -25,6 +25,7 @@
     --party-other: #A8A8A8;
 
     --hover: #f3d66a;
+    --hover-translucent: rgba(243, 214, 106, 0.53);
     --highlight: #37FC00;
     --selected: #E3CD7A;
 
@@ -113,6 +114,47 @@ body {
 
 .intermediate-step {
     margin-bottom: 100px;
+}
+
+.pseudo-section {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-left: 5%;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pseudo-step:first-child {
+    margin-left: 30px;
+}
+
+.pseudo-step {
+    width: 200px;
+    margin-bottom: 0;
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: var(--background-section);
+    border-radius: 8px;
+    /*border: solid 1px var(--border-section);*/
+    box-shadow: 0 8px 30px var(--shadow-section);
+    padding: 20px 16px;
+
+    font-family: var(--text-default-font);
+    font-size: 16px;
+    line-height: 23px;
+    color: var(--text-default);
+}
+
+.summary-title {
+    max-height: 20px;
+    font-family: var(--text-title-font);
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-title);
+    line-height: 1.2em;
 }
 
 .title {
@@ -243,6 +285,31 @@ video {
     margin: 40px 0;
     /*background-color: var(--background-section);*/
     background-color: black;
+    padding: 0;
+    max-height: 400px;
+    /*min-width: 640px;*/
+    width: 94%;
+    /*max-width: fit-content;*/
+    box-shadow: 0 4px 30px var(--shadow-section);
+    border-radius: 8px;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 5%;
+    margin-right: 20%;
+    width: 100%;
+    height: calc(50vh - 16px);
+    /*padding: 30px 30px 30px 30px;*/
+    padding: 60px;
+}
+
+.photo {
+    margin: 0 20% 0 5%;
+    /*background-color: var(--background-section);*/
+    /*background-color: black;*/
     padding: 0;
     max-height: 400px;
     /*min-width: 640px;*/
@@ -409,6 +476,20 @@ video {
 .guns {
     fill: var(--theme-guns)
 }
+
+
+/* LINE CHART */
+
+.line-brush {
+
+}
+
+.selection {
+    stroke: var(--selected);
+    stroke-width: 2px;
+    fill: var(--hover-translucent);
+}
+
 
 /* STACKED BAR CHART */
 
