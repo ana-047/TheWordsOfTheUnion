@@ -20,8 +20,6 @@ class RacingBarsChart {
     // Make sure chart height isn't more than window height because the chart div doesn't scroll
     const localHeight = Math.min(containerHeight, globalWindowHeight);
 
-
-
     // Declare local chart margins
     this.margin = {
       top: 10, right: 20, bottom: 50, left: 130,
@@ -68,19 +66,6 @@ class RacingBarsChart {
         .attr('y', vis.height + vis.margin.bottom -5)
         .text('Average SOTU Speech Word Count');
 
-// Add y-axis title
-    /*
-    vis.chart.append('text')
-        .attr('class', 'axis axis-label')
-        .attr('text-anchor', 'middle')
-        .attr('transform', 'rotate(-90)')
-        .attr('x', -vis.height / 2)
-        .attr('y', -vis.margin.left + 20)
-        .text('President');
-
-
-     */
-
     // Legend
     const keys = ['Republican', 'Democratic', 'Other'];
 
@@ -89,7 +74,6 @@ class RacingBarsChart {
 
     const color = d3.scaleOrdinal()
       .domain(keys)
-      // .range(["#FF8B8B", "#83A2FF", "#FFD28F"]);
       .range(vis.partyColors);
 
     const size = 20;
@@ -121,7 +105,7 @@ class RacingBarsChart {
       .style('fill', (d) => color(d))
       .text((d) => d)
       .attr('text-anchor', 'left')
-      .style('dominant-baseline', 'middle'); // I think dominant-baseline is for svg text and alignment-baseline is for other things?
+      .style('dominant-baseline', 'middle');
 
     // Sort the data and prep for display
     vis.displayData = vis.data.sort((a, b) => a.year - b.year);
@@ -129,9 +113,7 @@ class RacingBarsChart {
     const t = 800;
 
     vis.x.domain([0, 20000]);
-    vis.y.domain(vis.displayData.map((d) => d.name)) //.sort())
-
-    // console.log(vis.displayData.map(d => d.name))
+    vis.y.domain(vis.displayData.map((d) => d.name))
 
     d3.select('#presidents')
       .selectAll('option')
@@ -150,7 +132,7 @@ class RacingBarsChart {
         .transition()
         .duration(t)
       .call(vis.xAxis)
-     // .attr('color', '#EFEFEF');
+
 
     // Add a button to start the animation
     d3.select('#startBars')
@@ -158,14 +140,6 @@ class RacingBarsChart {
 
     d3.select('#resetBars')
       .on('click', () => this.resetAnimation()); // Call startAnimation when the button is clicked
-
-    // Create a tooltip div
-    //vis.tooltip = d3.select('#presidents').append('div')
-   //   .attr('class', 'tooltip')
-   //   .style('opacity', 0)
-   //   .style('pointer-events', 'none')
-      // .style('background-color', 'lightgrey')
-   //   .style('box-shadow', '2px 2px 6px rgba(0,0,0,0.3)');
 
     // Create tooltip skeleton
     this.tooltip = d3.select('#vis-container').append('div')
@@ -190,11 +164,7 @@ class RacingBarsChart {
     const vis = this;
 
     const t = 2000;
-
     const myPres = d3.select('#presidents').property('value');
-
-    // d3.select("#startBars").attr("disabled", true);
-
 
     // overall line
     vis.chart.append('line')
@@ -204,7 +174,6 @@ class RacingBarsChart {
       .attr('y2', vis.height)
       .attr('x2', vis.x(vis.avg_overall))
         .on('mouseover', (event, d) => {
-          // console.log('heatmap tooltip trigger');
           // Get the client offsets so the tooltip appears over the mouse
           const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
 
@@ -223,22 +192,18 @@ class RacingBarsChart {
               .html(`Party: All parties <br> Average speech length: ${format(Math.round(vis.avg_overall))} words`);
 
         })
-
         .on('mouseout', () => {
           // Hide tooltip
           vis.tooltip.transition()
               .duration(500)
               .style('opacity', 0);
-
         })
-
       .transition()
-        .delay(8000)
+      .delay(8000)
       .duration(t)
-
       .style('stroke', 'black')
       .style('stroke-width', 5)
-      //.style('stroke-dasharray', '20,5')
+
 
 
     // democratic
@@ -249,7 +214,6 @@ class RacingBarsChart {
       .attr('y2', vis.height)
       .attr('x2', vis.x(vis.avg_democrat))
         .on('mouseover', (event, d) => {
-          // console.log('heatmap tooltip trigger');
           // Get the client offsets so the tooltip appears over the mouse
           const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
 
@@ -274,17 +238,12 @@ class RacingBarsChart {
           vis.tooltip.transition()
               .duration(500)
               .style('opacity', 0);
-
         })
-
       .transition()
-        .delay(8000)
+      .delay(8000)
       .duration(t)
-
       .style('stroke', '#53AEF4')
       .style('stroke-width', 5)
-      //.style('stroke-dasharray', '20,5')
-
 
     // republican
     vis.chart.append('line')
@@ -294,7 +253,6 @@ class RacingBarsChart {
       .attr('y2', vis.height)
       .attr('x2', vis.x(vis.avg_republican))
         .on('mouseover', (event, d) => {
-          // console.log('heatmap tooltip trigger');
           // Get the client offsets so the tooltip appears over the mouse
           const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
 
@@ -313,21 +271,17 @@ class RacingBarsChart {
               .html(`Party: Republican <br> Average speech length: ${format(Math.round(vis.avg_republican))} words`);
 
         })
-
         .on('mouseout', () => {
           // Hide tooltip
           vis.tooltip.transition()
               .duration(500)
               .style('opacity', 0);
-
         })
       .transition()
-        .delay(8000)
+      .delay(8000)
       .duration(t)
       .style('stroke', '#DB767B')
       .style('stroke-width', 5)
-      //.style('stroke-dasharray', '20,5')
-
 
     vis.bars = vis.chart.selectAll('.racingBars')
       .data(vis.displayData);
@@ -338,16 +292,13 @@ class RacingBarsChart {
       .attr('y', (d) => vis.y(d.name))
       .attr('height', vis.y.bandwidth())
       .attr('x', 0)
-      // .attr("width", d => vis.x(0))
       .attr('fill', (d) => {
         if (d.name === myPres) {
           return '#E3CD7A';
         }
         return 'grey';
       })
-
         .on('mouseover', (event, d) => {
-          // console.log('heatmap tooltip trigger');
           // Get the client offsets so the tooltip appears over the mouse
           const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
 
@@ -369,7 +320,6 @@ class RacingBarsChart {
             `);
 
       })
-
         .on('mouseout', () => {
           // Hide tooltip
           vis.tooltip.transition()
@@ -449,36 +399,8 @@ class RacingBarsChart {
         return partyColors['party-other'];
       })
 
-    /*
-    .attr("class", d=>{
-        if(d.party === "Republican"){
-            return "racingBars party-republican"
-        }else if(d.party === "Democratic"){
-            return "racingBars party-democrat"
-        }else{
-            return "racingBars party-other"
-        }
-    })
-    */
-
-    // this part doesn't work
-    /*
-    .on("end", function (d) {
-        // Append image at the end of each bar
-        vis.svg.append("image")
-            .attr("xlink:href", d => `images/Portraits/${d.image}-*.jpeg`)
-            .attr("x", vis.x(d.word_count)) // Adjust the position based on your requirements
-            .attr("y", vis.y(d.name))
-            .attr("width", vis.x(20)) //
-            .attr("height", vis.y.bandwidth());
-    })
-    */
-
-    ;
-
     vis.bars.exit().remove();
 
-    // d3.select("#startBars").attr("disabled", false);
   }
 
   resetAnimation() {
@@ -488,7 +410,6 @@ class RacingBarsChart {
 
     vis.chart.selectAll('.vertical-line').remove();
 
-    //vis.chart.select('.x-axis').attr('color', '#EFEFEF');
   }
 
   activate() {

@@ -6,25 +6,14 @@ class StackedBarChart {
 
     // Render the chart
     this.init();
-    // this.update();
   }
 
   init() {
     const vis = this;
 
-    //globalBrushYears
-    /*
-
-     static updateBrushYears(chartInstance, brushYears) {
-    // Your logic to update the StackedBarChart based on brushYears
-    // For example, you can filter the data and call wrangleData and update methods again
-    chartInstance.wrangleData(brushYears[0], brushYears[1]);
-  }
-     */
-
     vis.minYear = 1923
     vis.maxYear = 2023
-
+5
     document.addEventListener('brushChange', () => {
 
      if(globalBrushYears) {
@@ -77,31 +66,6 @@ class StackedBarChart {
         .attr('y', vis.height + 40)
         .text('Proportion of Speech (%)');
 
-// Add y-axis title
-    /*
-    vis.chart.append('text')
-        .attr('class', 'axis axis-label')
-        .attr('text-anchor', 'middle')
-        .attr('transform', 'rotate(-90)')
-        .attr('x', -vis.height / 2)
-        .attr('y', -vis.margin.left + 10)
-        .text('President');
-
-     */
-
-    // vis.margin = {
-    //   top: 20, right: 250, bottom: 60, left: 120,
-    // };
-    // vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-    // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
-
-    // init drawing area
-    // vis.svg = d3.select(`#${vis.parentElement}`).append('svg')
-    //   .attr('width', vis.width + vis.margin.left + vis.margin.right)
-    //   .attr('height', vis.height + vis.margin.top + vis.margin.bottom)
-    //   .append('g')
-    //   .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`);
-
     // Scales and axes
     vis.y = d3.scaleBand()
       .range([vis.height, 0])
@@ -122,8 +86,8 @@ class StackedBarChart {
     vis.chart.append('g')
       .attr('class', 'x-axis axis')
       .attr('transform', `translate(0,${vis.height})`);
-    // legend
 
+    // legend
     vis.keys = Object.keys(vis.data[0]).slice(2);
 
     // Get theme colors from main and convert to array
@@ -218,29 +182,17 @@ class StackedBarChart {
           }
         });
 
-
-     // .append('text')
-     //   .attr('class', 'mylabels2')
-     // .attr('x', vis.width + vis.margin.right - 170 + size * 1.2)
-     // .attr('y', (d, i) => 10 + i * (size + 5) + (size / 2))
-     // .style('fill', 'black')
-     // .text((d) => d)
-    //  .attr('text-anchor', 'left')
-     // .style('alignment-baseline', 'middle');
-
 // Create tooltip skeleton
     this.tooltip = d3.select('#vis-container').append('div')
         .attr('class', 'heatmap-tooltip')
         .style('opacity', 0);
 
-
-    this.wrangleData(1923, 2023);
+    // wrangle data with min and max years
+    this.wrangleData(vis.minYear, vis.maxYear);
   }
 
   wrangleData(minYear, maxYear) {
     const vis = this;
-
-    //globalThemeSelection
 
     const sortData = vis.data.sort((a, b) => a.year - b.year).filter(d => d.year >= minYear && d.year <= maxYear);
 
@@ -271,7 +223,6 @@ class StackedBarChart {
       });
 
     // Flatten the nested structure
-
       vis.displayData = vis.displayData.flat()
 
     // Extract unique president names for y-axis domain
@@ -286,13 +237,6 @@ class StackedBarChart {
     const t = 800;
 
     const myMax = d3.max(vis.displayData, (d) => d.value_d1);
-
-    /*
-    // color scale
-    vis.colorScale = d3.scaleOrdinal()
-        .domain(vis.keys)
-        .range(["#61E8E1", "#EB4747", "#FFD28F", "#83A2FF", "#1D3354", "#52489C", "#0F7173", "#CD3983", "#AF2BBF", "#857AB7", "#00487C"]);
-*/
 
     vis.x.domain([0, myMax]);
 
@@ -318,7 +262,6 @@ class StackedBarChart {
       .each((d) => {
       })
         .on('mouseover', (event, d) => {
-          // console.log('heatmap tooltip trigger');
           // Get the client offsets so the tooltip appears over the mouse
           const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
 
@@ -335,41 +278,27 @@ class StackedBarChart {
           // Update tooltip contents
           vis.tooltip
               .html(`<span class="pres-name">President: ${d.name}</span>
-<br> <span class="pres-name">Theme: ${d.key}</span>
-<br> <span class="pres-name">Proportion: ${format(Math.round(d.value))}%</span>`);
-        })
-        .on('mouseout', () => {
-          // Hide tooltip
-          vis.tooltip.transition()
-              .duration(500)
-              .style('opacity', 0);
+                    <br> <span class="pres-name">Theme: ${d.key}</span>
+                    <br> <span class="pres-name">Proportion: ${format(Math.round(d.value))}%</span>`);
+              })
+              .on('mouseout', () => {
+              // Hide tooltip
+              vis.tooltip.transition()
+                  .duration(500)
+                  .style('opacity', 0);
 
-        })
-      .attr('y', (d) => vis.y(d.name))
-      .attr('height', vis.y.bandwidth())
-      .transition()
-      .duration(t)
-      .attr('x', (d) => vis.x(d.value_d0))
-      .attr('width', (d) => vis.x(d.value_d1) - vis.x(d.value_d0))
-      .attr('fill', (d) => vis.colorScale(d.key));
+            })
+            .attr('y', (d) => vis.y(d.name))
+            .attr('height', vis.y.bandwidth())
+            .transition()
+            .duration(t)
+            .attr('x', (d) => vis.x(d.value_d0))
+            .attr('width', (d) => vis.x(d.value_d1) - vis.x(d.value_d0))
+            .attr('fill', (d) => vis.colorScale(d.key));
 
-    vis.bars.exit()
-      .remove();
+          vis.bars.exit()
+            .remove();
 
-    /*
-            /// Update the rectangles
-            vis.svg.selectAll("rect")
-                .data(vis.displayData)
-                .join("rect")
-                .transition()
-                .duration(t)
-                .attr("x", d => vis.x(0))
-                .attr("y", d => vis.y(d.name))
-                .attr("width", d => vis.x(d.value))
-                .attr("height", vis.y.bandwidth())
-                .attr("fill", d => vis.colorScale(d.key));
-
-        */
   }
 
 

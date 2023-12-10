@@ -20,11 +20,9 @@ class LineChart {
             } else {
                 this.selectedTheme = null;
             }
-            // console.log('dripBar detected event theme change', this.selectedTheme);
             this.updateTheme();
         });
 
-        // console.log(globalThemeSelection)
 
         const vis = this;
         // Get the bounding box of the SVG element
@@ -51,16 +49,6 @@ class LineChart {
         vis.chart = vis.svg.append('g')
           .attr('transform', `translate(${vis.margin.left},${vis.margin.top})`)
           .attr('class', 'deactivated'); // Hide the chart until it's called by the Display class
-
-        // Add x-axis title
-        /*
-        vis.chart.append('text')
-            .attr('class', 'axis axis-label')
-            .attr('text-anchor', 'middle')
-            .attr('x', vis.width / 2)
-            .attr('y', vis.height + 40)
-            .text('Year');
-            */
 
         // Add y-axis title
         vis.chart.append('text')
@@ -137,11 +125,9 @@ class LineChart {
                 const selectedRange = event.selection || vis.xBrushScale.range();
                 const selectedYears = selectedRange.map(vis.xBrushScale.invert);
 
-                // const filteredData = vis.data.filter(d => d.year >= selectedYears[0] && d.year <= selectedYears[1]);
                 globalBrushYears = selectedYears;
                 triggerBrushChange();
 
-                // stackedBarChart.updateBrushYears(globalBrushYears);
             } catch (error) {
                 console.error('Error in brushed function:', error);
             }
@@ -166,9 +152,6 @@ class LineChart {
         // Create line function for each topic
         const lineGenerators = {};
         const topics = ['Border', 'Climate & Environment', 'Economy', 'Gun', 'Immigration', 'Law & Crime', 'War & Military'];
-
-        // console.log(this.selectedTheme)
-        // console.log(globalThemeSelection)
 
         if (globalLineSelection) {
             vis.topicsFiltered = topics.filter((key) => key === globalLineSelection);
@@ -231,12 +214,11 @@ class LineChart {
         this.chart.selectAll('*')
           .classed('disappear', false)
           .classed('hidden', false)
-        // this.chart.classed('activated', true);
+
     }
 
     deactivate() {
         // Method allows Display class to hide this chart
-        // this.chart.classed('activated', false);
         this.chart.classed('deactivated', true);
         this.chart.selectAll('*')
           .classed('shown', false)
