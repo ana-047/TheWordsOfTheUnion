@@ -61,6 +61,16 @@ body {
     color: var(--text-default);
 }
 
+.vertical-line {
+    stroke-width: 4px;
+    stroke-dasharray: 12 5;
+    opacity: 0.5;
+}
+
+.vertical-line:hover {
+    opacity: 1;
+}
+
 .container {
     margin-left: 5%;
     width: 30%;
@@ -847,4 +857,9 @@ h1 {
     max-height: 800px !important;
     opacity: 1;
     transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+
+.infographic-text {
+    word-wrap: break-word;
 }
