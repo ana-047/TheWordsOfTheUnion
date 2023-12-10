@@ -47,7 +47,7 @@ class InfographicChart {
         const rectWidth= (this.width/3) - (rowGap*2);
 
         const myInfo = vis.chart.append("image")
-            .attr("x", d => -100)
+            .attr("x", d => 0)
             .attr("y", d => 0)
             .attr("width", this.width)
             .attr("height", this.height)

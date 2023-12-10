@@ -189,17 +189,12 @@ class RacingBarsChart {
   updateVis() {
     const vis = this;
 
-    const t = 1200;
+    const t = 2000;
 
     const myPres = d3.select('#presidents').property('value');
 
     // d3.select("#startBars").attr("disabled", true);
 
-    vis.chart.select('.x-axis')
-      .transition()
-      .duration(t)
-      .delay(10000)
-      .attr('color', 'black');
 
     // overall line
     vis.chart.append('line')
@@ -236,9 +231,11 @@ class RacingBarsChart {
               .style('opacity', 0);
 
         })
+
       .transition()
+        .delay(8000)
       .duration(t)
-      .delay(11000)
+
       .style('stroke', 'black')
       .style('stroke-width', 5)
       //.style('stroke-dasharray', '20,5')
@@ -279,9 +276,11 @@ class RacingBarsChart {
               .style('opacity', 0);
 
         })
+
       .transition()
+        .delay(8000)
       .duration(t)
-      .delay(11000)
+
       .style('stroke', '#53AEF4')
       .style('stroke-width', 5)
       //.style('stroke-dasharray', '20,5')
@@ -323,8 +322,8 @@ class RacingBarsChart {
 
         })
       .transition()
+        .delay(8000)
       .duration(t)
-      .delay(11000)
       .style('stroke', '#DB767B')
       .style('stroke-width', 5)
       //.style('stroke-dasharray', '20,5')
@@ -379,67 +378,67 @@ class RacingBarsChart {
 
         })
       .transition()
-      .duration(1000)
+      .duration(600)
       .ease(d3.easeLinear)
       .attr('width', (d) => {
         if (d.word_count < 2000) { return vis.x(d.word_count); } return vis.x(2000);
       })
       .transition()
-      .duration(1000)
+      .duration(600)
       .ease(d3.easeLinear)
       .attr('width', (d) => {
         if (d.word_count < 4000) { return vis.x(d.word_count); } return vis.x(4000);
       })
       .transition()
-      .duration(1000)
+      .duration(600)
       .ease(d3.easeLinear)
       .ease(d3.easeLinear)
       .attr('width', (d) => {
         if (d.word_count < 6000) { return vis.x(d.word_count); } return vis.x(6000);
       })
       .transition()
-      .duration(1000)
+      .duration(600)
       .ease(d3.easeLinear)
       .attr('width', (d) => {
         if (d.word_count < 8000) { return vis.x(d.word_count); } return vis.x(8000);
       })
       .transition()
-      .duration(1000)
+      .duration(600)
       .ease(d3.easeLinear)
       .ease(d3.easeLinear)
       .attr('width', (d) => {
         if (d.word_count < 10000) { return vis.x(d.word_count); } return vis.x(10000);
       })
       .transition()
-      .duration(1000)
+      .duration(600)
       .ease(d3.easeLinear)
       .attr('width', (d) => {
         if (d.word_count < 12000) { return vis.x(d.word_count); } return vis.x(12000);
       })
       .transition()
-      .duration(1000)
+      .duration(600)
       .ease(d3.easeLinear)
       .attr('width', (d) => {
         if (d.word_count < 14000) { return vis.x(d.word_count); } return vis.x(14000);
       })
       .transition()
-      .duration(1000)
+      .duration(600)
       .ease(d3.easeLinear)
       .attr('width', (d) => {
         if (d.word_count < 16000) { return vis.x(d.word_count); } return vis.x(16000);
       })
       .transition()
-      .duration(1000)
+      .duration(600)
       .ease(d3.easeLinear)
       .attr('width', (d) => {
         if (d.word_count < 18000) { return vis.x(d.word_count); } return vis.x(18000);
       })
       .transition()
-      .duration(1000)
+      .duration(600)
       .ease(d3.easeLinear)
       .attr('width', (d) => vis.x(d.word_count))
       .transition()
-      .delay(1200)
+      .delay(800)
       .duration(1200)
       .attr('fill', (d) => {
         if (d.party === 'Republican') {
