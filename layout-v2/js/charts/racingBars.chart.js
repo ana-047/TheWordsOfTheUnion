@@ -208,12 +208,41 @@ class RacingBarsChart {
       .attr('y1', 0)
       .attr('y2', vis.height)
       .attr('x2', vis.x(vis.avg_overall))
+        .on('mouseover', (event, d) => {
+          // console.log('heatmap tooltip trigger');
+          // Get the client offsets so the tooltip appears over the mouse
+          const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
+
+          let format = d3.format(",");
+
+          // Render the tooltip and update position
+          vis.tooltip
+              .transition()
+              .duration(200)
+              .style('opacity', 0.9)
+              .style('left', `${offsetX + 10}px`)
+              .style('top', `${offsetY - 20}px`);
+
+          // Update tooltip contents
+          vis.tooltip
+              .html(`Party: All parties <br> Average Speech Length: ${Math.round(vis.avg_overall)}`);
+
+        })
+
+        .on('mouseout', () => {
+          // Hide tooltip
+          vis.tooltip.transition()
+              .duration(500)
+              .style('opacity', 0);
+
+        })
       .transition()
       .duration(t)
       .delay(11000)
       .style('stroke', 'black')
-      .style('stroke-width', 25)
-      .style('stroke-dasharray', '5,5');
+      .style('stroke-width', 5)
+      //.style('stroke-dasharray', '20,5')
+
 
     // democratic
     vis.chart.append('line')
@@ -222,12 +251,41 @@ class RacingBarsChart {
       .attr('y1', 0)
       .attr('y2', vis.height)
       .attr('x2', vis.x(vis.avg_democrat))
+        .on('mouseover', (event, d) => {
+          // console.log('heatmap tooltip trigger');
+          // Get the client offsets so the tooltip appears over the mouse
+          const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
+
+          let format = d3.format(",");
+
+          // Render the tooltip and update position
+          vis.tooltip
+              .transition()
+              .duration(200)
+              .style('opacity', 0.9)
+              .style('left', `${offsetX + 10}px`)
+              .style('top', `${offsetY - 20}px`);
+
+          // Update tooltip contents
+          vis.tooltip
+              .html(`Party: Democrat <br> Average Speech Length: ${Math.round(vis.avg_democrat)}`);
+
+        })
+
+        .on('mouseout', () => {
+          // Hide tooltip
+          vis.tooltip.transition()
+              .duration(500)
+              .style('opacity', 0);
+
+        })
       .transition()
       .duration(t)
       .delay(11000)
-      .style('stroke', '#83A2FF')
-      .style('stroke-width', 25)
-      .style('stroke-dasharray', '5,5');
+      .style('stroke', '#53AEF4')
+      .style('stroke-width', 5)
+      //.style('stroke-dasharray', '20,5')
+
 
     // republican
     vis.chart.append('line')
@@ -236,12 +294,41 @@ class RacingBarsChart {
       .attr('y1', 0)
       .attr('y2', vis.height)
       .attr('x2', vis.x(vis.avg_republican))
+        .on('mouseover', (event, d) => {
+          // console.log('heatmap tooltip trigger');
+          // Get the client offsets so the tooltip appears over the mouse
+          const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
+
+          let format = d3.format(",");
+
+          // Render the tooltip and update position
+          vis.tooltip
+              .transition()
+              .duration(200)
+              .style('opacity', 0.9)
+              .style('left', `${offsetX + 10}px`)
+              .style('top', `${offsetY - 20}px`);
+
+          // Update tooltip contents
+          vis.tooltip
+              .html(`Party: Republican <br> Average Speech Length: ${Math.round(vis.avg_republican)}`);
+
+        })
+
+        .on('mouseout', () => {
+          // Hide tooltip
+          vis.tooltip.transition()
+              .duration(500)
+              .style('opacity', 0);
+
+        })
       .transition()
       .duration(t)
       .delay(11000)
-      .style('stroke', '#FF8B8B')
-      .style('stroke-width', 25)
-      .style('stroke-dasharray', '5,5');
+      .style('stroke', '#DB767B')
+      .style('stroke-width', 5)
+      //.style('stroke-dasharray', '20,5')
+
 
     vis.bars = vis.chart.selectAll('.racingBars')
       .data(vis.displayData);
