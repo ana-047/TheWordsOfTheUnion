@@ -32,9 +32,9 @@ const chartConfigs = [
   },
   {
     step: 1,
-    chartGenerator: (container, data) => new ImageChart(container, data),
+    chartGenerator: (container, data) => new TimelineChart(container, data),
     dataPath: 'data/sotu-speech-delivery-method-timeline.csv',
-    visId: 'vis-focus-secondary',
+    visId: 'vis-brush',
   },
   {
     step: 2,
@@ -153,12 +153,6 @@ const chartConfigs = [
     dataPath: 'data/countries_long.csv',
     visId: 'vis-brush',
   },
-  {
-    step: 14,
-    chartGenerator: (container, data) => new InfographicChart(container, data),
-    dataPath: 'data/countries_long.csv',
-    visId: 'vis-focus-secondary',
-  }
 ];
 
 // INIT OFFSET SERVICE FOR TOOLTIP POSITIONING
