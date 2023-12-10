@@ -257,7 +257,7 @@ class BeeswarmChart {
     vis.xAxis = d3.axisTop().scale(vis.xScale)
       .tickFormat(d3.format('d'));
     vis.chart.append('g')
-      .attr('class', 'x-axis')
+      .attr('class', 'x-axis axis')
       // .attr('transform', `translate(0, ${vis.height + vis.margin.bottom / 2})`)
       .attr('transform', `translate(0, ${vis.margin.top * -0.5})`)
       .call(vis.xAxis);
@@ -267,7 +267,7 @@ class BeeswarmChart {
       .tickValues([-1, 0, 1]) // Set specific tick values
       .tickFormat((d) => (d === 0 ? '0' : d > 0 ? '+1' : '-1')); // Label format for sentiment scores;
     vis.chart.append('g')
-      .attr('class', 'y-axis')
+      .attr('class', 'y-axis axis')
       .attr('transform', `translate(${-vis.margin.left * 0.2}, 0)`)
       .call(vis.yAxis);
 
@@ -499,6 +499,9 @@ class BeeswarmChart {
   activate() {
     // Method allows Display class to show this chart
     this.chart.classed('deactivated', false);
+    this.chart.selectAll('*')
+      .classed('disappear', false)
+      .classed('hidden', false)
     // this.chart.classed('activated', true);
     this.chart.raise()
   }
@@ -508,5 +511,9 @@ class BeeswarmChart {
     this.chart.lower();
     // this.chart.classed('activated', false);
     this.chart.classed('deactivated', true);
+    this.chart.selectAll('*')
+      .classed('shown', false)
+      .classed('hidden', true)
+      .classed('disappear', true);
   }
 }
