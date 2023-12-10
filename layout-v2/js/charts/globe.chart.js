@@ -59,13 +59,11 @@ class GlobeChart {
     //this.equirectangularProjection = d3.geoEquirectangular().scale(this.mapScale * 0.6).translate([this.width * 0.41, this.height * 0.68]);
 
     const widthToHeightRatio = this.width / this.height;
-    const maxScale = 0.3; // Adjust this as needed
+    const maxScale = 0.3; // Controls the scale of the map
 
     this.equirectangularProjection = d3.geoEquirectangular()
       .scale(Math.min(widthToHeightRatio * this.mapScale * maxScale, this.mapScale)) // Dynamic scaling based on width
       .translate([this.width / 2, this.height * 0.5]); // Centering projection within the container
-
-
 
     // Create a chart group that will hold the actual chart
     // (The parent SVG will hold multiple chart groups and display them as needed)
@@ -73,11 +71,18 @@ class GlobeChart {
       .attr('transform', `translate(${this.margin.left},${this.margin.top})`)
       .attr('class', 'deactivated'); // Hide the chart until it's called by the Display class
 
+    // Create tooltip skeleton
+    this.tooltip = d3.select('#vis-container').append('div')
+      .attr('class', 'globe-tooltip')
+      .style('opacity', 0);
+
     this.render();
     // this.updateMap([null]);
   }
 
   render() {
+    const vis = this;
+
     this.path = d3.geoPath().projection(this.initialProjection);
 
     // Create a background for the globe
@@ -99,7 +104,15 @@ class GlobeChart {
       .append('path')
       .attr('class', 'country')
       .attr('d', this.path)
-      .on('click', (event, d) => this.handleCountryClick(event, d));
+      .on('click', (event, d) => this.handleCountryClick(event, d))
+      .on('mouseover', (event, d) => {
+        const vis = this;
+        vis.handleMouseOver(event, d, vis);
+      })
+      .on('mouseout', (event, d) => {
+        const vis = this;
+        vis.handleMouseOut(event, d, vis);
+      });
 
     this.rotateGlobe();
   }
@@ -214,6 +227,16 @@ class GlobeChart {
           return `country country-hidden`;
         }
         return 'country country-disabled'; // Default class
+      });
+
+    vis.chart.selectAll('.country')
+      .on('mouseover', (event, d) => {
+        const vis = this;
+        vis.handleMouseOver(event, d, vis);
+      })
+      .on('mouseout', (event, d) => {
+        const vis = this;
+        vis.handleMouseOut(event, d, vis);
       });
   }
 
@@ -330,6 +353,34 @@ class GlobeChart {
   getCountryName(d) {
     return (d && d.properties && d.properties.name) ? d.properties.name : null;
   }
+
+  handleMouseOver(event, d, vis) {
+    // Show tooltip on mouseover
+    // Get the client offsets so the tooltip appears over the mouse
+    const { offsetX, offsetY } = offsetCalculator.getOffsets(event.clientX, event.clientY);
+
+    // Update tooltip position
+    vis.tooltip
+      .transition()
+      .duration(200)
+      .style('opacity', 0.9)
+      .style('left', `${offsetX + 10}px`)
+      .style('top', `${offsetY - 20}px`);
+
+    // Update tooltip content
+    // Find the country info
+    const countryName = vis.getCountryName(d);
+    vis.tooltip.html(`<strong class="label">${countryName}</strong>`);
+  }
+
+  handleMouseOut(event, d, vis) {
+    // Hide tooltip on mouseout
+    vis.tooltip
+      .transition()
+      .duration(200)
+      .style('opacity', 0);
+  }
+
 
   activate() {
     // Method allows Display class to show this chart

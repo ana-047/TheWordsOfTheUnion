@@ -308,6 +308,28 @@ video {
     fill: var(--delivery-televised);
 }
 
+.timeline-tooltip {
+    /* Position */
+    position: absolute;
+    z-index: 9999;
+
+    /* Interactivity */
+    pointer-events: none;
+
+    /* Style */
+    border-radius: 4px;
+    padding: 8px;
+    background-color: var(--background-tooltip);
+    box-shadow: 0 8px 30px var(--shadow-tooltip);
+
+    font-family: var(--text-title-font);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-title);
+    line-height: 1.2em;
+}
+
 
 /* SPEECH LENGTH TRANSITION */
 .big-stat {
@@ -388,6 +410,7 @@ video {
     fill: var(--theme-guns)
 }
 
+/* STACKED BAR CHART */
 
 /* stacked bars */
 .mylabels2 {
@@ -401,6 +424,31 @@ video {
     margin: 4px 8px;
     padding: 4px 8px;
 }
+
+.stackedBars:hover{
+    fill: var(--hover);
+}
+
+.racingBars:hover{
+    fill: var(--hover);
+}
+
+.mylabels2:hover{
+    fill: var(--hover);
+}
+
+.theme-label:hover{
+    fill: var(--hover);
+}
+
+h1 {
+    font-family: var(--text-title-font);
+}
+
+/*text {*/
+/*    font-family: var(--text-title-font);*/
+/*    font-size: 12px;*/
+/*}*/
 
 
 /* BEE SWARM */
@@ -522,29 +570,26 @@ video {
     fill: var(--selected);
 }
 
-.stackedBars:hover{
-    fill: var(--hover);
-}
+.globe-tooltip {
+    /* Position */
+    position: absolute;
+    z-index: 9999;
 
-.racingBars:hover{
-    fill: var(--hover);
-}
+    /* Interactivity */
+    pointer-events: none;
 
-.mylabels2:hover{
-    fill: var(--hover);
-}
+    /* Style */
+    border-radius: 4px;
+    padding: 8px;
+    background-color: var(--background-tooltip);
+    box-shadow: 0 8px 30px var(--shadow-tooltip);
 
-.theme-label:hover{
-    fill: var(--hover);
-}
-
-h1 {
     font-family: var(--text-title-font);
-}
-
-text {
-    font-family: var(--text-title-font);
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: var(--text-title);
+    line-height: 1.2em;
 }
 
 
@@ -559,6 +604,7 @@ text {
     font-size: 16px;
     font-weight: bold;
     color: var(--text-title);
+    fill: var(--text-title);
     line-height: 1.2em;
 }
 
