@@ -154,7 +154,7 @@ class Display {
         container.videoContainer.selectAll('*')
           .classed('disappear', false)
           .classed('hidden', false)
-          .classed('shown', true);
+          // .classed('shown', true);
       } else if (globalSectionIndex >= 1) {
         // Hide video for later sections
         container.videoContainer.classed('shown', false);
