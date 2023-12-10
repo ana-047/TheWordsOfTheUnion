@@ -345,15 +345,16 @@ class StackedBarChart {
               .style('opacity', 0);
 
         })
+      .attr('y', (d) => vis.y(d.name))
+      .attr('height', vis.y.bandwidth())
       .transition()
       .duration(t)
       .attr('x', (d) => vis.x(d.value_d0))
-      .attr('y', (d) => vis.y(d.name))
       .attr('width', (d) => vis.x(d.value_d1) - vis.x(d.value_d0))
-      .attr('height', vis.y.bandwidth())
       .attr('fill', (d) => vis.colorScale(d.key));
 
-    vis.bars.exit().remove();
+    vis.bars.exit()
+      .remove();
 
     /*
             /// Update the rectangles
