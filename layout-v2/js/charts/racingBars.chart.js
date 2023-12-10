@@ -225,7 +225,7 @@ class RacingBarsChart {
 
           // Update tooltip contents
           vis.tooltip
-              .html(`Party: All parties <br> Average Speech Length: ${Math.round(vis.avg_overall)}`);
+              .html(`Party: All parties <br> Average speech length: ${format(Math.round(vis.avg_overall))} words`);
 
         })
 
@@ -268,7 +268,7 @@ class RacingBarsChart {
 
           // Update tooltip contents
           vis.tooltip
-              .html(`Party: Democrat <br> Average Speech Length: ${Math.round(vis.avg_democrat)}`);
+              .html(`Party: Democrat <br> Average speech length: ${format(Math.round(vis.avg_democrat))} words`);
 
         })
 
@@ -311,7 +311,7 @@ class RacingBarsChart {
 
           // Update tooltip contents
           vis.tooltip
-              .html(`Party: Republican <br> Average Speech Length: ${Math.round(vis.avg_republican)}`);
+              .html(`Party: Republican <br> Average speech length: ${format(Math.round(vis.avg_republican))} words`);
 
         })
 
@@ -366,7 +366,7 @@ class RacingBarsChart {
           vis.tooltip
               .html(`
                 <span class="pres-name">President: ${d.name}</span> 
-            <br><span class="pres-name">Average word count: ${format(Math.round(d.word_count))}</span>
+            <br><span class="pres-name">Average speech length: ${format(Math.round(d.word_count))} words</span>
             `);
 
       })
