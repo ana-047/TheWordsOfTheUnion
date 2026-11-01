@@ -2,7 +2,7 @@
 
 Instructions: 
 
-To run this project, make sure your web server is running from the project root directory, then open index.html. You can also view a cloud hosted version of the project at https://thethirstytoucan.github.io/TheWordsOfTheUnion/
+To run this project, make sure your web server is running from the project root directory, then open index.html. You can also view a cloud hosted version of the project at https://ana-047.github.io/TheWordsOfTheUnion/
 
 
 Overview:
